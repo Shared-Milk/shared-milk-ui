@@ -5,6 +5,5 @@ workflows:
   build:
     jobs:
       - cypress/run:
-          record: true # record results on Cypress Dashboard
           group: 'all tests' # name this group "all tests" on the dashboard
           start: 'npm start' # start server before running tests 

@@ -17,22 +17,17 @@
   justify-items: $justifyItems;
 }
 
-@mixin button($backgroundColor, $fontColor) {
+@mixin bigButton($backgroundColor) {
   background-color: $backgroundColor;
-  color: $fontColor;
+  color: v.$offWhite;
+  font-family: v.$headerFont;
+  font-size: 2.5em;
   border: none;
-  border-radius: 1.75em;
-  padding: 1% 2%;
-  margin: 2%;
-  min-width: 5.5em;
-  font-size: 1.5em;
-  font-family: v.$bodyFont;
-  box-shadow: 1px 1px 3px 0px v.$offBlack;
+  border-radius: 0.5em;
+  box-shadow: 2px 3px 6px 3px #6b6b6b;
 }
 
-@mixin buttonHover($backgroundColor, $fontColor) {
-  background-color: $backgroundColor;
-  color: $fontColor;
+@mixin buttonHover() {
   cursor: pointer;
   transform: scale(1.08);
 }

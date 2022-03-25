@@ -16,10 +16,15 @@ h1, h2, h3, h4 {
   font-family: v.$headerFont;
 }
 
+h2 {
+  font-size: 2em;
+}
+
 p {
-  margin: 0.5em;
+  margin: 0.5em 0;
   color: v.$darkBlue;
   font-weight: 600;
+  line-height: 1.25em;
 }
 
 a:link { text-decoration: none; }

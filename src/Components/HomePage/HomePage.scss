@@ -1,0 +1,49 @@
+@use '../Styles/mixins' as m;
+@use '../Styles/variables' as v;
+
+.home {
+  display: grid;
+  grid-template-columns: 40% 60%;
+  grid-gap: 2em;
+  margin: 5%;
+
+  h2 {
+    color: v.$salmon;
+  }
+
+  .buttons {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+    
+    .need, .donate {
+      width: 44%;
+      padding: 5% 10%;
+    }
+
+    .need {
+      @include m.bigButton(v.$orange);
+      margin: 0 3% 0 0;
+    }
+
+    .donate {
+      @include m.bigButton(v.$lightTeal);
+      margin: 0 0 0 3%;
+    }
+
+    .support {
+      @include m.bigButton(v.$salmon);
+      width: 60%;
+      margin: 6%;
+      padding: 5%;
+    }
+
+    .need, .donate, .support {
+      &:hover {
+        @include m.buttonHover()
+      }
+    }
+  }
+}

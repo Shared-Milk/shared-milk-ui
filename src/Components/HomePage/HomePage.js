@@ -4,8 +4,10 @@ import Footer from '../Footer/Footer';
 
 const HomePage = () => {
   return (
+    <>
     <Header />
-    // <Footer />
+    <Footer />
+    </>
   )
 };
 

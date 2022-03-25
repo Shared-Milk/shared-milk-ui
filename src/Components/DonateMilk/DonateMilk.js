@@ -1,1 +1,7 @@
-import './DonateMilk.scss'
+import './DonateMilk.scss';
+
+const DonateMilk = () => {
+  
+};
+
+export default DonateMilk;

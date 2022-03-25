@@ -1,7 +1,7 @@
 import './App.scss';
 
-class App {
-  return ();
+const App = () => {
+  
 }
 
 export default App;

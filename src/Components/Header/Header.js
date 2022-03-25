@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <section className='logo'>
-        <h1 tabIndex='0' className='nav'>Don't Cry Over Spilled Milk</h1>
+        <h1 tabIndex='0' className='nav'>Don't Cry Over Shared Milk</h1>
       </section>
       <nav>
         <ul className='menu'>

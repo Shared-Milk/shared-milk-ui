@@ -1,0 +1,55 @@
+@use '../Styles/mixins' as m;
+@use '../Styles/variables' as v;
+
+header {
+  background-color: v.$darkTeal;
+  @include m.flexbox(row, nowrap, normal, space-between, center);
+  padding: 2%;
+
+  h1 {
+    font-size: 3em;
+    font-weight: 600;
+    color: v.$offWhite;
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  nav {
+    flex: 1;
+    @include m.flexbox(row, nowrap, normal, flex-end, normal);
+    white-space: nowrap;
+
+    a {
+      color: inherit;
+      // cursor: pointer !important;
+    }
+
+    a.active {
+      border-bottom: 4px solid v.$orange;
+      padding-bottom: 20%;
+    }
+  }
+
+  .menu {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    @include m.flexbox(row, nowrap, normal, flex-end, flex-start);
+
+    li {
+      color: v.$offWhite;
+      letter-spacing: 0.05em;
+      position: relative;
+      padding: 0 10%;
+      border-right: 2px solid v.$offWhite;
+      font-size: 1.2em;
+      font-weight: 600;
+    }
+
+    li:last-child {
+      border-right: none;
+    }
+  }
+}

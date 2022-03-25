@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <header>
       <section className='logo'>
-        <Link exact to='/'><h1 className='nav'>Don't Cry Over Shared Milk</h1>
+        <Link exact to='/'><h1 className='nav'>No Use Cryin' Over Shared Milk</h1>
         </Link>
       </section>
       <nav>

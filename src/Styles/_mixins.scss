@@ -1,0 +1,38 @@
+@use './variables' as v;
+
+@mixin flexbox($direction, $wrap, $alignContent, $justify, $alignItems) {
+  display: flex;
+  flex-direction: $direction;
+  flex-wrap: $wrap;
+  align-content: $alignContent;
+  justify-content: $justify;
+  align-items: $alignItems;
+}
+
+@mixin flexgrid($alignContent, $justifyContent, $alignItems, $justifyItems) {
+  display: grid;
+  align-content: $alignContent;
+  justify-content: $justifyContent;
+  align-items: $alignItems;
+  justify-items: $justifyItems;
+}
+
+@mixin button($backgroundColor, $fontColor) {
+  background-color: $backgroundColor;
+  color: $fontColor;
+  border: none;
+  border-radius: 1.75em;
+  padding: 1% 2%;
+  margin: 2%;
+  min-width: 5.5em;
+  font-size: 1.5em;
+  font-family: v.$bodyFont;
+  box-shadow: 1px 1px 3px 0px v.$offBlack;
+}
+
+@mixin buttonHover($backgroundColor, $fontColor) {
+  background-color: $backgroundColor;
+  color: $fontColor;
+  cursor: pointer;
+  transform: scale(1.08);
+}

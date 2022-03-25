@@ -1,0 +1,16 @@
+@use '../Styles/mixins' as m;
+@use '../Styles/variables' as v;
+
+footer {
+  text-align: center;
+  background-color: v.$darkBlue;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  padding: 1%;
+
+  p {
+    font-size: 0.75em;
+    color: v.$offWhite;
+  }
+}

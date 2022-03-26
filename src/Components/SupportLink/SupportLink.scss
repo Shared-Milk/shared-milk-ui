@@ -1,0 +1,28 @@
+@use '../Styles/mixins' as m;
+@use '../Styles/variables' as v;
+
+.support-links {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 5% 2% 20% 2%;
+
+  .support-button {
+    display: block;
+    height: 200px;
+    width: 200px;
+    border-radius: 50%;
+    margin: 1%;
+    padding: 2%;
+    font-family: v.$bodyFont;
+    font-size: 1em;
+    font-weight: bolder;
+    border: none;
+    background-color: v.$salmon;
+    color: v.$offWhite;
+    box-shadow: 2px 3px 6px 3px #6b6b6b;
+
+    &:hover {
+      @include m.buttonHover(1.2em)
+    }
+  }
+}

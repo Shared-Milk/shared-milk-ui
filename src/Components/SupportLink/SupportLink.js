@@ -1,14 +1,6 @@
 import './SupportLink.scss';
-import { Link, Navigate, Route, Redirect } from 'react-router-dom';
 
 const SupportLink = () => {
-  // const navigate = useNavigate();
-  // navigate('/support', {replace: true});
-
-  // const handleClick = (link) => {
-  //   window.open(link);
-  // }
-
   return (
     <section className='support-links'>
       <button className='support-button' onClick={() => window.open('https://www.lllusa.org/', '_blank')}>La Leche League, International</button>

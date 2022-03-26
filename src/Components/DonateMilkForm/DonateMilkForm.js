@@ -23,6 +23,14 @@ const DonateMilkForm = () => {
       </div>
       <label for='message'>Message</label>
       <textarea placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' />
+      {/* 
+      
+      link below needs a conditional that depends on the 'yes' or 'no' radio buttons above 
+
+      - link to '/sorry' if YES
+      - linke to '/thank-you' if NO
+      
+      */}
       <Link exact to='/thank-you' className='button'>Submit</Link>
     </form>
   )

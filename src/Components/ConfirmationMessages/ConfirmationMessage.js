@@ -1,5 +1,3 @@
-import './ConfirmationMessage.scss';
-
 const ConfirmationMessage = () => {
   return (
     <article className='main-container'>

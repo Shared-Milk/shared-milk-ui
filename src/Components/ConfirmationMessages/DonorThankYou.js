@@ -1,5 +1,3 @@
-import './DonorThankYou.scss';
-
 const DonorThankYou = () => {
   return (
     <article className='main-container'>

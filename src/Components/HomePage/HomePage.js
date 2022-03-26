@@ -13,7 +13,7 @@ const HomePage = () => {
       <aside className='buttons'>
         <Link exact to='/need-milk' className='need'>Need<br></br>Milk</Link>
         <Link exact to='/donate' className='donate'>Donate<br></br>Milk</Link>
-        <Link exact to='/donate' className='support'>Need<br></br>Support</Link>
+        <Link exact to='/support' className='support'>Need<br></br>Support</Link>
       </aside>
     </main>
   )

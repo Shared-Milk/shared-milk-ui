@@ -2,6 +2,14 @@
 @use '../Styles/variables' as v;
 
 .main-container {
+  h2 {
+    color: v.$salmon;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
   form {
     margin: 1% 0;
     display: flex;
@@ -17,7 +25,7 @@
     }
     
     input, textarea {
-      line-height: 2em;
+      height: 2em;
       background-color: v.$lightGray;
       color: v.$mediumGray;
       border: none;
@@ -28,9 +36,18 @@
       padding: 0 2%;
     }
 
+    textarea {
+      height: 6em;
+      padding: 1% 2%;
+    }
+
     .button {
       @include m.button(v.$orange, v.$offWhite, v.$bodyFont);
       margin: 4% 0 4% 60%;
+
+      &:hover {
+        @include m.buttonHover(1.2em)
+      }
     }
   }
 }

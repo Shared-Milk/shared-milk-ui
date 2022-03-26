@@ -28,10 +28,10 @@
   text-align: center;
 }
 
-@mixin buttonHover() {
+@mixin buttonHover($fontSize) {
   cursor: pointer;
   transform: scale(1.08);
-  font-size: 3em;
+  font-size: $fontSize;
 }
 
 @mixin button($backgroundColor, $textColor, $font) {

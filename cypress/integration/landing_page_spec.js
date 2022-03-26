@@ -14,7 +14,7 @@ describe('Shared Milk landing page user flow', () => {
 
   it('should be able to navigate to the Need Milk page view', () => {
     // cy.intercept(fetch call)
-    cy.get('.nav').contains('Need Milk').click();
+    cy.get('.nav').contains('Need Milk').click()
     // cy.wait(['api call']);
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/need-milk')
@@ -23,7 +23,7 @@ describe('Shared Milk landing page user flow', () => {
 
     it('should be able to navigate to the Donate page form', () => {
       // cy.intercept(fetch call)
-      cy.get('.nav').contains('Donate').click();
+      cy.get('.nav').contains('Donate').click()
       // cy.wait(['api call']);
       cy.location().should((location => {
         expect(location.href).to.eq('http://localhost:3000/donate')
@@ -31,9 +31,7 @@ describe('Shared Milk landing page user flow', () => {
     });
 
     it('should be able to navigate to the About Us page view', () => {
-      // cy.intercept(fetch call)
-      cy.get('.nav').contains('About Us').click();
-      // cy.wait(['api call']);
+      cy.get('.nav').contains('About Us').click()
       cy.location().should((location => {
         expect(location.href).to.eq('http://localhost:3000/about-us')
       }))
@@ -41,7 +39,7 @@ describe('Shared Milk landing page user flow', () => {
 
     it('should be able to navigate to the Support page view', () => {
       // cy.intercept(fetch call)
-      cy.get('.nav').contains('Support').click();
+      cy.get('.nav').contains('Support').click()
       // cy.wait(['api call']);
       cy.location().should((location => {
         expect(location.href).to.eq('http://localhost:3000/support')
@@ -54,4 +52,32 @@ describe('Shared Milk landing page user flow', () => {
     cy.get('.support ').should('have.attr', 'href', '/support')
   })
 
+  it('should navigate users to their page of interest on button click', () => {
+  
+    it('should navigate user to the Need Milk page', () => {
+      cy.get('.need').should('have.attr', 'href', '/need-milk').click()
+    // cy.wait(['api call']);
+      cy.location().should((location => {
+        expect(location.href).to.eq('http://localhost:3000/need-milk')
+     }))
+    })
+
+    it('should navigate user to the Donate Milk page', () => {
+      cy.get('.need').should('have.attr', 'href', '/donate').click()
+    // cy.wait(['api call']);
+      cy.location().should((location => {
+        expect(location.href).to.eq('http://localhost:3000/donate')
+     }))
+    })
+
+    it('should navigate user to the support page', () => {
+      cy.get('.need').should('have.attr', 'href', '/support').click()
+    // cy.wait(['api call']);
+      cy.location().should((location => {
+        expect(location.href).to.eq('http://localhost:3000/support')
+     }))
+    })
+
+  })
 })
+

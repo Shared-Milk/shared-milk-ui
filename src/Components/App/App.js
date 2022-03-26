@@ -1,19 +1,32 @@
 import React from 'react';
 import './App.scss';
-import HomePage from '../HomePage/HomePage';
+import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
-import { Routes, Route } from 'react-router-dom';
+// Nav Bar Imports
+import HomePage from '../HomePage/HomePage';
+import NeedMilk from '../NeedMilk/NeedMilk';
+import Donate from '../DonateMilk/DonateMilk';
+import About from '../About/About';
+import Support from '../SupportPage/Support';
+
+//Prompt Page Imports
+import MilkRequestForm from '../MilkRequestForm/MilkRequestForm';
 
 const App = () => {
  return (
-   <div className="App">
+   <main className="App">
      <Header />
      <Routes>
-       <Route path='/' element={<HomePage />}/>
+        <Route path='/' element={<HomePage />}/>
+        <Route path='need-milk' element={<NeedMilk />}/>
+        <Route path='donate' element={<Donate />}/>
+        <Route path='about' element={<About />}/>
+        <Route path='support' element={<Support />}/>
+        <Route path='contact' element={<MilkRequestForm />}/>
      </Routes>
      <Footer />
-  </div>
+  </main>
  )
 }
 

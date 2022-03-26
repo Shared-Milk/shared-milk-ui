@@ -28,8 +28,21 @@
   text-align: center;
 }
 
-@mixin buttonHover() {
+@mixin buttonHover($fontSize) {
   cursor: pointer;
   transform: scale(1.08);
-  font-size: 3em;
+  font-size: $fontSize;
+}
+
+@mixin button($backgroundColor, $textColor, $font) {
+  background-color: $backgroundColor;
+  color: $textColor;
+  font-family: $font;
+  font-size: 1.2em;
+  font-weight: 600;
+  border: none;
+  border-radius: 1.5em;
+  box-shadow: 2px 3px 6px 3px #6b6b6b;
+  text-align: center;
+  padding: 2%;
 }

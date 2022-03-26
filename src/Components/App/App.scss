@@ -14,6 +14,7 @@ body {
 
 h1, h2, h3, h4 {
   font-family: v.$headerFont;
+  color: v.$darkBlue;
 }
 
 h2 {
@@ -30,7 +31,7 @@ h4 {
 
 p {
   margin: 0.5em 0;
-  color: v.$darkBlue;
+  color: v.$offBlack;
   font-weight: 600;
   line-height: 1.25em;
 }

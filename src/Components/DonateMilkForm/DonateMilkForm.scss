@@ -1,2 +1,13 @@
 @use '../Styles/mixins' as m;
 @use '../Styles/variables' as v;
+
+.donor-form {
+  p {
+    margin: 2% 0 0 0;
+  }
+
+  .form-group {
+    display: flex;
+    align-items: center;
+  }
+}

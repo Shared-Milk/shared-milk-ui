@@ -2,7 +2,7 @@
 @use '../Styles/variables' as v;
 
 .main-container {
-  margin: 5%;
+  margin: 5% 10%;
 }
 
 .columns {
@@ -45,7 +45,7 @@
 
     .need, .donate, .support {
       &:hover {
-        @include m.buttonHover()
+        @include m.buttonHover(3em)
       }
     }
   }

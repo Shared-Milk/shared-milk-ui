@@ -1,2 +1,54 @@
 @use '../Styles/mixins' as m;
 @use '../Styles/variables' as v;
+
+.main-container {
+  h2 {
+    color: v.$salmon;
+  }
+
+  p {
+    font-size: 1.2em;
+  }
+
+  form {
+    margin: 1% 0;
+    display: flex;
+    flex-direction: column;
+    width: 60%;
+    height: 100vh;
+
+    label {
+      padding: 2% 1% 1%;
+      font-size: 0.75em;
+      font-family: v.$bodyFont;
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+    
+    input, textarea {
+      height: 2em;
+      background-color: v.$lightGray;
+      color: v.$mediumGray;
+      border: none;
+      font-family: v.$bodyFont;
+      font-weight: 600;
+      font-size: 1.2em;
+      border-radius: 0.2em;
+      padding: 0 2%;
+    }
+
+    textarea {
+      height: 6em;
+      padding: 1% 2%;
+    }
+
+    .button {
+      @include m.button(v.$orange, v.$offBlack, v.$bodyFont);
+      margin: 4% 0 4% 60%;
+
+      &:hover {
+        @include m.buttonHover(1.2em)
+      }
+    }
+  }
+}

@@ -19,6 +19,7 @@ describe('Shared Milk landing page user flow', () => {
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/need-milk')
     }));
+  });
 
     it('should be able to navigate to the Donate page form', () => {
       // cy.intercept(fetch call)
@@ -35,8 +36,8 @@ describe('Shared Milk landing page user flow', () => {
       // cy.wait(['api call']);
       cy.location().should((location => {
         expect(location.href).to.eq('http://localhost:3000/about-us')
-      }));
-    });
+      }))
+    })
 
     it('should be able to navigate to the Support page view', () => {
       // cy.intercept(fetch call)
@@ -44,8 +45,13 @@ describe('Shared Milk landing page user flow', () => {
       // cy.wait(['api call']);
       cy.location().should((location => {
         expect(location.href).to.eq('http://localhost:3000/support')
-      }));
-    });
+      }))
+    })
 
-  });
-});
+  it('should display mission buttons for interested users on page load', () => {
+    cy.get('.need').should('have.attr', 'href', '/need-milk')
+    cy.get('.donate').should('have.attr', 'href', '/donate')
+    cy.get('.support ').should('have.attr', 'href', '/support')
+  })
+
+})

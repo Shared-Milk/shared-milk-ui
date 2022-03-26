@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
-    <main className='home'>
+    <section className='main-container columns'>
       <aside className='mission'>
         <h2>Our Mission</h2>
         <p>To build connections between parents of baby’s in need and generous donors.</p>
@@ -13,9 +13,9 @@ const HomePage = () => {
       <aside className='buttons'>
         <Link exact to='/need-milk' className='need'>Need<br></br>Milk</Link>
         <Link exact to='/donate' className='donate'>Donate<br></br>Milk</Link>
-        <Link exact to='/donate' className='support'>Need<br></br>Support</Link>
+        <Link exact to='/support' className='support'>Need<br></br>Support</Link>
       </aside>
-    </main>
+    </section>
   )
 };
 

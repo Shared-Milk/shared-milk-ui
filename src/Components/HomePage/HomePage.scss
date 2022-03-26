@@ -1,11 +1,14 @@
 @use '../Styles/mixins' as m;
 @use '../Styles/variables' as v;
 
-.home {
+.main-container {
+  margin: 5%;
+}
+
+.columns {
   display: grid;
   grid-template-columns: 40% 60%;
   grid-gap: 2em;
-  margin: 5%;
 
   h2 {
     color: v.$salmon;

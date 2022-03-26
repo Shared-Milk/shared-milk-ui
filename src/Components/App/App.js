@@ -13,6 +13,7 @@ import Support from '../SupportPage/Support';
 //Prompt Page Imports
 import MilkRequestForm from '../MilkRequestForm/MilkRequestForm';
 import ConfirmationMessage from '../ConfirmationMessage/ConfirmationMessage';
+import DonorThankYou from '../DonorThankYou/DonorThankYou';
 
 const App = () => {
  return (
@@ -26,6 +27,7 @@ const App = () => {
         <Route path='support' element={<Support />}/>
         <Route path='contact' element={<MilkRequestForm />}/>
         <Route path='sent-confirmation' element={<ConfirmationMessage />}/>
+        <Route path='thank-you' element={<DonorThankYou />}/>
      </Routes>
      <Footer />
   </main>

@@ -2,9 +2,9 @@ import './DonorThankYou.scss';
 
 const DonorThankYou = () => {
   return (
-    <article>
+    <article className='main-container'>
       <h2>Thank You!</h2>
-      <p>Thank you for offering to to donate milk. Someone on our team will be in contact with you shortly.</p>
+      <p>Thank you for offering to donate milk. An eager parent will be in contact with you soon!</p>
     </article>
   )
 };

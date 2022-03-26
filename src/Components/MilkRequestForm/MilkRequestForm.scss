@@ -15,6 +15,7 @@
     display: flex;
     flex-direction: column;
     width: 60%;
+    height: 100vh;
 
     label {
       padding: 2% 1% 1%;
@@ -42,7 +43,7 @@
     }
 
     .button {
-      @include m.button(v.$orange, v.$offWhite, v.$bodyFont);
+      @include m.button(v.$orange, v.$offBlack, v.$bodyFont);
       margin: 4% 0 4% 60%;
 
       &:hover {

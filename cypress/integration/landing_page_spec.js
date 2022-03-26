@@ -33,7 +33,7 @@ describe('Shared Milk landing page user flow', () => {
   it('should be able to navigate to the About Us page view', () => {
     cy.get('.nav').contains('About Us').click()
     cy.location().should((location => {
-      expect(location.href).to.eq('http://localhost:3000/about-us')
+      expect(location.href).to.eq('http://localhost:3000/about')
     }))
   })
 

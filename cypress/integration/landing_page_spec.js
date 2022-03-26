@@ -21,30 +21,30 @@ describe('Shared Milk landing page user flow', () => {
     }));
   });
 
-    it('should be able to navigate to the Donate page form', () => {
-      // cy.intercept(fetch call)
-      cy.get('.nav').contains('Donate').click()
-      // cy.wait(['api call']);
-      cy.location().should((location => {
-        expect(location.href).to.eq('http://localhost:3000/donate')
-      }));
-    });
+  it('should be able to navigate to the Donate page form', () => {
+    // cy.intercept(fetch call)
+    cy.get('.nav').contains('Donate').click()
+    // cy.wait(['api call']);
+    cy.location().should((location => {
+      expect(location.href).to.eq('http://localhost:3000/donate')
+    }));
+  });
 
-    it('should be able to navigate to the About Us page view', () => {
-      cy.get('.nav').contains('About Us').click()
-      cy.location().should((location => {
-        expect(location.href).to.eq('http://localhost:3000/about-us')
-      }))
-    })
+  it('should be able to navigate to the About Us page view', () => {
+    cy.get('.nav').contains('About Us').click()
+    cy.location().should((location => {
+      expect(location.href).to.eq('http://localhost:3000/about-us')
+    }))
+  })
 
-    it('should be able to navigate to the Support page view', () => {
-      // cy.intercept(fetch call)
-      cy.get('.nav').contains('Support').click()
-      // cy.wait(['api call']);
-      cy.location().should((location => {
-        expect(location.href).to.eq('http://localhost:3000/support')
-      }))
-    })
+  it('should be able to navigate to the Support page view', () => {
+    // cy.intercept(fetch call)
+    cy.get('.nav').contains('Support').click()
+    // cy.wait(['api call']);
+    cy.location().should((location => {
+      expect(location.href).to.eq('http://localhost:3000/support')
+    }))
+  })
 
   it('should display mission buttons for interested users on page load', () => {
     cy.get('.need').should('have.attr', 'href', '/need-milk')
@@ -77,7 +77,15 @@ describe('Shared Milk landing page user flow', () => {
         expect(location.href).to.eq('http://localhost:3000/support')
      }))
     })
-
   })
+
+  it('should display organization mission statement', () => {
+    cy.get('aside.mission').children().should('have.length', 4)
+  })
+
+  it('should display trademark at page footer', () => {
+    cy.get('p').contains('© No Use Cryin\' Over Shared Milk')
+  })
+
 })
 

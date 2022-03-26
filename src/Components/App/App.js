@@ -1,8 +1,9 @@
 import React from 'react';
 import './App.scss';
-import HomePage from '../HomePage/HomePage';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
+import HomePage from '../HomePage/HomePage';
+import NeedMilk from '../NeedMilk/NeedMilk';
 import { Routes, Route } from 'react-router-dom';
 
 const App = () => {
@@ -10,7 +11,8 @@ const App = () => {
    <div className="App">
      <Header />
      <Routes>
-       <Route path='/' element={<HomePage />}/>
+        <Route path='/' element={<HomePage />}/>
+        <Route path='/need-milk' element={<NeedMilk />}/>
      </Routes>
      <Footer />
   </div>

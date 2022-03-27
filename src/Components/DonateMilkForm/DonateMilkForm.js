@@ -7,37 +7,36 @@ const DonateMilkForm = () => {
   const [donorName, setDonorName] = useState();
   const [donorEmail, setDonorEmail] = useState();
   const [donorPhone, setDonorPhone] = useState();
-  const [donorLocation, setDonorLocation] = useState();
+  const [donorCity, setDonorCity] = useState();
+  const [donorState, setDonorState] = useState();
   const [donorBio, setDonorBio] = useState();
 
   const handleSmoker = (event) => {
     setSmoker(event.target.value)
-    console.log('smoker', smoker)
   }
 
   const handleDonorName = (event) => {
     setDonorName(event.target.value)
-    console.log('name', donorName)
   }
 
   const handleDonorEmail = (event) => {
     setDonorEmail(event.target.value)
-    console.log('email', donorEmail)
   }
 
   const handleDonorPhone = (event) => {
     setDonorPhone(event.target.value)
-    console.log('phone', donorPhone)
   }
 
-  const handleDonorLocation = (event) => {
-    setDonorLocation(event.target.value)
-    console.log('location', donorLocation)
+  const handleDonorCity = (event) => {
+    setDonorCity(event.target.value)
+  }
+
+  const handleDonorState = (event) => {
+    setDonorState(event.target.value)
   }
 
   const handleDonorBio = (event) => {
     setDonorBio(event.target.value)
-    console.log('bio', donorBio)
   }
 
   const navigate = useNavigate();
@@ -49,7 +48,7 @@ const DonateMilkForm = () => {
       return navigate('/thank-you')
     }
   }
-  
+
   return (
     <form className='donor-form'>
       <label htmlFor='Your Name'>Your Name</label>
@@ -59,9 +58,9 @@ const DonateMilkForm = () => {
       <label htmlFor='Phone Number'>Phone Number</label>
       <input type='tel' placeholder='Phone Number' onChange={(event) => { handleDonorPhone(event) }} />
       <label htmlFor='City'>City</label>
-      <input type='text' placeholder='City' onChange={(event) => { handleDonorLocation(event) }}/>
+      <input type='text' placeholder='City' onChange={(event) => { handleDonorCity(event) }}/>
       <label htmlFor='State'>State</label>
-      <input type='text' placeholder='State' onChange={(event) => { handleDonorLocation(event) }}/>
+      <input type='text' placeholder='State' onChange={(event) => { handleDonorState(event) }}/>
       <p className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label htmlFor='yes'>YES</label>

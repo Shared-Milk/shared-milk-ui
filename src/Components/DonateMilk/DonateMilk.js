@@ -1,4 +1,3 @@
-import './DonateMilk.scss';
 import DonateMilkForm from '../DonateMilkForm/DonateMilkForm';
 
 const DonateMilk = () => {

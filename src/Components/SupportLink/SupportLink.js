@@ -3,7 +3,7 @@ import './SupportLink.scss';
 const SupportLink = () => {
   return (
     <section className='support-links'>
-      <button className='support-button' onClick={() => window.open('https://www.lllusa.org/', '_blank')}>La Leche League, International</button>
+      <button className='support-button' onClick={() => window.open('https://www.lllusa.org/', '_blank')}>La Leche League, USA</button>
       <button className='support-button' onClick={() => window.open('https://www.medela.us', '_blank')}>Medela</button>
       <button className='support-button' onClick={() => window.open('https://www.nestcollaborative.com', '_blank')}>Nest Collaborative</button>
       <button className='support-button' onClick={() => window.open('https://wicbreastfeeding.fns.usda.gov/', '_blank')}>WIC Breastfeeding Support</button>

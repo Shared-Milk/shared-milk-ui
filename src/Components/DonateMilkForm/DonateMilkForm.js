@@ -2,6 +2,13 @@ import './DonateMilkForm.scss';
 import { Link } from 'react-router-dom';
 
 const DonateMilkForm = () => {
+  function handleDonorSubmit() {
+    if (document.getElementById('yes').checked) {
+      return <Link exact to='/sorry'></Link>
+    } else {
+      <Link exact to='/thank-you'>Submit</Link>
+    }
+  }
   return (
     <form className='donor-form'>
       <label for='Your Name'>Your Name</label>
@@ -17,9 +24,9 @@ const DonateMilkForm = () => {
       <p className='form-question'>Have you used any tabacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label for='yes'>YES</label>
-        <input type='radio' name='smoker' />
+        <input type='radio' name='smoker' value='yes' id='yes'/>
         <label for='no'>NO</label>
-        <input type='radio' name='smoker'/>
+        <input type='radio' name='smoker' value='no' id='no'/>
       </div>
       <label for='message'>Message</label>
       <textarea placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' />
@@ -31,7 +38,7 @@ const DonateMilkForm = () => {
       - linke to '/thank-you' if NO
       
       */}
-      <Link exact to='/thank-you' className='button'>Submit</Link>
+      <button className='button' onSubmit={>Submit</button>
     </form>
   )
 };

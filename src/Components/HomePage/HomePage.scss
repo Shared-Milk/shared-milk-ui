@@ -3,6 +3,7 @@
 
 .main-container {
   margin: 5% 10%;
+  height: 100vh;
 }
 
 .columns {
@@ -15,7 +16,7 @@
   }
 
   .buttons {
-    @include m.flexbox(row, wrap, center, center, center); 
+    @include m.flexbox(row, wrap, flex-start, center, center); 
     
     .need, .donate {
       width: 44%;
@@ -48,3 +49,51 @@
     }
   }
 }
+
+/*
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+  */
+
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .columns {
+      @include m.flexbox(row, wrap, normal, center, normal); 
+    }
+  }
+
+  /*
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+  */
+
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    .columns {
+      @include m.flexbox(row, wrap, normal, center, normal); 
+    }
+  }
+
+  /*
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+  */
+
+  @media (min-width: 481px) and (max-width: 767px) {
+    .columns {
+      @include m.flexbox(row, wrap, normal, center, normal); 
+    }
+  }
+
+  /*
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+  */
+
+  @media (min-width: 320px) and (max-width: 480px) {
+    // .main-container {
+    //   padding: 0 0 0 20%;
+    // }
+
+    .columns {
+      @include m.flexbox(row, wrap, normal, center, normal); 
+    }
+  }

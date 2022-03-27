@@ -6,15 +6,20 @@ header {
   @include m.flexbox(row, nowrap, normal, space-between, center);
   padding: 2%;
 
-  h1 {
-    font-size: 3em;
-    font-weight: 600;
-    color: v.$offWhite;
+  .logo {
+    flex: 1;
 
-    &:hover {
-      cursor: pointer;
+    h1 {
+      font-size: 3em;
+      font-weight: 600;
+      color: v.$offWhite;
+  
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
+
 
   nav {
     flex: 1;

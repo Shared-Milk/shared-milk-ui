@@ -17,9 +17,9 @@ const DonateMilkForm = () => {
       <p className='form-question'>Have you used any tabacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label for='yes'>YES</label>
-        <input type='radio' />
+        <input type='radio' name='smoker' />
         <label for='no'>NO</label>
-        <input type='radio' />
+        <input type='radio' name='smoker'/>
       </div>
       <label for='message'>Message</label>
       <textarea placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' />

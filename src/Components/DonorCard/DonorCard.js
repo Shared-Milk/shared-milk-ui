@@ -5,7 +5,8 @@ const DonorCard = ({donor}) => {
   return (
     <section className='contact-grid'>
       {/* will need to update the below link to a specific contact id */}
-      <Link to='/contact' className='contact-card'>
+      {/* <Link to='/contact' state={{ name: donor.name }} className='contact-card'> */}
+      <Link to="/contact" state={donor} className='contact-card'>
         {/* Will need to fill in cards below with dummy data */}
         <h3>{donor.name}</h3>
         <p>Location: {donor.location}</p>

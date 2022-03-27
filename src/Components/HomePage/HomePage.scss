@@ -19,7 +19,8 @@
     @include m.flexbox(row, wrap, flex-start, center, center); 
     
     .need, .donate {
-      width: 44%;
+      // width: 44%;
+      width: 6em;
       padding: 10% 1%;
     }
 
@@ -35,7 +36,8 @@
 
     .support {
       @include m.bigButton(v.$salmon);
-      width: 60%;
+      // width: 60%;
+      width: 8em;
       margin: 6%;
       padding: 5%;
     }
@@ -57,7 +59,7 @@
 
   @media (min-width: 768px) and (max-width: 1024px) {
     .columns {
-      @include m.flexbox(row, wrap, normal, center, normal); 
+      @include m.flexbox(row, wrap, flex-start, center, normal); 
     }
   }
 
@@ -68,7 +70,7 @@
 
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     .columns {
-      @include m.flexbox(row, wrap, normal, center, normal); 
+      @include m.flexbox(row, wrap, flex-start, center, normal); 
     }
   }
 
@@ -79,7 +81,7 @@
 
   @media (min-width: 481px) and (max-width: 767px) {
     .columns {
-      @include m.flexbox(row, wrap, normal, center, normal); 
+      @include m.flexbox(row, wrap, flex-start, center, normal); 
     }
   }
 
@@ -94,6 +96,10 @@
     // }
 
     .columns {
-      @include m.flexbox(row, wrap, normal, center, normal); 
+      @include m.flexbox(row, wrap, flex-start, center, normal); 
+
+      .buttons {
+        flex-direction: column;
+      }
     }
   }

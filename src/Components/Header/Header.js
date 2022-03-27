@@ -5,25 +5,25 @@ const Header = () => {
   return (
     <header>
       <section className='logo'>
-        <Link exact to='/'><h1 className='nav'>No Use Cryin' Over Shared Milk</h1>
+        <Link to='/'><h1 className='nav'>No Use Cryin' Over Shared Milk</h1>
         </Link>
       </section>
       <nav>
         <ul className='menu'>
           <li>
-            <NavLink exact to='/' className='nav'>Home</NavLink>
+            <NavLink to='/' className='nav'>Home</NavLink>
           </li>
           <li>
-            <NavLink exact to='/need-milk' className='nav'>Need Milk</NavLink>
+            <NavLink to='/need-milk' className='nav'>Need Milk</NavLink>
           </li>
           <li>
-            <NavLink exact to='/donate' className='nav'>Donate</NavLink>
+            <NavLink to='/donate' className='nav'>Donate</NavLink>
           </li>
           <li>
-            <NavLink exact to='/about' className='nav'>About Us</NavLink>
+            <NavLink to='/about' className='nav'>About Us</NavLink>
           </li>
           <li>
-            <NavLink exact to='/support' className='nav'>Support</NavLink>
+            <NavLink to='/support' className='nav'>Support</NavLink>
           </li>
         </ul>
       </nav>

@@ -16,30 +16,34 @@
   }
 
   .buttons {
-    @include m.flexbox(row, wrap, flex-start, center, center); 
+    // @include m.flexbox(row, wrap, flex-start, space-evenly, center);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+    height: 50%;
+
+    .need, .donate, .support {
+      @include m.flexbox(row, nowrap, normal, center, center);
+      text-align: center;
+    }
     
     .need, .donate {
-      // width: 44%;
-      width: 6em;
       padding: 10% 1%;
     }
 
     .need {
       @include m.bigButton(v.$orange);
-      margin: 0 3% 0 0;
     }
 
     .donate {
       @include m.bigButton(v.$lightTeal);
-      margin: 0 0 0 3%;
     }
 
     .support {
       @include m.bigButton(v.$salmon);
-      // width: 60%;
-      width: 8em;
-      margin: 6%;
-      padding: 5%;
+      // grid-row: 2;
+      grid-column: auto / span 2;
+      margin: 0 8%;
     }
 
     .need,
@@ -53,14 +57,46 @@
 }
 
 /*
+##Device = Desktops/MacBook
+##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  // .columns {
+  //   .buttons {
+  //     .need, .donate {
+  //       width: 8em;
+  //     }
+  //   }
+  // }
+}
+
+/*
+ ##Device = Laptops, Desktops
+ ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  // .columns {
+  //   @include m.flexbox(row, wrap, flex-start, center, normal); 
+
+  // .buttons {
+  //     .need, .donate {
+  //       // width: 6em;
+  //     }
+  //   }
+  // }
+}
+ 
+/*
   ##Device = Tablets, Ipads (portrait)
   ##Screen = B/w 768px to 1024px
   */
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    .columns {
-      @include m.flexbox(row, wrap, flex-start, center, normal); 
-    }
+    // .columns {
+    //   @include m.flexbox(row, wrap, flex-start, center, normal); 
+    // }
   }
 
   /*
@@ -69,9 +105,9 @@
   */
 
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    .columns {
-      @include m.flexbox(row, wrap, flex-start, center, normal); 
-    }
+    // .columns {
+    //   @include m.flexbox(row, wrap, flex-start, center, normal); 
+    // }
   }
 
   /*
@@ -80,9 +116,9 @@
   */
 
   @media (min-width: 481px) and (max-width: 767px) {
-    .columns {
-      @include m.flexbox(row, wrap, flex-start, center, normal); 
-    }
+    // .columns {
+    //   @include m.flexbox(row, wrap, flex-start, center, normal); 
+    // }
   }
 
   /*
@@ -91,15 +127,12 @@
   */
 
   @media (min-width: 320px) and (max-width: 480px) {
-    // .main-container {
-    //   padding: 0 0 0 20%;
+    // .columns {
+    //   @include m.flexbox(row, wrap, flex-start, center, normal); 
+
+    //   .buttons {
+    //     flex-direction: column;
+    //     align-content: center;
+    //   }
     // }
-
-    .columns {
-      @include m.flexbox(row, wrap, flex-start, center, normal); 
-
-      .buttons {
-        flex-direction: column;
-      }
-    }
   }

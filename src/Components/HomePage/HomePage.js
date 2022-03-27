@@ -14,9 +14,9 @@ const HomePage = () => {
            We are here for you and you are not alone. Please visit our <Link exact to='/support'>Support Page</Link> to view more resources.</p>
       </aside>
       <aside className='buttons'>
-        <Link exact to='/need-milk' className='need'>Need<br></br>Milk</Link>
-        <Link exact to='/donate' className='donate'>Donate<br></br>Milk</Link>
-        <Link exact to='/support' className='support'>Need<br></br>Support</Link>
+        <Link to='/need-milk' className='need'>Need<br></br>Milk</Link>
+        <Link to='/donate' className='donate'>Donate<br></br>Milk</Link>
+        <Link to='/support' className='support'>Need<br></br>Support</Link>
       </aside>
     </section>
   )

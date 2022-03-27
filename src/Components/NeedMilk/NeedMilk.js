@@ -1,4 +1,3 @@
-import './NeedMilk.scss';
 import DonorCard from '../DonorCard/DonorCard';
 import {useEffect, useState} from 'react';
 import {useQuery, gql} from '@apollo/client';

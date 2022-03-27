@@ -1,4 +1,3 @@
-import './Support.scss';
 import SupportLink from '../SupportLink/SupportLink';
 
 const Support = () => {

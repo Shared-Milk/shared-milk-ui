@@ -15,11 +15,7 @@
   }
 
   .buttons {
-    display: flex;
-    flex-wrap: wrap;
-    align-content: center;
-    justify-content: center;
-    align-items: center;
+    @include m.flexbox(row, wrap, center, center, center);
     
     .need, .donate {
       width: 44%;

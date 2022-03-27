@@ -46,7 +46,7 @@ const client = new ApolloClient({
 const App = () => {
    return (
       <ApolloProvider client={client}>   
-         <main className="App">
+         <main className='App'>
             <Header />
             <Routes>
                <Route path='/' element={<HomePage />}/>

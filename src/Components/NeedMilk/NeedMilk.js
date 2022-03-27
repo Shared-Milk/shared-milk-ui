@@ -2,7 +2,7 @@ import './NeedMilk.scss';
 import DonorCard from '../DonorCard/DonorCard';
 import {useEffect, useState} from 'react'
 import {useQuery, gql} from '@apollo/client'
-import { GET_ALL_DONORS } from '../../Graphql/Queries';
+import { GET_ALL_DONORS } from '../../GraphQL/Queries';
 
 const NeedMilk = () => {
   const {error, loading, data} = useQuery(GET_ALL_DONORS)

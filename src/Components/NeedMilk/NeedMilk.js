@@ -17,9 +17,11 @@ const NeedMilk = () => {
     <section className='main-container'>
       <h2>Milk Donors</h2>
       <p>Click on a profile below to contact a milk donor.</p>
-      {donors.map(donor => {
-        return (<DonorCard key={donor.id} donor={donor}/>)
-      })}
+      <section className='contact-grid'>
+        {donors.map(donor => {
+          return (<DonorCard key={donor.id} donor={donor}/>)
+        })}
+      </section>
     </section>
   )
 };

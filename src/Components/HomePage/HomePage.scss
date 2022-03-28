@@ -1,8 +1,9 @@
-@use '../Styles/mixins' as m;
-@use '../Styles/variables' as v;
+@use "../Styles/mixins" as m;
+@use "../Styles/variables" as v;
 
 .main-container {
   margin: 5% 10%;
+  height: 100vh;
 }
 
 .columns {
@@ -15,33 +16,121 @@
   }
 
   .buttons {
-    @include m.flexbox(row, wrap, center, center, center);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 2em;
+    height: 50%;
+
+    .need, .donate, .support {
+      @include m.flexbox(row, nowrap, normal, center, center);
+      text-align: center;
+    }
     
     .need, .donate {
-      width: 44%;
       padding: 10% 1%;
     }
 
     .need {
       @include m.bigButton(v.$orange);
-      margin: 0 3% 0 0;
     }
 
     .donate {
       @include m.bigButton(v.$lightTeal);
-      margin: 0 0 0 3%;
     }
 
     .support {
       @include m.bigButton(v.$salmon);
-      width: 60%;
-      margin: 6%;
-      padding: 5%;
+      grid-column: auto / span 2;
+      margin: 0 8%;
     }
 
-    .need, .donate, .support {
+    .need,
+    .donate,
+    .support {
       &:hover {
-        @include m.buttonHover(3em)
+        @include m.buttonHover(3em);
+      }
+    }
+  }
+}
+
+ 
+/*
+##Device = Tablets, Ipads (portrait)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .donate {
+    height: auto;
+  }
+
+  .columns {
+    @include m.flexbox(row, wrap, flex-start, center, normal); 
+
+    .buttons {
+      width: 80%;
+    }
+  }
+}
+
+/*
+##Device = Tablets, Ipads (landscape)
+##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .columns {
+    @include m.flexbox(row, wrap, flex-start, center, normal); 
+
+    .buttons {
+      width: 80%;
+    }
+  }
+}
+
+/*
+##Device = Low Resolution Tablets, Mobiles (Landscape)
+##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 481px) and (max-width: 767px) {
+  .columns {
+    @include m.flexbox(row, wrap, flex-start, center, normal); 
+
+    .buttons {
+      width: 80%;
+    }
+  }
+}
+
+/*
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .main-container {
+    height: auto;
+  }
+
+  .message {
+    height: 100vh;
+  }
+
+  .columns {
+    @include m.flexbox(row, wrap, flex-start, center, normal); 
+    
+    .buttons {
+      width: 100%;
+      grid-template-columns: none;
+      grid-gap: 0;
+      display: flex;
+      flex-direction: column;
+
+      .need, .donate, .support {
+        margin: 2%;
+        padding: 10% 1%;
       }
     }
   }

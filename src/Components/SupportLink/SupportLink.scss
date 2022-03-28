@@ -2,15 +2,14 @@
 @use '../Styles/variables' as v;
 
 .support-links {
-  display: flex;
-  flex-wrap: wrap;
+  @include m.flexbox(row, wrap, normal, center, normal);
   margin: 5% 2% 20% 2%;
   padding-bottom: 25%;
 
   .support-button {
     display: block;
-    height: 200px;
-    width: 200px;
+    height: 10em;
+    width: 10em;
     border-radius: 50%;
     margin: 1%;
     padding: 2%;
@@ -25,5 +24,18 @@
     &:hover {
       @include m.buttonHover(1.2em)
     }
+  }
+}
+
+
+/*
+##Device = Most of the Smartphones Mobiles (Portrait)
+##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 320px) and (max-width: 480px) {
+  .support-links .support-button {
+      height: 8em;
+      width: 8em;
   }
 }

@@ -4,12 +4,13 @@
 
 body {
   background-color: v.$offWhite;
-  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overscroll-behavior: none;
 }
 
 .App {
   font-family: v.$bodyFont;
-  width: 100%;
 }
 
 h1, h2, h3, h4 {

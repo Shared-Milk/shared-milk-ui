@@ -6,15 +6,20 @@ header {
   @include m.flexbox(row, nowrap, normal, space-between, center);
   padding: 2%;
 
-  h1 {
-    font-size: 3em;
-    font-weight: 600;
-    color: v.$offWhite;
+  .logo {
+    flex: 1;
 
-    &:hover {
-      cursor: pointer;
+    h1 {
+      font-size: 3em;
+      font-weight: 600;
+      color: v.$offWhite;
+  
+      &:hover {
+        cursor: pointer;
+      }
     }
   }
+
 
   nav {
     flex: 1;
@@ -58,16 +63,13 @@ header {
   */
 
   @media (min-width: 768px) and (max-width: 1024px) {
+    flex-direction: column;
 
-  }
-
-  /*
-  ##Device = Tablets, Ipads (landscape)
-  ##Screen = B/w 768px to 1024px
-  */
-
-  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-
+    nav {
+      .menu {
+        flex-wrap: wrap;
+      }
+    }
   }
 
   /*
@@ -76,7 +78,13 @@ header {
   */
 
   @media (min-width: 481px) and (max-width: 767px) {
+    flex-direction: column;
 
+    nav {
+      .menu {
+        flex-wrap: wrap;
+      }
+    }
   }
 
   /*
@@ -85,6 +93,12 @@ header {
   */
 
   @media (min-width: 320px) and (max-width: 480px) {
+    flex-direction: column;
 
+    nav {
+      .menu {
+        flex-wrap: wrap;
+      }
+    }
   }
 }

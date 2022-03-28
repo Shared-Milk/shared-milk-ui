@@ -13,30 +13,37 @@ const DonateMilkForm = () => {
 
   const handleSmoker = (event) => {
     setSmoker(event.target.value)
+    return smoker
   }
 
   const handleDonorName = (event) => {
     setDonorName(event.target.value)
+    return donorName
   }
 
   const handleDonorEmail = (event) => {
     setDonorEmail(event.target.value)
+    return donorEmail
   }
 
   const handleDonorPhone = (event) => {
     setDonorPhone(event.target.value)
+    return donorPhone
   }
 
   const handleDonorCity = (event) => {
     setDonorCity(event.target.value)
+    return donorCity
   }
 
   const handleDonorState = (event) => {
     setDonorState(event.target.value)
+    return donorState
   }
 
   const handleDonorBio = (event) => {
     setDonorBio(event.target.value)
+    return donorBio
   }
 
   const navigate = useNavigate();

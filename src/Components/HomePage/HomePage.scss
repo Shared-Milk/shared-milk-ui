@@ -138,6 +138,13 @@
         width: 100%;
         grid-template-columns: none;
         grid-gap: 0;
+        display: flex;
+        flex-direction: column;
+
+        .need, .donate, .support {
+          margin: 2%;
+          padding: 10% 1%;
+        }
       }
     }
   }

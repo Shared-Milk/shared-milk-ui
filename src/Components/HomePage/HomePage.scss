@@ -16,7 +16,6 @@
   }
 
   .buttons {
-    // @include m.flexbox(row, wrap, flex-start, space-evenly, center);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2em;
@@ -41,7 +40,6 @@
 
     .support {
       @include m.bigButton(v.$salmon);
-      // grid-row: 2;
       grid-column: auto / span 2;
       margin: 0 8%;
     }
@@ -62,13 +60,7 @@
 */
 
 @media (min-width: 1281px) {
-  // .columns {
-  //   .buttons {
-  //     .need, .donate {
-  //       width: 8em;
-  //     }
-  //   }
-  // }
+
 }
 
 /*
@@ -77,15 +69,7 @@
 */
 
 @media (min-width: 1025px) and (max-width: 1280px) {
-  // .columns {
-  //   @include m.flexbox(row, wrap, flex-start, center, normal); 
 
-  // .buttons {
-  //     .need, .donate {
-  //       // width: 6em;
-  //     }
-  //   }
-  // }
 }
  
 /*
@@ -94,9 +78,13 @@
   */
 
   @media (min-width: 768px) and (max-width: 1024px) {
-    // .columns {
-    //   @include m.flexbox(row, wrap, flex-start, center, normal); 
-    // }
+    .columns {
+      @include m.flexbox(row, wrap, flex-start, center, normal); 
+
+      .buttons {
+        width: 80%;
+      }
+    }
   }
 
   /*
@@ -105,9 +93,13 @@
   */
 
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
-    // .columns {
-    //   @include m.flexbox(row, wrap, flex-start, center, normal); 
-    // }
+    .columns {
+      @include m.flexbox(row, wrap, flex-start, center, normal); 
+
+      .buttons {
+        width: 80%;
+      }
+    }
   }
 
   /*
@@ -116,9 +108,13 @@
   */
 
   @media (min-width: 481px) and (max-width: 767px) {
-    // .columns {
-    //   @include m.flexbox(row, wrap, flex-start, center, normal); 
-    // }
+    .columns {
+      @include m.flexbox(row, wrap, flex-start, center, normal); 
+
+      .buttons {
+        width: 80%;
+      }
+    }
   }
 
   /*
@@ -127,12 +123,21 @@
   */
 
   @media (min-width: 320px) and (max-width: 480px) {
-    // .columns {
-    //   @include m.flexbox(row, wrap, flex-start, center, normal); 
+    .main-container {
+      height: auto;
+    }
 
-    //   .buttons {
-    //     flex-direction: column;
-    //     align-content: center;
-    //   }
-    // }
+    .message {
+      height: 100vh;
+    }
+
+    .columns {
+      @include m.flexbox(row, wrap, flex-start, center, normal); 
+      
+      .buttons {
+        width: 100%;
+        grid-template-columns: none;
+        grid-gap: 0;
+      }
+    }
   }

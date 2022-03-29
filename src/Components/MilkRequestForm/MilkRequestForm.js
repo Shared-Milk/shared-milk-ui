@@ -16,7 +16,7 @@ const MilkRequestForm = () => {
         <label htmlFor='Phone Number'>Phone Number</label>
         <input type='tel' placeholder='Phone Number' />
         <label htmlFor='Message'>Message</label>
-        <textarea placeholder='How much milk do you need? When do you need it? Tell your donor more about yourself.' />
+        <textarea type='text' placeholder='How much milk do you need? When do you need it? Tell your donor more about yourself.' />
         <Link to='/sent-confirmation' className='button'>Send Message</Link>
       </form>
     </section>

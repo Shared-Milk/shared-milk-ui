@@ -2,6 +2,15 @@
 @use '../Styles/mixins' as m;
 @use '../Styles/variables' as v;
 
+* {
+  box-sizing: border-box;
+}
+
+// #page-wrap {
+//   padding-bottom: 10px;
+//   padding-top: 10px;
+// }
+
 body {
   background-color: v.$offWhite;
   display: flex;

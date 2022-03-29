@@ -1,0 +1,16 @@
+import React from 'react';
+import { NavLink } from 'react-router-dom';
+import { slide as Menu } from 'react-burger-menu';
+import './MobileMenu.scss';
+
+export default props => {
+  return (
+    <Menu right>
+      <NavLink to='/' className='nav'>Home</NavLink>
+      <NavLink to='/need-milk' className='nav'>Need Milk</NavLink>
+      <NavLink to='/donate' className='nav'>Donate</NavLink>
+      <NavLink to='/about' className='nav'>About Us</NavLink>
+      <NavLink to='/support' className='nav'>Support</NavLink>
+    </Menu>
+  );
+};

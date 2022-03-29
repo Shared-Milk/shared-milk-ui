@@ -8,10 +8,8 @@ const Header = () => {
         <Link to='/'><h1 data-testid='site-title' className='nav'>No Use Cryin' Over Shared Milk</h1>
         </Link>
       </section>
-      <nav>
-        <ul className='menu mobile-hidden'>
       <nav data-testid='nav-bar'>
-        <ul className='menu'>
+        <ul className='menu mobile-hidden'>
           <li>
             <NavLink to='/' data-testid='home-link' className='nav'>Home</NavLink>
           </li>

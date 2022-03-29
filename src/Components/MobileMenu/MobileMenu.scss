@@ -7,7 +7,7 @@
   width: 36px;
   height: 30px;
   right: 36px;
-  top: 36px;
+  top: 24px;
 }
 
 /* Color/shape of burger icon bars */
@@ -44,7 +44,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-menu {
   background: v.$darkTeal;
   padding: 2.5em 1.5em 0;
-  font-size: 1.15em;
+  font-size: 1.75em;
 }
 
 /* Morph shape necessary with bubble or elastic */
@@ -62,7 +62,7 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-item {
   display: inline-block;
   color: v.$offWhite;
-  margin-bottom: 10px;
+  margin-bottom: 0.5em;
   text-align: left;
   text-decoration: none;
   transition: color 0.2s;

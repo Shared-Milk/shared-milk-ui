@@ -5,9 +5,10 @@ header {
   background-color: v.$darkTeal;
   @include m.flexbox(row, nowrap, normal, space-between, center);
   padding: 2%;
-
+  
   .logo {
     flex: 1;
+    line-height: 3em;
 
     h1 {
       font-size: 3em;

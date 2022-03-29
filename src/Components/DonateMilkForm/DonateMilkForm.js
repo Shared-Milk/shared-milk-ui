@@ -1,5 +1,5 @@
 import './DonateMilkForm.scss';
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const DonateMilkForm = () => {
@@ -7,9 +7,37 @@ const DonateMilkForm = () => {
   const [donorName, setDonorName] = useState();
   const [donorEmail, setDonorEmail] = useState();
   const [donorPhone, setDonorPhone] = useState();
-  const [donorCity, setDonorCity] = useState();
-  const [donorState, setDonorState] = useState();
+  // const [donorCity, setDonorCity] = useState();
+  // const [donorState, setDonorState] = useState();
   const [donorBio, setDonorBio] = useState();
+  const [donorLocation, setDonorLocation] = useState();
+
+  // const [user, setUser] = useState({
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   bio: '', 
+  //   location: '',
+  //   donor_status: smoker
+  // })
+
+  const [createUser, { error }] = useMutation(CREATE_DONOR);
+
+  const createNewDonor = () => {
+    createUser({
+      variables: {
+        name: donorName,
+        email: donorEmail,
+        phone: donorPhone,
+        bio: donorBio,
+        location: donorLocation,
+        donor_status: 0
+      }
+    })
+    if (error) {
+      console.log(error)
+    }
+  }
 
   const handleSmoker = (event) => {
     setSmoker(event.target.value)
@@ -31,15 +59,21 @@ const DonateMilkForm = () => {
     return donorPhone
   }
 
-  const handleDonorCity = (event) => {
-    setDonorCity(event.target.value)
-    return donorCity
+  // const handleDonorCity = (event) => {
+  //   setDonorCity(event.target.value)
+  //   return donorCity
+  // }
+
+  // const handleDonorState = (event) => {
+  //   setDonorState(event.target.value)
+  //   return donorState
+  // }
+
+  const handleDonorLocation = (event) => {
+    setDonorLocation(event.target.value);
+    return donorLocation
   }
 
-  const handleDonorState = (event) => {
-    setDonorState(event.target.value)
-    return donorState
-  }
 
   const handleDonorBio = (event) => {
     setDonorBio(event.target.value)
@@ -48,10 +82,12 @@ const DonateMilkForm = () => {
 
   const navigate = useNavigate();
 
-  const handleDonorSubmit = () => {
+  const handleDonorSubmit = (event) => {
+    event.preventDefault();
     if (smoker === 'yes') {
       return navigate('/sorry')
     } else if (smoker === 'no') {
+      createNewDonor();
       return navigate('/thank-you')
     }
   }
@@ -65,7 +101,7 @@ const DonateMilkForm = () => {
       <label htmlFor='Phone Number'>Phone Number</label>
       <input type='tel' placeholder='Phone Number' onChange={(event) => { handleDonorPhone(event) }} />
       <label htmlFor='Location'>Location</label>
-      <input type='text' placeholder='Location' onChange={(event) => { handleDonorCity(event) }}/>
+      <input type='text' placeholder='Location' onChange={(event) => { handleDonorLocation(event) }}/>
       {/* <label htmlFor='State'>State</label>
       <input type='text' placeholder='State' onChange={(event) => { handleDonorState(event) }}/> */}
       <p className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
@@ -77,7 +113,7 @@ const DonateMilkForm = () => {
       </div>
       <label htmlFor='message'>Message</label>
       <textarea type='text' placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' onChange={(event) => { handleDonorBio(event) }}/>
-      <button className='button' onClick={() => handleDonorSubmit()}>Submit</button>
+      <button className='button' onClick={(event) => handleDonorSubmit(event)}>Submit</button>
     </form>
   )
 };

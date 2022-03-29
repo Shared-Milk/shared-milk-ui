@@ -47,8 +47,10 @@ const client = new ApolloClient({
 const App = () => {
    return (
       <ApolloProvider client={client}>   
-         <main className='App' >
-            <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+         <main className='App'>
+            <div className='desktop-hidden'>
+               <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}/>
+            </div>
             <div id='page-wrap'>
                <Header id='outer-container'/>
                <Routes>

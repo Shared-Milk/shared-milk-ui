@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 import { slide as Menu } from 'react-burger-menu';
 import './MobileMenu.scss';
 
-export default props => {
+const MobileMenu = () => {
   return (
     <Menu right>
       <NavLink to='/' className='nav'>Home</NavLink>
@@ -14,3 +14,5 @@ export default props => {
     </Menu>
   );
 };
+
+export default MobileMenu;

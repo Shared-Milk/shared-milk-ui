@@ -2,6 +2,14 @@
 @use '../Styles/mixins' as m;
 @use '../Styles/variables' as v;
 
+* {
+  box-sizing: border-box;
+}
+
+#outer-container {
+  display: none;
+}
+
 body {
   background-color: v.$offWhite;
   display: flex;
@@ -42,3 +50,26 @@ a:visited { text-decoration: none; }
 a:hover { text-decoration: none; }
 a:active { text-decoration: none; }
 a:focus { text-decoration: none; }
+
+/*
+##Device = Desktops
+##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px) {
+  .desktop-hidden {
+    display: none;
+  }
+}
+
+/*
+##Device = Laptops, Desktops
+##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  .desktop-hidden {
+    display: none;
+  }
+}
+

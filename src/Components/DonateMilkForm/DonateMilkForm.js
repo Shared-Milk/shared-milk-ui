@@ -64,10 +64,10 @@ const DonateMilkForm = () => {
       <input type='email' placeholder='Email Address' onChange={(event) => { handleDonorEmail(event) }} />
       <label htmlFor='Phone Number'>Phone Number</label>
       <input type='tel' placeholder='Phone Number' onChange={(event) => { handleDonorPhone(event) }} />
-      <label htmlFor='City'>City</label>
-      <input type='text' placeholder='City' onChange={(event) => { handleDonorCity(event) }}/>
-      <label htmlFor='State'>State</label>
-      <input type='text' placeholder='State' onChange={(event) => { handleDonorState(event) }}/>
+      <label htmlFor='Location'>Location</label>
+      <input type='text' placeholder='Location' onChange={(event) => { handleDonorCity(event) }}/>
+      {/* <label htmlFor='State'>State</label>
+      <input type='text' placeholder='State' onChange={(event) => { handleDonorState(event) }}/> */}
       <p className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label htmlFor='yes'>YES</label>

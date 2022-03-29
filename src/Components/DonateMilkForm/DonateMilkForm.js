@@ -22,9 +22,18 @@ const DonateMilkForm = () => {
     location: '',
   })
 
-  const [createUser, { error }] = useMutation(CREATE_DONOR);
+  const [createUser, { error }] = useMutation(CREATE_DONOR, 
+    {   
+      variables: {
+      name: user.name,
+      email: user.email,
+      phone: user.phone,
+      bio: user.bio,
+      location: user.location
+    }});
 
   const createNewDonor = () => {
+    console.log('here', user)
     createUser({
       variables: {
         name: user.name,
@@ -88,7 +97,9 @@ const DonateMilkForm = () => {
   const navigate = useNavigate();
 
   const handleDonorSubmit = () => {
+    console.log('herereee non smoker')
     if (smoker === 'yes') {
+      console.log('smoker here')
       return navigate('/sorry')
     } else if (smoker === 'no') {
       createNewDonor();
@@ -121,6 +132,7 @@ const DonateMilkForm = () => {
       <textarea placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' onChange={ (event) => { handleChange(event) } }/>
       <button className='button' onClick={ (event) => {
         event.preventDefault()
+        console.log('hereeeee 133')
         handleDonorSubmit()
       } }>Submit</button>
     </form>

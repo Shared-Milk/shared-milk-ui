@@ -12,7 +12,7 @@ describe('Shared Milk landing page user flow', () => {
     cy.get('.nav').contains('Support')
   });
 
-  it('should be able to navigate to the Need Milk page view', () => {
+  it('should be able to navigate to the Need Milk page view on desktop or mobile', () => {
     cy.viewport(1532, 897)
     cy.visit('http://localhost:3000')
     // cy.intercept(fetch call)
@@ -21,11 +21,26 @@ describe('Shared Milk landing page user flow', () => {
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/need-milk')
     }));
+    cy.viewport(1004, 883)
+    cy.get('.desktop-hidden > div > div > .bm-burger-button > #react-burger-menu-btn').click()
+    cy.get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .active').click()
+    cy.get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .bm-item:nth-child(2)').click().contains('Need Milk').click()
+    cy.location().should((location => {
+      expect(location.href).to.eq('http://localhost:3000/need-milk')
+    }));
   });
+  
 
-  it('should be able to navigate to the Donate page form', () => {
+  it('should be able to navigate to the Donate page form on desktop or mobile', () => {
     cy.viewport(1532, 897)
     cy.get('header > nav > .menu > li:nth-child(3) > .nav').contains('Donate').click()
+    cy.location().should((location => {
+      expect(location.href).to.eq('http://localhost:3000/donate')
+    }));
+    cy.viewport(1004, 883)
+    cy.get('.desktop-hidden > div > div > .bm-burger-button > #react-burger-menu-btn').click()
+    cy.get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .active').click()
+    cy.get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .bm-item:nth-child(3)').click().click()
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/donate')
     }));
@@ -37,6 +52,13 @@ describe('Shared Milk landing page user flow', () => {
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/about')
     }))
+    cy.viewport(1004, 883)
+    cy.get('.desktop-hidden > div > div > .bm-burger-button > #react-burger-menu-btn').click()
+    cy.get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .active').click()
+    cy.get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .bm-item:nth-child(4)').click().click()
+    cy.location().should((location => {
+      expect(location.href).to.eq('http://localhost:3000/about')
+    }));
   })
 
   it('should be able to navigate to the Support page view', () => {
@@ -45,6 +67,13 @@ describe('Shared Milk landing page user flow', () => {
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/support')
     }))
+    cy.viewport(1004, 883)
+    cy.get('.desktop-hidden > div > div > .bm-burger-button > #react-burger-menu-btn').click()
+    cy.get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .active').click()
+    cy.get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .bm-item:nth-child(5)').click().click()
+    cy.location().should((location => {
+      expect(location.href).to.eq('http://localhost:3000/support')
+    }));
   })
 
   it('should display mission buttons for interested users on page load', () => {

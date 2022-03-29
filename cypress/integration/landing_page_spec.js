@@ -1,6 +1,5 @@
 describe('Shared Milk landing page user flow', () => {
   beforeEach(() => {
-    cy.viewport(1532, 897)
     cy.visit('http://localhost:3000')
   });
 
@@ -15,7 +14,6 @@ describe('Shared Milk landing page user flow', () => {
 
   it('should be able to navigate to the Need Milk page view on desktop or mobile', () => {
     cy.viewport(1532, 897)
-    cy.visit('http://localhost:3000')
     // cy.intercept(fetch call)
     cy.get('header > nav > .menu > li:nth-child(2) > .nav').contains('Need Milk').click()
     // cy.wait(['api call']);

@@ -21,7 +21,6 @@ header {
     }
   }
 
-
   nav {
     flex: 1;
     @include m.flexbox(row, nowrap, normal, flex-end, normal);

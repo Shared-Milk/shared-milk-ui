@@ -1,6 +1,7 @@
 import './MilkRequestForm.scss';
 import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
+import { useForm } from 'react-hook-form';
 
 const MilkRequestForm = () => {
   const location = useLocation();
@@ -9,6 +10,9 @@ const MilkRequestForm = () => {
   const [recipientEmail, setRecipientEmail] = useState();
   const [recipientPhone, setRecipientPhone] = useState();
   const [recipientMessage, setRecipientMessage] = useState();
+  const { register, handleSubmit, watch, formState: { errors } } = useForm();
+  const onSubmit = data => console.log(data);
+
 
   const handleChange = (event) => {
     if (event.target.name === 'recipientName') {

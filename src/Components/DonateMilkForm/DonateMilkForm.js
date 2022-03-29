@@ -76,7 +76,7 @@ const DonateMilkForm = () => {
         <input type='radio' name='smoker' value='no' id='no' onChange={(event) => { handleSmoker(event)}}/>
       </div>
       <label htmlFor='message'>Message</label>
-      <textarea placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' onChange={(event) => { handleDonorBio(event) }}/>
+      <textarea type='text' placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' onChange={(event) => { handleDonorBio(event) }}/>
       <button className='button' onClick={() => handleDonorSubmit()}>Submit</button>
     </form>
   )

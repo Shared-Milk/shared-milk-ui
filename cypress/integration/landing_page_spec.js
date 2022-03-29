@@ -1,5 +1,6 @@
 describe('Shared Milk landing page user flow', () => {
   beforeEach(() => {
+    cy.viewport(1532, 897)
     cy.visit('http://localhost:3000')
   });
 

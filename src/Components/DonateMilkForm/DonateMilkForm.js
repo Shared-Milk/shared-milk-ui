@@ -20,6 +20,7 @@ const DonateMilkForm = () => {
     phone: '',
     bio: '', 
     location: '',
+    donor_status: smoker
   })
 
   const [createUser, { error }] = useMutation(CREATE_DONOR);
@@ -31,7 +32,8 @@ const DonateMilkForm = () => {
         email: user.email,
         phone: user.phone,
         bio: user.bio,
-        location: user.location
+        location: user.location,
+        donor_status: 0
       }
     })
     if (error) {
@@ -41,7 +43,8 @@ const DonateMilkForm = () => {
 
 
   const handleSmoker = (event) => {
-    setSmoker(event.target.value)
+    let value = parseInt(event.target.value)
+    setSmoker(value)
     return smoker
   }
 
@@ -88,9 +91,9 @@ const DonateMilkForm = () => {
   const navigate = useNavigate();
 
   const handleDonorSubmit = () => {
-    if (smoker === 'yes') {
+    if (smoker) {
       return navigate('/sorry')
-    } else if (smoker === 'no') {
+    } else if (!smoker) {
       createNewDonor();
       return navigate('/thank-you')
     }
@@ -113,9 +116,9 @@ const DonateMilkForm = () => {
       <p className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label htmlFor='yes'>YES</label>
-        <input type='radio' name='smoker' value='yes' onChange={ (event) => { handleSmoker(event) } }/>
+        <input type='radio' name='smoker' value='1' onChange={ (event) => { handleSmoker(event) } }/>
         <label htmlFor='no'>NO</label>
-        <input type='radio' name='smoker' value='no' id='no' onChange={ (event) => { handleSmoker(event) } }/>
+        <input type='radio' name='smoker' value='0' id='no' onChange={ (event) => { handleSmoker(event) } }/>
       </div>
       <label htmlFor='message'>Message</label>
       <textarea placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' onChange={ (event) => { handleChange(event) } }/>

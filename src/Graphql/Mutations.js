@@ -6,13 +6,15 @@ mutation createUser(
   $email: String!,
   $phone: String!,
   $bio: String!,
-  $location: String!) {
+  $location: String!
+  $donor_status: Int) {
   queryUsers(
     name: $name,
     email: $email,
     phone: $phone,
     bio: $bio,
     location: $location
+    donor_status: $donor_status
   ) {
     id
     }

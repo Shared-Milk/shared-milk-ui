@@ -36,7 +36,7 @@ const errorLink = onError(({graphqlErrors, networkError}) => {
 
 const link = from([
    errorLink,
-   new HttpLink({ uri: 'https://d62af07c-6e04-49ca-a5bd-846d40736f3e.mock.pstmn.io/graphql' })
+   new HttpLink({ uri: 'http://localhost:5000/graphql' })
 ])
 
 const client = new ApolloClient({

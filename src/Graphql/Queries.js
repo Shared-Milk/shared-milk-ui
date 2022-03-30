@@ -6,7 +6,7 @@ export const GET_ALL_DONORS = gql `
       id
       name
       email
-      phone
+      phoneFormatter
       bio
       location
     }

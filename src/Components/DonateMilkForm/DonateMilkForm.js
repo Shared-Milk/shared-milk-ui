@@ -23,19 +23,27 @@ const DonateMilkForm = () => {
   //   donor_status: smoker
   // })
 
-  const [createUser, { error }] = useMutation(CREATE_DONOR);
+  const [createUser, { error }] = useMutation(CREATE_DONOR, {variables: {
+    name: donorName,
+    email: donorEmail,
+    phone: donorPhone,
+    bio: donorBio,
+    location: donorLocation,
+    donorStatus: 0
+  }});
 
   const createNewDonor = () => {
-    createUser({
-      variables: {
-        name: donorName,
-        email: donorEmail,
-        phone: donorPhone,
-        bio: donorBio,
-        location: donorLocation,
-        donorStatus: 0
-      }
-    })
+    // createUser({
+    //   variables: {
+    //     name: donorName,
+    //     email: donorEmail,
+    //     phone: donorPhone,
+    //     bio: donorBio,
+    //     location: donorLocation,
+    //     donorStatus: 0
+    //   }
+    // })
+    createUser()
       console.log('>>>>donor name', typeof donorName)
     if (error) {
       console.log(error)
@@ -98,24 +106,24 @@ const DonateMilkForm = () => {
   return (
     <form className='donor-form'>
       <label htmlFor='Your Name'>Your Name</label>
-      <input type='text' placeholder='First & Last Name' onChange={(event) => { handleDonorName(event) }}/>
+      <input type='text' placeholder='First & Last Name'  onChange={(event) => { handleDonorName(event) }}/>
       <label htmlFor='Email Address'>Email Address</label>
-      <input type='email' placeholder='Email Address' onChange={(event) => { handleDonorEmail(event) }} />
+      <input type='email' placeholder='Email Address'  onChange={(event) => { handleDonorEmail(event) }} />
       <label htmlFor='Phone Number'>Phone Number</label>
-      <input type='tel' placeholder='Phone Number' onChange={(event) => { handleDonorPhone(event) }} />
+      <input type='tel' placeholder='Phone Number'  onChange={(event) => { handleDonorPhone(event) }} />
       <label htmlFor='Location'>Location</label>
-      <input type='text' placeholder='Location' onChange={(event) => { handleDonorLocation(event) }}/>
+      <input type='text' placeholder='Location'  onChange={(event) => { handleDonorLocation(event) }}/>
       {/* <label htmlFor='State'>State</label>
       <input type='text' placeholder='State' onChange={(event) => { handleDonorState(event) }}/> */}
       <p className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label htmlFor='yes'>YES</label>
-        <input type='radio' name='smoker' value='yes' onChange={(event) => {handleSmoker(event)}}/>
+        <input type='radio' name='smoker' value='yes'  onChange={(event) => {handleSmoker(event)}}/>
         <label htmlFor='no'>NO</label>
         <input type='radio' name='smoker' value='no' id='no' onChange={(event) => { handleSmoker(event)}}/>
       </div>
       <label htmlFor='message'>Message</label>
-      <textarea type='text' placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' onChange={(event) => { handleDonorBio(event) }}/>
+      <textarea type='text' placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?'  onChange={(event) => { handleDonorBio(event) }}/>
       <button className='button' onClick={(event) => handleDonorSubmit(event)}>Submit</button>
     </form>
   )

@@ -33,9 +33,10 @@ const DonateMilkForm = () => {
         phone: donorPhone,
         bio: donorBio,
         location: donorLocation,
-        donor_status: 0
+        donorStatus: 0
       }
     })
+      console.log('>>>>donor name', typeof donorName)
     if (error) {
       console.log(error)
     }

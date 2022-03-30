@@ -7,7 +7,7 @@ mutation{
     email: String,
     phone: String,
     bio: String,
-    location: String
+    location: String,
     donorStatus: Int}) {
     createUser(
       name: name,

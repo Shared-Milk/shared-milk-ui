@@ -23,28 +23,19 @@ const DonateMilkForm = () => {
   //   donor_status: smoker
   // })
 
-  const [createUser, { error }] = useMutation(CREATE_DONOR, {variables: {
-    name: donorName,
-    email: donorEmail,
-    phone: donorPhone,
-    bio: donorBio,
-    location: donorLocation,
-    donorStatus: 0
-  }});
+  const [createUser, { error }] = useMutation(CREATE_DONOR)
 
   const createNewDonor = () => {
-    // createUser({
-    //   variables: {
-    //     name: donorName,
-    //     email: donorEmail,
-    //     phone: donorPhone,
-    //     bio: donorBio,
-    //     location: donorLocation,
-    //     donorStatus: 0
-    //   }
-    // })
-    createUser()
-      console.log('>>>>donor name', typeof donorName)
+    createUser({
+      variables: {
+        name: donorName,
+        email: donorEmail,
+        phone: donorPhone,
+        bio: donorBio,
+        location: donorLocation,
+        donorStatus: 0
+      }
+    })
     if (error) {
       console.log(error)
     }

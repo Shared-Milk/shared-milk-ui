@@ -10,14 +10,7 @@ const MilkRequestForm = () => {
   // const [recipientEmail, setRecipientEmail] = useState();
   // const [recipientPhone, setRecipientPhone] = useState();
   // const [recipientMessage, setRecipientMessage] = useState();
-  const { register, handleSubmit, formState: { errors } } = useForm({
-    defaultValues: {
-      recipientName: '',
-      recipientEmail: '',
-      recipientPhone: '',
-      recipientMessage: ''
-    }
-    });
+  const { register, handleSubmit, formState: { errors } } = useForm();
   const onSubmit = data => {console.log(data)};
   console.log(errors)
   // console.log(onValid)

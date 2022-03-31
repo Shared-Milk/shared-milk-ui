@@ -18,7 +18,7 @@ const DonorCard = ({donor}) => {
 export default DonorCard;
 
 DonorCard.propTypes = {
-  allBooks: PropTypes.shape({
+  donor: PropTypes.shape({
     name: PropTypes.string,
     location: PropTypes.string,
     bio: PropTypes.string

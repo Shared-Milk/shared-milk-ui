@@ -8,13 +8,13 @@ jobs:
       - heroku/deploy-via-git
 orbs:
   cypress: cypress-io/cypress@1
-    heroku: circleci/heroku@1.2.6
+  heroku: circleci/heroku@1.2.6
 workflows:
-  build:
-    jobs:
-      - cypress/run:
-          group: 'all tests' # name this group "all tests" on the dashboard
-          start: 'npm start' # start server before running tests 
-      - deploy-heroku:
-          requires:
-            - cypress/run
+    build:
+      jobs:
+        - cypress/run:
+            group: 'all tests' # name this group "all tests" on the dashboard
+            start: 'npm start' # start server before running tests
+        - deploy-heroku:
+            requires:
+              - cypress/run

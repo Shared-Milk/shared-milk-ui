@@ -11,7 +11,7 @@ const NeedMilk = () => {
     if(data) {
       setDonors(data.users)
     }
-  }, [])
+  }, [data])
 
   return (
     <section className='main-container'>

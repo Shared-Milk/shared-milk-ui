@@ -9,7 +9,7 @@ const NeedMilk = () => {
   
   useEffect(() => {
     if(data) {
-      setDonors(data.queryUsers)
+      setDonors(data.users)
     }
   }, [data])
 

@@ -2,38 +2,38 @@ import './DonateMilkForm.scss';
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { CREATE_DONOR } from '../../Graphql/Mutations';
+import { CREATE_DONOR } from '../../Graphql/Mutations.js'
 
 const DonateMilkForm = () => {
   const [smoker, setSmoker] = useState();
-  // const [donorName, setDonorName] = useState();
-  // const [donorEmail, setDonorEmail] = useState();
-  // const [donorPhone, setDonorPhone] = useState();
+  const [donorName, setDonorName] = useState();
+  const [donorEmail, setDonorEmail] = useState();
+  const [donorPhone, setDonorPhone] = useState();
   // const [donorCity, setDonorCity] = useState();
   // const [donorState, setDonorState] = useState();
-  // const [donorBio, setDonorBio] = useState();
-  // const [donorLocation, setDonorLocation] = useState();
+  const [donorBio, setDonorBio] = useState();
+  const [donorLocation, setDonorLocation] = useState();
 
-  const [user, setUser] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    bio: '', 
-    location: '',
-    donor_status: smoker
-  })
+  // const [user, setUser] = useState({
+  //   name: '',
+  //   email: '',
+  //   phone: '',
+  //   bio: '', 
+  //   location: '',
+  //   donor_status: smoker
+  // })
 
-  const [createUser, { error }] = useMutation(CREATE_DONOR);
+  const [createUser, { error }] = useMutation(CREATE_DONOR)
 
   const createNewDonor = () => {
     createUser({
       variables: {
-        name: user.name,
-        email: user.email,
-        phone: user.phone,
-        bio: user.bio,
-        location: user.location,
-        donor_status: 0
+        name: donorName,
+        email: donorEmail,
+        phone: donorPhone,
+        bio: donorBio,
+        location: donorLocation,
+        donorStatus: 0
       }
     })
     if (error) {
@@ -41,32 +41,31 @@ const DonateMilkForm = () => {
     }
   }
 
-
   const handleSmoker = (event) => {
     let value = parseInt(event.target.value)
     setSmoker(value)
     return smoker
   }
 
-  const handleChange = (event) => {
-    setUser({ [event.target.name]: event.target.value });
-    return user
+  // const handleChange = (event) => {
+  //   setUser({ [event.target.name]: event.target.value });
+  //   return user
+  // }
+
+  const handleDonorName = (event) => {
+    setDonorName(event.target.value)
+    return donorName
   }
 
-  // const handleDonorName = (event) => {
-  //   setDonorName(event.target.value)
-  //   return donorName
-  // }
+  const handleDonorEmail = (event) => {
+    setDonorEmail(event.target.value)
+    return donorEmail
+  }
 
-  // const handleDonorEmail = (event) => {
-  //   setDonorEmail(event.target.value)
-  //   return donorEmail
-  // }
-
-  // const handleDonorPhone = (event) => {
-  //   setDonorPhone(event.target.value)
-  //   return donorPhone
-  // }
+  const handleDonorPhone = (event) => {
+    setDonorPhone(event.target.value)
+    return donorPhone
+  }
 
   // const handleDonorCity = (event) => {
   //   setDonorCity(event.target.value)
@@ -78,22 +77,24 @@ const DonateMilkForm = () => {
   //   return donorState
   // }
 
-  // const handleDonorLocation = (event) => {
-  //   setDonorLocation(event.target.value);
-  //   return donorLocation
-  // }
+  const handleDonorLocation = (event) => {
+    setDonorLocation(event.target.value);
+    return donorLocation
+  }
 
-  // const handleDonorBio = (event) => {
-  //   setDonorBio(event.target.value)
-  //   return donorBio
-  // }
+
+  const handleDonorBio = (event) => {
+    setDonorBio(event.target.value)
+    return donorBio
+  }
 
   const navigate = useNavigate();
 
-  const handleDonorSubmit = () => {
-    if (smoker) {
+  const handleDonorSubmit = (event) => {
+    event.preventDefault();
+    if (smoker === 'yes') {
       return navigate('/sorry')
-    } else if (!smoker) {
+    } else if (smoker === 'no') {
       createNewDonor();
       return navigate('/thank-you')
     }
@@ -102,30 +103,25 @@ const DonateMilkForm = () => {
   return (
     <form className='donor-form'>
       <label htmlFor='Your Name'>Your Name</label>
-      <input type='text' name='name' placeholder='First & Last Name' onChange={ (event) => { handleChange(event) } }/>
+      <input type='text' placeholder='First & Last Name'  onChange={(event) => { handleDonorName(event) }}/>
       <label htmlFor='Email Address'>Email Address</label>
-      <input type='email' name='email' placeholder='Email Address' onChange={ (event) => { handleChange(event) } } />
+      <input type='email' placeholder='Email Address'  onChange={(event) => { handleDonorEmail(event) }} />
       <label htmlFor='Phone Number'>Phone Number</label>
-      <input type='tel' name='phone' placeholder='Phone Number' onChange={ (event) => { handleChange(event) } } />
-      {/* <label htmlFor='City'>City</label> */}
-      {/* <input type='text' name='' placeholder='City' onChange={ (event) => { handleDonorCity(event) } }/>
-      <label htmlFor='State'>State</label>
-      <input type='text' name='' placeholder='State' onChange={ (event) => { handleDonorState(event) } }/> */}
-      <label htmlFor='City and State'>Location</label>
-      <input type='text' name='location' placeholder='City, State (i.e. Denver, CO)' onChange={ (event) => { handleChange(event) } } />
+      <input type='tel' placeholder='Phone Number'  onChange={(event) => { handleDonorPhone(event) }} />
+      <label htmlFor='Location'>Location</label>
+      <input type='text' placeholder='Location'  onChange={(event) => { handleDonorLocation(event) }}/>
+      {/* <label htmlFor='State'>State</label>
+      <input type='text' placeholder='State' onChange={(event) => { handleDonorState(event) }}/> */}
       <p className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label htmlFor='yes'>YES</label>
-        <input type='radio' name='smoker' value='1' onChange={ (event) => { handleSmoker(event) } }/>
+        <input type='radio' name='smoker' value='yes'  onChange={(event) => {handleSmoker(event)}}/>
         <label htmlFor='no'>NO</label>
         <input type='radio' name='smoker' value='0' id='no' onChange={ (event) => { handleSmoker(event) } }/>
       </div>
       <label htmlFor='message'>Message</label>
-      <textarea placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' onChange={ (event) => { handleChange(event) } }/>
-      <button className='button' onClick={ (event) => {
-        event.preventDefault()
-        handleDonorSubmit()
-      } }>Submit</button>
+      <textarea type='text' placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?'  onChange={(event) => { handleDonorBio(event) }}/>
+      <button className='button' onClick={(event) => handleDonorSubmit(event)}>Submit</button>
     </form>
   )
 };

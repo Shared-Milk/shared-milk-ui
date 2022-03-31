@@ -18,6 +18,7 @@ import NeedMilk from '../NeedMilk/NeedMilk';
 import Donate from '../DonateMilk/DonateMilk';
 import About from '../About/About';
 import Support from '../SupportPage/Support';
+import Sidebar from '../MobileMenu/MobileMenu';
 
 //Prompt Page Imports
 import MilkRequestForm from '../MilkRequestForm/MilkRequestForm';
@@ -35,7 +36,7 @@ const errorLink = onError(({ graphqlErrors, networkError }) => {
 
 const link = from([
    errorLink,
-   new HttpLink({ uri: 'https://d62af07c-6e04-49ca-a5bd-846d40736f3e.mock.pstmn.io/graphql' })
+   new HttpLink({ uri: 'http://localhost:5000//graphql' })
 ])
 
 const client = new ApolloClient({
@@ -45,24 +46,29 @@ const client = new ApolloClient({
 
 const App = () => {
    return (
-      <ApolloProvider client={ client }>   
+      <ApolloProvider client={client}>
          <main className='App'>
-            <Header />
-            <Routes>
-               <Route path='/' element={ <HomePage /> }/>
-               <Route path='need-milk' element={ <NeedMilk /> }/>
-               <Route path='donate' element={ <Donate /> }/>
-               <Route path='about' element={ <About /> }/>
-               <Route path='support' element={ <Support /> }/>
-               <Route path='contact' element={ <MilkRequestForm /> }/>
-               <Route path='sent-confirmation' element={ <ConfirmationMessage /> }/>
-               <Route path='thank-you' element={ <DonorThankYou /> }/>
-               <Route path='sorry' element={ <DonorSorry /> }/>
-            </Routes>
-            <Footer />
+            <div className='desktop-hidden'>
+               <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
+            </div>
+            <div id='page-wrap'>
+               <Header id='outer-container' />
+               <Routes>
+                  <Route path='/' element={<HomePage />} />
+                  <Route path='need-milk' element={<NeedMilk />} />
+                  <Route path='donate' element={<Donate />} />
+                  <Route path='about' element={<About />} />
+                  <Route path='support' element={<Support />} />
+                  <Route path='contact' element={<MilkRequestForm />} />
+                  <Route path='sent-confirmation' element={<ConfirmationMessage />} />
+                  <Route path='thank-you' element={<DonorThankYou />} />
+                  <Route path='sorry' element={<DonorSorry />} />
+               </Routes>
+               <Footer />
+            </div>
          </main>
       </ApolloProvider>
    )
-}
+};
 
 export default App;

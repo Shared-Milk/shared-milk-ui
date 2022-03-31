@@ -5,9 +5,10 @@ header {
   background-color: v.$darkTeal;
   @include m.flexbox(row, nowrap, normal, space-between, center);
   padding: 2%;
-
+  
   .logo {
     flex: 1;
+    line-height: 3em;
 
     h1 {
       font-size: 3em;
@@ -19,7 +20,6 @@ header {
       }
     }
   }
-
 
   nav {
     flex: 1;
@@ -64,10 +64,15 @@ header {
 
   @media (min-width: 768px) and (max-width: 1024px) {
     flex-direction: column;
+    align-items: flex-start;
 
     nav {
       .menu {
         flex-wrap: wrap;
+      }
+
+      .mobile-hidden {
+        display: none;
       }
     }
   }
@@ -79,10 +84,15 @@ header {
 
   @media (min-width: 481px) and (max-width: 767px) {
     flex-direction: column;
+    align-items: flex-start;
 
     nav {
       .menu {
         flex-wrap: wrap;
+      }
+
+      .mobile-hidden {
+        display: none;
       }
     }
   }
@@ -94,10 +104,15 @@ header {
 
   @media (min-width: 320px) and (max-width: 480px) {
     flex-direction: column;
+    align-items: flex-start;
 
     nav {
       .menu {
         flex-wrap: wrap;
+      }
+
+      .mobile-hidden {
+        display: none;
       }
     }
   }

@@ -37,6 +37,10 @@
       padding: 0 2%;
     }
 
+    input[type=text], input[type=email], input[type=tel], textarea[type='text'] {
+      color: v.$offBlack;
+    }
+
     textarea {
       height: 6em;
       padding: 1% 2%;

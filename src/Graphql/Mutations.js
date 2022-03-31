@@ -1,23 +1,63 @@
 import { gql } from "@apollo/client"
 
 export const CREATE_DONOR = gql`
-mutation createUser(
-  $name: String!,
-  $email: String!,
-  $phone: String!,
-  $bio: String!,
-  $location: String!) {
-  queryUsers(
+
+mutation CreateUser(
+  $name: String!
+  $email: String!
+  $phone: String!
+  $bio: String!
+  $location: String!
+  $donorStatus: Int!
+  ) {
+  createUser(input: {
     name: $name,
     email: $email,
     phone: $phone,
     bio: $bio,
-    location: $location
-  ) {
-    id
+    location: $location,
+    donorStatus: $donorStatus,
+  }) {
+    user {
+      id
+      name
     }
-}`
+  }
+}
+`;
+// mutation{
+//   createUser(input: {
+//     name: String,
+//     email: String,
+//     phone: String,
+//     bio: String,
+//     location: String,
+//     donorStatus: Int}) {
+//     createUser(
+//       name: name,
+//       email: email,
+//       phone: phone,
+//       bio: bio,
+//       location: location
+//       donorStatus: donorStatus
+//     ) {
+//       id
+//       }
+//       errors
+//     }
+// }`
 
+
+
+// mutation CreateUser($input: CreateUserInput!) {
+//   createUser (input: $input) {
+//     name: String,
+//     email: String,
+//     phone: String,
+//     bio: String,
+//     location: String,
+//     donorStatus: Int})
+//   }
 // export const CREATE_DONOR = gql`
 // mutation 
 //   createUser($input: 
@@ -26,12 +66,11 @@ mutation createUser(
 //       email: $email,
 //       phone: $phone,
 //       bio: $bio,
-//       location: $location
-//       donor_status: "0"
+//       location: $location,
+//       donorStatus: 0
 //     }) {
-//       mom: {
+//       user {
 //           id  
 //       }
 //       errors
 //     }`
-   

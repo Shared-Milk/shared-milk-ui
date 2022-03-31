@@ -95,27 +95,27 @@ const DonateMilkForm = () => {
   }
 
   return (
-    <form className='donor-form'>
+    <form data-testid='donate-form' className='donor-form'>
       <label htmlFor='Your Name'>Your Name</label>
-      <input type='text' placeholder='First & Last Name'  onChange={(event) => { handleDonorName(event) }}/>
+      <input data-testid='donor-name-input' type='text' placeholder='First & Last Name'  onChange={(event) => { handleDonorName(event) }}/>
       <label htmlFor='Email Address'>Email Address</label>
-      <input type='email' placeholder='Email Address'  onChange={(event) => { handleDonorEmail(event) }} />
+      <input data-testid='donor-email-input' type='email' placeholder='Email Address'  onChange={(event) => { handleDonorEmail(event) }} />
       <label htmlFor='Phone Number'>Phone Number</label>
-      <input type='tel' placeholder='Phone Number'  onChange={(event) => { handleDonorPhone(event) }} />
+      <input data-testid='donor-phone-input' type='tel' placeholder='Phone Number'  onChange={(event) => { handleDonorPhone(event) }} />
       <label htmlFor='Location'>Location</label>
-      <input type='text' placeholder='Location'  onChange={(event) => { handleDonorLocation(event) }}/>
+      <input data-testid='donor-location-input' type='text' placeholder='Location'  onChange={(event) => { handleDonorLocation(event) }}/>
       {/* <label htmlFor='State'>State</label>
       <input type='text' placeholder='State' onChange={(event) => { handleDonorState(event) }}/> */}
-      <p className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
+      <p data-testid='donor-radio-descriptor'  className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label htmlFor='yes'>YES</label>
-        <input type='radio' name='smoker' value='yes'  onChange={(event) => {handleSmoker(event)}}/>
+        <input data-testid='donor-smoker-yes' type='radio' name='smoker' value='yes'  onChange={(event) => {handleSmoker(event)}}/>
         <label htmlFor='no'>NO</label>
-        <input type='radio' name='smoker' value='no' id='no' onChange={(event) => { handleSmoker(event)}}/>
+        <input data-testid='donor-smoker-no' type='radio' name='smoker' value='no' id='no' onChange={(event) => { handleSmoker(event)}}/>
       </div>
       <label htmlFor='message'>Message</label>
-      <textarea type='text' placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?'  onChange={(event) => { handleDonorBio(event) }}/>
-      <button className='button' onClick={(event) => handleDonorSubmit(event)}>Submit</button>
+      <textarea data-testid='donor-bio-input' type='text' placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?'  onChange={(event) => { handleDonorBio(event) }}/>
+      <button data-testid='donate-submit-button' className='button' onClick={(event) => handleDonorSubmit(event)}>Submit</button>
     </form>
   )
 };

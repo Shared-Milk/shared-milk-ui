@@ -36,17 +36,17 @@ const errorLink = onError(({graphqlErrors, networkError}) => {
 
 const link = from([
    errorLink,
-   new HttpLink({ uri: 'http://localhost:5000//graphql' })
+   new HttpLink({ uri: 'http://localhost:5000/graphql' })
 ])
 
 const client = new ApolloClient({
-   cache: new InMemoryCache(), 
-   link: link 
+   cache: new InMemoryCache(),
+   link: link
 })
 
 const App = () => {
    return (
-      <ApolloProvider client={client}>   
+      <ApolloProvider client={client}>
          <main className='App'>
             <div className='desktop-hidden'>
                <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}/>

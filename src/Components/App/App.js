@@ -36,7 +36,7 @@ const errorLink = onError(({graphqlErrors, networkError}) => {
 
 const link = from([
    errorLink,
-   new HttpLink({ uri: 'http://localhost:5000//graphql' })
+   new HttpLink({ uri: 'https://secret-forest-87730.herokuapp.com/graphql' })
 ])
 
 const client = new ApolloClient({

@@ -1,5 +1,6 @@
 import './DonorCard.scss';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
 const DonorCard = ({ donor }) => {
   return (
@@ -15,3 +16,11 @@ const DonorCard = ({ donor }) => {
 };
 
 export default DonorCard;
+
+DonorCard.propTypes = {
+  donor: PropTypes.shape({
+    name: PropTypes.string,
+    location: PropTypes.string,
+    bio: PropTypes.string
+  })
+}

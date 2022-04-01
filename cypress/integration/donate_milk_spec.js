@@ -55,6 +55,54 @@ describe('Donate Milk form parts check', () => {
   })
 });
 
+describe('Messages', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/donate')
+  });
+
+  it.only('should get a sorry message when yes to smoking is selected', () => {
+    cy.get('[data-testid=donor-name-input]')
+      .click()
+      .type('Jane Doe')
+    cy.get('[data-testid=donor-email-input]')
+      .click()
+      .type('janedoe@example.com')
+    cy.get('[data-testid=donor-phone-input]')
+      .click()
+      .type('(555) 555-5555')
+    cy.get('[data-testid=donor-location-input]')
+      .click()
+      .type('Denver, CO')
+    cy.get('[data-testid=donor-smoker-yes]').click()
+    cy.get('[data-testid=donor-bio-input]')
+      .click()
+      .type('My first decided she likes solid food more, I would be happy to share my milk as I conclude feeding her.')
+    cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
+    cy.get('[data-testid=donor-sorry-title]').contains('Sorry!')
+  })
+
+  it('should get a thank you message when yes to smoking is selected', () => {
+    cy.get('[data-testid=donor-name-input]')
+      .click()
+      .type('Jane Doe')
+    cy.get('[data-testid=donor-email-input]')
+      .click()
+      .type('janedoe@example.com')
+    cy.get('[data-testid=donor-phone-input]')
+      .click()
+      .type('(555) 555-5555')
+    cy.get('[data-testid=donor-location-input]')
+      .click()
+      .type('Denver, CO')
+    cy.get('[data-testid=donor-smoker-no]').click()
+    cy.get('[data-testid=donor-bio-input]')
+      .click()
+      .type('My first decided she likes solid food more, I would be happy to share my milk as I conclude feeding her.')
+    cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
+    cy.get('[data-testid=thank-donor-title]').contains('Thank You!')
+  })
+})
+
 describe('Shared Milk landing page happy user flow', () => {
   beforeEach(() => {
     cy.intercept('POST', 'https://secret-forest-87730.herokuapp.com/graphql', (req) => {
@@ -64,7 +112,7 @@ describe('Shared Milk landing page happy user flow', () => {
       })
     });
 
-    cy.visit('https://serene-spire-14776.herokuapp.com/need-milk')
+    cy.visit('https://no-use-cryin-over-shared-milk.herokuapp.com/need-milk')
   });
 
 });

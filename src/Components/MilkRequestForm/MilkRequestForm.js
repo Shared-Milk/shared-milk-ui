@@ -27,5 +27,5 @@ const MilkRequestForm = () => {
 export default MilkRequestForm;
 
 MilkRequestForm.propTypes = {
-    name: PropTypes.string
-}
+  name: PropTypes.string
+};

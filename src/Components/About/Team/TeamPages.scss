@@ -1,26 +1,13 @@
 @use '../Styles/mixins' as m;
 @use '../Styles/variables' as v;
 
-.team-container {
+.team-grid {
   margin-top: 5%;
   
-  .team-grid {
+  .team-member {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-gap: 1em;
-    justify-items: center;
-
-    .member-card {
-      display: flex;
-      @include m.flexbox(column, wrap, center, center, center);
-
-      .social-links {
-        .social-icon {
-          max-height: 1.75em;
-        }
-      }
-
-    }
+    grid-template-columns: 40% 60%;
+    grid-gap: 2em;
 
     .col-1 {
       display: flex;

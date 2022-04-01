@@ -10,7 +10,7 @@ import {
    HttpLink,
    from,
 } from '@apollo/client';
-import { onError } from '@apollo/client/link/error'
+import { onError } from '@apollo/client/link/error';
 
 // Nav Bar Imports
 import HomePage from '../HomePage/HomePage';

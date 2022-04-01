@@ -1,4 +1,4 @@
-describe('Shared Milk landing page user flow', () => {
+describe('Donate Milk form parts check', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/donate')
   });
@@ -51,6 +51,26 @@ describe('Shared Milk landing page user flow', () => {
   })
 
   it('should have a submit button', () => {
-    cy.get('[data-testid=donate-submit-button]').click()
+    cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
   })
 });
+
+describe('Shared Milk landing page happy user flow', () => {
+  beforeEach(() => {
+    cy.intercept('POST', 'https://secret-forest-87730.herokuapp.com/graphql', (req) => {
+      req.reply({
+        statusCode: 200,
+        fixture: 'createDonor.json'
+      })
+    });
+
+    cy.visit('https://serene-spire-14776.herokuapp.com/need-milk')
+  });
+
+});
+
+describe('Shared Milk landing page sad user flows', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/donate')
+  });
+})

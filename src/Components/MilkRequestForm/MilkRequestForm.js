@@ -5,53 +5,15 @@ import { useForm } from 'react-hook-form';
 const MilkRequestForm = () => {
   const location = useLocation();
   const name = location.state.name || 'user';
-  // const [recipientName, setRecipientName] = useState();
-  // const [recipientEmail, setRecipientEmail] = useState();
-  // const [recipientPhone, setRecipientPhone] = useState();
-  // const [recipientMessage, setRecipientMessage] = useState();
   const navigate = useNavigate();
-
   const { register, handleSubmit, formState: { errors } } = useForm();
-
-  const onSubmit = data => {
-    console.log('DATA', data)
+  const isEmpty = Object.keys(errors).length === 0;
+  
+  const onSubmit = () => {
     if (isEmpty) {
-      // <Link path='sent-confirmation' element={<ConfirmationMessage />} />
       navigate('/sent-confirmation')
     }
-    console.log('EMPTY', isEmpty)
   };
-  // console.log(errors)
-  // console.log(onValid)
-
-  // const handleChange = (event) => {
-  //   if (event.target.name === 'recipientName') {
-  //     setRecipientName(event.target.value)
-  //     return recipientName
-  //   }
-  //   if (event.target.name === 'recipientEmail') {
-  //     setRecipientEmail(event.target.value)
-  //     return recipientEmail
-  //   }
-  //   if (event.target.name === 'recipientPhone') {
-  //     setRecipientPhone(event.target.value)
-  //     return recipientPhone
-  //   }
-  //   if (event.target.name === 'recipientMessage') {
-  //     setRecipientMessage(event.target.value)
-  //     return recipientMessage
-  //   }
-  // }
-
-  
-  const isEmpty = Object.keys(errors).length === 0;
-  // console.log('EMPTY', isEmpty);
-
-  // const handleNavigation = () => {
-  //   // onSubmit()
-  //   console.log('ERRORS', errors);
-  // }
-
 
   return (
     <section className='main-container'>
@@ -69,7 +31,6 @@ const MilkRequestForm = () => {
         <label htmlFor='Message'>Message</label>
         <textarea type='text' {...register('recipientMessage', { required: 'This field required' })} placeholder='How much milk do you need? When do you need it? Tell your donor more about yourself.' />
         <p>{ errors.recipientMessage?.message }</p>
-        {/* <Link to='/sent-confirmation' className='button'>Send Message</Link> */}
         <button className='button' type='submit'>Submit</button>
       </form>
     </section>

@@ -1,6 +1,7 @@
 import './MilkRequestForm.scss';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
+import PropTypes from 'prop-types';
 
 const MilkRequestForm = () => {
   const location = useLocation();
@@ -38,3 +39,7 @@ const MilkRequestForm = () => {
 };
 
 export default MilkRequestForm;
+
+MilkRequestForm.propTypes = {
+    name: PropTypes.string
+}

@@ -2,17 +2,8 @@
 @use '../Styles/variables' as v;
 
 .donor-form {
-  p {
-    color: v.$orange;
-    font-style: italic;
-    font-size: 1em !important;
-  }
-
   .form-question {
-    color: v.$offBlack;
-    margin: 2% 0 0 0;
-    font-style: normal;
-    font-size: 1.2em !important;
+    margin: 2% 0 0 0; 
   }
 
   .form-group {

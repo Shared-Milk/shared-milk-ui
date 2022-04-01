@@ -41,27 +41,27 @@ const DonateMilkForm = () => {
   return (
     <form className='donor-form' onSubmit={ handleSubmit(onSubmit) }>
       <label htmlFor='Your Name'>Your Name</label>
-      <input {...register('donorName', { required: '* Do you know who you are?' })} type='text' placeholder='First & Last Name' />
-      <p>{ errors.donorName?.message }</p>
+      <input {...register('donorName', { required: `* Is the baby-brain that bad?` })} type='text' placeholder='First & Last Name' />
+      <p className='error'>{ errors.donorName?.message }</p>
       <label htmlFor='Email Address'>Email Address</label>
-      <input {...register('donorEmail', { required: '* Oops, you spilled the milk. Please input your email' })} type='email' placeholder='Email Address' />
-      <p>{ errors.donorEmail?.message }</p>
+      <input {...register('donorEmail', { required: `* Oh, fer cryin' out loud. We don't do snail mail. Just enter your email` })} type='email' placeholder='Email Address' />
+      <p className='error'>{ errors.donorEmail?.message }</p>
       <label htmlFor='Phone Number'>Phone Number</label>
-      <input {...register('donorPhone', { required: '* Can I have yo number??' })} type='tel' placeholder='Phone Number' />
-      <p>{ errors.donorPhone?.message }</p>
+      <input {...register('donorPhone', { required: `* Can I have yo number??` })} type='tel' placeholder='Phone Number' />
+      <p className='error'>{ errors.donorPhone?.message }</p>
       <label htmlFor='Location'>Location</label>
       <input {...register('donorLocation', { required: `Ope! We can't find you. Peekaboo!` })} type='text' placeholder='Location' />
       <p className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label htmlFor='no'>NO</label>
-        <input {...register('smoker', { required: '* Did you go out for a smoke?' })} type='radio' name='smoker' value='0' />
+        <input {...register('smoker', { required: `* Did you go out for a smoke?` })} type='radio' name='smoker' value='0' />
         <label htmlFor='yes'>YES</label>
-        <input {...register('smoker', { required: '* Did you go out for a smoke?' })} type='radio' name='smoker' value='1' />
+        <input {...register('smoker', { required: `* Did you go out for a smoke?` })} type='radio' name='smoker' value='1' />
       </div>
-      <p>{ errors.smoker?.message }</p>
+      <p className='error'>{ errors.smoker?.message }</p>
       <label htmlFor='message'>Message</label>
-      <textarea {...register('donorBio', { required: '* Tell me something good.' })} type='text' placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' />
-      <p>{ errors.donorBio?.message }</p>
+      <textarea {...register('donorBio', { required: `* Seriously though, tell us about yourself. Don't be sketchy` })} type='text' placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' />
+      <p className='error'>{ errors.donorBio?.message }</p>
       <button className='button' type='submit'>Submit</button>
     </form>
   )

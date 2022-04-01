@@ -1,5 +1,4 @@
 import './MilkRequestForm.scss';
-import { useState } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 
@@ -10,9 +9,19 @@ const MilkRequestForm = () => {
   // const [recipientEmail, setRecipientEmail] = useState();
   // const [recipientPhone, setRecipientPhone] = useState();
   // const [recipientMessage, setRecipientMessage] = useState();
+  const navigate = useNavigate();
+
   const { register, handleSubmit, formState: { errors } } = useForm();
-  const onSubmit = data => {console.log(data)};
-  console.log(errors)
+
+  const onSubmit = data => {
+    console.log('DATA', data)
+    if (isEmpty) {
+      // <Link path='sent-confirmation' element={<ConfirmationMessage />} />
+      navigate('/sent-confirmation')
+    }
+    console.log('EMPTY', isEmpty)
+  };
+  // console.log(errors)
   // console.log(onValid)
 
   // const handleChange = (event) => {
@@ -34,18 +43,20 @@ const MilkRequestForm = () => {
   //   }
   // }
 
-  const navigate = useNavigate();
+  
+  const isEmpty = Object.keys(errors).length === 0;
+  // console.log('EMPTY', isEmpty);
 
   // const handleNavigation = () => {
   //   // onSubmit()
-  //   navigate('sent-confirmation')
+  //   console.log('ERRORS', errors);
   // }
 
 
   return (
     <section className='main-container'>
       <h2>Connect with { name }</h2>
-      <form onSubmit={ handleSubmit(!errors && navigate('sent-confirmation')) }>
+      <form onSubmit={ handleSubmit(onSubmit) }>
         <label htmlFor='First & Last Name'>Your Name</label>
         <input {...register('recipientName', { required: 'This field required' })} type='text' placeholder='First & Last Name' />
         <p>{ errors.recipientName?.message }</p>
@@ -56,10 +67,10 @@ const MilkRequestForm = () => {
         <input {...register('recipientPhone', { required: 'This field required' })} type='tel' placeholder='Phone Number' />
         <p>{ errors.recipientPhone?.message }</p>
         <label htmlFor='Message'>Message</label>
-        <textarea {...register('recipientMessage', { required: 'This field required' })} placeholder='How much milk do you need? When do you need it? Tell your donor more about yourself.' />
+        <textarea type='text' {...register('recipientMessage', { required: 'This field required' })} placeholder='How much milk do you need? When do you need it? Tell your donor more about yourself.' />
         <p>{ errors.recipientMessage?.message }</p>
         {/* <Link to='/sent-confirmation' className='button'>Send Message</Link> */}
-        <button className='button' onSubmit={onSubmit} type='submit'>Submit</button>
+        <button className='button' type='submit'>Submit</button>
       </form>
     </section>
   )

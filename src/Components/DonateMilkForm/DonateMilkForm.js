@@ -2,6 +2,7 @@ import './DonateMilkForm.scss';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { CREATE_DONOR } from '../../Graphql/Mutations.js';
+import { GET_ALL_DONORS } from '../../Graphql/Queries';
 import { useForm } from 'react-hook-form';
 
 const DonateMilkForm = () => {
@@ -30,6 +31,10 @@ const DonateMilkForm = () => {
         bio: data.donorBio,
         location: data.donorLocation,
         donorStatus: 0
+      },
+      refetchQueries: [{ query: GET_ALL_DONORS }],
+      options: {
+        awaitRefetchQueries: true
       }
     })
     if (error) {

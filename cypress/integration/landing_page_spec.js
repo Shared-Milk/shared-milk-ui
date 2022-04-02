@@ -8,7 +8,7 @@ describe('Shared Milk landing page user flow', () => {
     cy.get('[data-testid=nav-bar]').contains('Home')
     cy.get('[data-testid=nav-bar]').contains('Need Milk')
     cy.get('[data-testid=nav-bar]').contains('Donate')
-    cy.get('[data-testid=nav-bar]').contains('About Us')
+    cy.get('[data-testid=nav-bar]').contains('About')
     cy.get('[data-testid=nav-bar]').contains('Support')
   });
 
@@ -45,9 +45,9 @@ describe('Shared Milk landing page user flow', () => {
     }));
   });
 
-  it('should be able to navigate to the About Us page view', () => {
+  it('should be able to navigate to the About page view', () => {
     cy.viewport(1532, 897)
-    cy.get('header > nav > .menu > li:nth-child(4) > .nav').contains('About Us').click()
+    cy.get('header > nav > .menu > li:nth-child(4) > .nav').contains('About').click()
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/about')
     }))

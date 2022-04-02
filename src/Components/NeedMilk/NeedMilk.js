@@ -1,10 +1,10 @@
 import DonorCard from '../DonorCard/DonorCard';
-import {useEffect, useState} from 'react';
-import {useQuery, gql} from '@apollo/client';
+import { useEffect, useState } from 'react';
+import { useQuery, gql } from '@apollo/client';
 import { GET_ALL_DONORS } from '../../Graphql/Queries';
 
 const NeedMilk = () => {
-  const {error, loading, data} = useQuery(GET_ALL_DONORS)
+  const { error, loading, data } = useQuery(GET_ALL_DONORS)
   const [donors, setDonors] = useState([])
   
   useEffect(() => {
@@ -18,9 +18,9 @@ const NeedMilk = () => {
       <h2>Milk Donors</h2>
       <p>Click on a profile below to contact a milk donor.</p>
       <section className='contact-grid'>
-        {donors.map(donor => {
-          return (<DonorCard key={donor.id} donor={donor}/>)
-        })}
+        { donors.map(donor => {
+          return (<DonorCard key={ donor.id } donor={ donor }/>)
+        }) }
       </section>
     </section>
   )

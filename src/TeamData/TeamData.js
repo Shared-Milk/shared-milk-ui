@@ -12,7 +12,7 @@ const teamData = [
     name: "Seth Perna",
     photo: `${seth}`,
     pronouns: "he/him",
-    linkedin: "https://www.linkedin.com/in/seth-perna-82613b223/",
+    linkedin: "http://www.linkedin.com/in/SethPerna",
     github: "https://github.com/SethPerna",
     bio: "n/a"
   },
@@ -21,7 +21,7 @@ const teamData = [
     name: "Kelly Anderson",
     photo: `${kelly}`,
     pronouns: "she/her",
-    linkedin: "https://www.linkedin.com/in/kelly-anderson-588090218/",
+    linkedin: "http://www.linkedin.com/in/Kelly-Anderson852",
     github: "https://github.com/kanderson852",
     bio: "n/a"
   },

@@ -8,6 +8,8 @@ import { useLocation } from 'react-router-dom';
 const Profile = () => {
   const location = useLocation();
   const profile = location.state;
+  const linkedinText = profile.linkedin.replace('http://www.', '');
+  const githubText = profile.github.replace('https://', '');
 
   return (
     <section className='main-container'>
@@ -23,11 +25,11 @@ const Profile = () => {
               <p>{profile.bio}</p> 
             <div className='social-link'>
               <img className='social-icon' src={linkedin} alt={`${profile.name}'s Linked In`}/>
-              <p className='link'>{profile.linkedin}</p>
+              <p className='link'>{linkedinText}</p>
             </div>
             <div className='social-link'>
               <img className='social-icon' src={github} alt={`${profile.name}'s Github`}/>
-              <p className='link'>{profile.github}</p>
+              <p className='link'>{githubText}</p>
             </div>
           </div>
         </article>

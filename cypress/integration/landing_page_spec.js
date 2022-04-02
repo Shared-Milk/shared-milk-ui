@@ -4,12 +4,12 @@ describe('Shared Milk landing page user flow', () => {
   });
 
   it('should display page title and navigation links on page load', () => {
-    cy.get('h1').contains('No Use Cryin\' Over Shared Milk')
-    cy.get('.nav').contains('Home')
-    cy.get('.nav').contains('Need Milk')
-    cy.get('.nav').contains('Donate')
-    cy.get('.nav').contains('About Us')
-    cy.get('.nav').contains('Support')
+    cy.get('[data-testid=site-title]').contains('No Use Cryin\' Over Shared Milk')
+    cy.get('[data-testid=nav-bar]').contains('Home')
+    cy.get('[data-testid=nav-bar]').contains('Need Milk')
+    cy.get('[data-testid=nav-bar]').contains('Donate')
+    cy.get('[data-testid=nav-bar]').contains('About Us')
+    cy.get('[data-testid=nav-bar]').contains('Support')
   });
 
   it('should be able to navigate to the Need Milk page view on desktop or mobile', () => {

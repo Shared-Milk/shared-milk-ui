@@ -8,9 +8,9 @@ const memberCard = ({member}) => {
 
   return (
     <article className='member-card'>
-      <Link to={`/${url}`}>
+      <Link to={`/${url}`} className='name-and-photo'>
+        <h4>{member.firstName} {member.lastName}</h4>
         <img className='bio-photo' src={member.photo} alt={`Photo of ${member.firstName}`}/>
-        <h3>{member.firstName} {member.lastName}</h3>
       </Link>
       <div className='social-links'>
         <img className='social-icon' src={member.linkedinIcon} alt={`${member.firstName}'s Linked In Profile`}/>

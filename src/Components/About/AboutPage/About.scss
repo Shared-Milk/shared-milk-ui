@@ -3,6 +3,11 @@
 
 .about-page {
   height: 100%;
+  
+  h3 {
+    margin-top: 5%;
+    font-size: 1.5em;
+  }
 
   .mission-container {
     display: flex;
@@ -16,11 +21,6 @@
       width: 80%;
     }
   }
-  
-
-  h3 {
-    margin-top: 5%;
-  }
 }
 
 .team-container {
@@ -31,29 +31,33 @@
     grid-gap: 1em;
     justify-items: center;
     margin-top: 4%;
+    padding-bottom: 5%;
 
     .member-card {
       @include m.flexbox(column, wrap, center, center, center);
       text-align: center;
-      
-      .bio-photo {
-        margin: 5%;
-        border-radius: 50em;
-        width: 85%;
-        @include m.buttonShadow();
-        
+
+      .name-and-photo {
         &:hover {
           @include m.buttonHover(1.2em);
         }
-      }
 
-      h3 {
-        font-size: 1.5em;
+        .bio-photo {
+          margin: 5%;
+          border-radius: 50em;
+          width: 85%;
+          @include m.buttonShadow();
+        }
 
-        &:hover {
-          @include m.buttonHover(1.7em);
+        h4 {
+          margin: 1% 0;
+          font-size: 2em;
+          color: v.$salmon;
+          letter-spacing: 2px;
+          // text-shadow: 1px 1px 1px #6b6b6b;       
         }
       }
+      
 
       .social-links {
         display: flex;

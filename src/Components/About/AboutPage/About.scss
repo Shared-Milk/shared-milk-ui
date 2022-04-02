@@ -1,6 +1,10 @@
 @use '../../Styles/mixins' as m;
 @use '../../Styles/variables' as v;
 
+.about-page {
+  height: 100%;
+}
+
 .team-container {
   margin-top: 5%;
   
@@ -11,12 +15,40 @@
     justify-items: center;
 
     .member-card {
-      display: flex;
       @include m.flexbox(column, wrap, center, center, center);
+      text-align: center;
+      
+      .bio-photo {
+        margin: 5%;
+        border-radius: 50em;
+        width: 85%;
+        @include m.buttonShadow();
+        
+        &:hover {
+          @include m.buttonHover(1.2em);
+        }
+      }
+
+      h3 {
+        font-size: 1.5em;
+
+        &:hover {
+          @include m.buttonHover(1.7em);
+        }
+      }
 
       .social-links {
+        display: flex;
+        justify-content: space-evenly;
+        width: 50%;
+        margin: 5%;
+
         .social-icon {
           max-height: 1.75em;
+
+          &:hover {
+            @include m.buttonHover(1em);
+          }
         }
       }
 
@@ -49,10 +81,5 @@
         }
       }
     }
-  }
-
-  .bio-photo {
-    border-radius: 50em;
-    width: 85%;
   }
 }

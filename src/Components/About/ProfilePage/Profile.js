@@ -1,4 +1,4 @@
-import './TeamPages.scss';
+import './Profile.scss';
 import { useLocation } from 'react-router-dom';
 
 const Profile = () => {

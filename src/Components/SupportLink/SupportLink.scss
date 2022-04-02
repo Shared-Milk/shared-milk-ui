@@ -19,7 +19,7 @@
     border: none;
     background-color: v.$salmon;
     color: v.$offWhite;
-    box-shadow: 2px 3px 6px 3px #6b6b6b;
+    @include m.buttonShadow();
 
     &:hover {
       @include m.buttonHover(1.2em)

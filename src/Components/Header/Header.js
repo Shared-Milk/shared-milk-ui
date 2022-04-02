@@ -5,7 +5,8 @@ const Header = () => {
   return (
     <header>
       <section className='logo'>
-        <Link to='/'><h1 data-testid='site-title' className='nav'>No Use Cryin' Over Shared Milk</h1>
+        <Link to='/'>
+          <h1 data-testid='site-title' className='nav'>No Use Cryin' Over Shared Milk</h1>
         </Link>
       </section>
       <nav data-testid='nav-bar'>

@@ -10,7 +10,7 @@ import {
    HttpLink,
    from,
 } from '@apollo/client';
-import {onError} from '@apollo/client/link/error'
+import { onError } from '@apollo/client/link/error';
 
 // Nav Bar Imports
 import HomePage from '../HomePage/HomePage';
@@ -27,10 +27,10 @@ import DonorThankYou from '../ConfirmationMessages/DonorThankYou';
 import DonorSorry from '../ConfirmationMessages/DonorSorry';
 import Profile from '../About/ProfilePage/Profile';
 
-const errorLink = onError(({graphqlErrors, networkError}) => {
+const errorLink = onError(({ graphqlErrors, networkError }) => {
    if(graphqlErrors) {
-      graphqlErrors.map(({message, location, path}) => {
-         return console.log(`Graphql error: ${message}`)
+      graphqlErrors.map(({ message, location, path }) => {
+         return console.log(`Graphql error: ${ message }`)
       })
    }
 })
@@ -47,13 +47,13 @@ const client = new ApolloClient({
 
 const App = () => {
    return (
-      <ApolloProvider client={client}>   
+      <ApolloProvider client={client}>
          <main className='App'>
             <div className='desktop-hidden'>
-               <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}/>
+               <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
             </div>
             <div id='page-wrap'>
-               <Header id='outer-container'/>
+               <Header id='outer-container' />
                <Routes>
                   <Route path='/' element={<HomePage />}/>
                   <Route path='need-milk' element={<NeedMilk />}/>
@@ -71,6 +71,6 @@ const App = () => {
          </main>
       </ApolloProvider>
    )
-}
+};
 
 export default App;

@@ -1,6 +1,6 @@
-import {gql} from '@apollo/client'
+import { gql } from '@apollo/client';
 
-export const GET_ALL_DONORS = gql `
+export const GET_ALL_DONORS = gql`
   query {
     users {
       id
@@ -11,4 +11,4 @@ export const GET_ALL_DONORS = gql `
       location
     }
   }
-`
+`;

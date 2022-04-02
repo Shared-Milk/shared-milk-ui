@@ -1,6 +1,6 @@
 import './About.scss';
 import { useState, useEffect } from 'react';
-import { teamData } from '../../../TeamData/TeamData';
+import { teamData, socialIcons } from '../../../TeamData/TeamData';
 import TeamMembers from '../TeamMembers/TeamMembers';
 
 const About = () => {
@@ -19,7 +19,7 @@ const About = () => {
       <p>This is a Turing Module 4 project built with React.js, Ruby, Rails, GraphQL, and .... </p>
       <p>Click on any of us below to get to know more about us.</p>
       <section className='team-container'>
-        <TeamMembers team={team}/>
+        <TeamMembers team={team} />
       </section>
     </section>
   )

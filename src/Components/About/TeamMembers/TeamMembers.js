@@ -1,7 +1,6 @@
 import React from 'react';
 // import './DonorCard.scss';
 import MemberCard from '../MemberCards/MemberCard';
-import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 
 const TeamMembers = ({team}) => {

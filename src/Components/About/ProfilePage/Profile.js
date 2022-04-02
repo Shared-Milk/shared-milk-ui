@@ -1,6 +1,4 @@
 import './TeamPages.scss';
-import github from '../SocialIcons/github.png';
-import linkedin from '../SocialIcons/linkedin.png';
 import { useLocation } from 'react-router-dom';
 
 const Profile = () => {
@@ -22,11 +20,11 @@ const Profile = () => {
             <h3>About Me</h3>
               <p>{profile.bio}</p> 
             <div className='social-link'>
-              <img className='social-icon' src={linkedin} alt={`${profile.firstName}'s Linked In`}/>
+              <img className='social-icon' src={profile.linkedinIcon} alt={`${profile.firstName}'s Linked In`}/>
               <p className='link'>{linkedinText}</p>
             </div>
             <div className='social-link'>
-              <img className='social-icon' src={github} alt={`${profile.firstName}'s Github`}/>
+              <img className='social-icon' src={profile.githubIcon} alt={`${profile.firstName}'s Github`}/>
               <p className='link'>{githubText}</p>
             </div>
           </div>

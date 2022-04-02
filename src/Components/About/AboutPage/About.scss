@@ -3,16 +3,34 @@
 
 .about-page {
   height: 100%;
+
+  .mission-container {
+    display: flex;
+    justify-content: center;
+    
+    .mission {
+      text-align: center;
+      font-size: 1.5em;
+      color: v.$salmon;
+      font-style: italic;
+      width: 80%;
+    }
+  }
+  
+
+  h3 {
+    margin-top: 5%;
+  }
 }
 
 .team-container {
-  margin-top: 5%;
   
   .team-grid {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1em;
     justify-items: center;
+    margin-top: 4%;
 
     .member-card {
       @include m.flexbox(column, wrap, center, center, center);

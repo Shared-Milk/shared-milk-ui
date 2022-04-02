@@ -26,7 +26,6 @@ import ConfirmationMessage from '../ConfirmationMessages/ConfirmationMessage';
 import DonorThankYou from '../ConfirmationMessages/DonorThankYou';
 import DonorSorry from '../ConfirmationMessages/DonorSorry';
 import Profile from '../About/ProfilePage/Profile';
-import MemberCard from '../About/MemberCards/MemberCard';
 
 const errorLink = onError(({graphqlErrors, networkError}) => {
    if(graphqlErrors) {
@@ -65,9 +64,6 @@ const App = () => {
                   <Route path='sent-confirmation' element={<ConfirmationMessage />}/>
                   <Route path='thank-you' element={<DonorThankYou />}/>
                   <Route path='sorry' element={<DonorSorry />}/>
-                  {/* <Route path='seth' element={<MemberPage />}/> */}
-                  {/* <Route path=":id" render={() => <MemberPage />}/> */}
-                  {/* <Route path=":id" render={routeProps => <MemberPage routeProps={routeProps}/>}/> */}
                   <Route path='about/*' element={<Profile />}/>
                </Routes>
                <Footer />

@@ -1,0 +1,58 @@
+@use '../../Styles/mixins' as m;
+@use '../../Styles/variables' as v;
+
+.team-container {
+  margin-top: 5%;
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    justify-items: center;
+
+    .member-card {
+      display: flex;
+      @include m.flexbox(column, wrap, center, center, center);
+
+      .social-links {
+        .social-icon {
+          max-height: 1.75em;
+        }
+      }
+
+    }
+
+    .col-1 {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .col-2 {
+      h3 {
+        margin: 5% 0 2% 0;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        margin: 1%;
+
+        .social-icon {
+          max-height: 1.75em;
+        }
+
+        .link {
+          margin: 0 1%;
+        }
+      }
+    }
+  }
+
+  .bio-photo {
+    border-radius: 50em;
+    width: 85%;
+  }
+}

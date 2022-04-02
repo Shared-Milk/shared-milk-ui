@@ -1,4 +1,9 @@
 import seth from './Images/seth_perna.png'
+import kelly from './Images/kelly_anderson.png';
+import chez from './Images/chez_gallo.png';
+import eric from './Images/eric_mielke.png';
+import jani from './Images/jani_palomino.png';
+import lindsay from './Images/lindsay_schnell.png';
 import devon from './Images/devon_wigle.png'
 
 const teamData = [
@@ -14,7 +19,7 @@ const teamData = [
   {
     id: 2,
     name: "Kelly Anderson",
-    photo: `${seth}`,
+    photo: `${kelly}`,
     pronouns: "she/her",
     linkedin: "https://www.linkedin.com/in/kelly-anderson-588090218/",
     github: "https://github.com/kanderson852",
@@ -23,7 +28,7 @@ const teamData = [
   {
     id: 3,
     name: "Chez Gallo",
-    photo: `${seth}`,
+    photo: `${chez}`,
     pronouns: "she/her",
     linkedin: "https://www.linkedin.com/in/chez-gallo/",
     github: "https://github.com/cagallo",
@@ -32,7 +37,7 @@ const teamData = [
   {
     id: 4,
     name: "Eric Mielke",
-    photo: `${seth}`,
+    photo: `${eric}`,
     pronouns: "he/him",
     linkedin: "https://www.linkedin.com/in/emielke76/",
     github: "https://github.com/EMielke76",
@@ -41,7 +46,7 @@ const teamData = [
   {
     id: 5,
     name: "Jani Palomino",
-    photo: `${seth}`,
+    photo: `${jani}`,
     pronouns: "she/her",
     linkedin: "https://www.linkedin.com/in/janipalomino/",
     github: "https://github.com/janitastic",
@@ -50,7 +55,7 @@ const teamData = [
   {
     id: 6,
     name: "Lindsay Schnell",
-    photo: `${seth}`,
+    photo: `${lindsay}`,
     pronouns: "no personal pronouns",
     linkedin: "https://www.linkedin.com/in/lindsay-schnell/",
     github: "https://github.com/lschnell8",

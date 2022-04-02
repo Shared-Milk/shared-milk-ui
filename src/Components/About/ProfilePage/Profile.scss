@@ -41,3 +41,14 @@
     }
   }
 }
+
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .main-container {
+    .team-grid {
+      .team-member {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

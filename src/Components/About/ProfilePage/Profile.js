@@ -4,7 +4,7 @@ import { useLocation } from 'react-router-dom';
 const Profile = () => {
   const location = useLocation();
   const profile = location.state;
-  const linkedinText = profile.linkedin.replace('http://www.', '');
+  const linkedinText = profile.linkedin.replace('https://www.', '');
   const githubText = profile.github.replace('https://', '');
 
   return (
@@ -19,6 +19,7 @@ const Profile = () => {
           <div className='col-2'>
             <h3>About Me</h3>
               <p>{profile.bio}</p> 
+            <h3>Connect with Me</h3>
             <div className='social-link'>
               <img className='social-icon' src={profile.linkedinIcon} alt={`${profile.firstName}'s Linked In`}/>
               <p className='link'>{linkedinText}</p>

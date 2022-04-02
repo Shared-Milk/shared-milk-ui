@@ -55,11 +55,7 @@
     }
 
     .col-1 {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      flex-direction: column;
-      align-items: center;
+      @include m.flexbox(column, wrap, normal, center, center);
     }
 
     .col-2 {

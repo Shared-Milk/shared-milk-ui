@@ -1,46 +1,43 @@
 @use '../../Styles/mixins' as m;
 @use '../../Styles/variables' as v;
 
-// .team-grid {
-//   margin-top: 5%;
+.team-grid {
   
-//   .team-member {
-//     display: grid;
-//     grid-template-columns: 40% 60%;
-//     grid-gap: 2em;
+  .team-member {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-gap: 2em;
+    
+    .col-1 {
+      @include m.flexbox(column, wrap, normal, center, center);
+   
+      .bio-photo {
+        border-radius: 50em;
+        width: 85%;
+        margin: 5%;
+        @include m.buttonShadow();
+      }
+    }
 
-//     .col-1 {
-//       display: flex;
-//       justify-content: center;
-//       flex-wrap: wrap;
-//       flex-direction: column;
-//       align-items: center;
-//     }
+    .col-2 {
+      h3 {
+        margin: 5% 0 2% 0;
+        font-size: 1.5em;
+      }
 
-//     .col-2 {
-//       h3 {
-//         margin: 5% 0 2% 0;
-//       }
+      .social-link {
+        display: flex;
+        align-items: center;
+        margin: 1%;
 
-//       .social-link {
-//         display: flex;
-//         align-items: center;
-//         margin: 1%;
+        .social-icon {
+          max-height: 1.75em;
+        }
 
-//         .social-icon {
-//           max-height: 1.75em;
-//         }
-
-//         .link {
-//           margin: 0 1%;
-//         }
-//       }
-//     }
-//   }
-
-//   .bio-photo {
-//     border-radius: 50em;
-//     width: 85%;
-//     margin: 5%;
-//   }
-// }
+        .link {
+          margin: 0 1%;
+        }
+      }
+    }
+  }
+}

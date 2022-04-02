@@ -5,26 +5,40 @@ import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types'
 
 const TeamMembers = ({team}) => {
-  console.log('team passed to TeamMembers', team)
-
-  const memberDetails = team.map(teamMember => {
-    return (
-      <MemberCard 
-        key={teamMember.id}
-        id={teamMember.id}
-        name={teamMember.name}
-        photo={teamMember.photo}
-        pronouns={teamMember.pronouns}
-        linkedin={teamMember.linkedin}
-        github={teamMember.github}
-        bio={teamMember.bio}
-      />
-    )
-  });
+  // const memberDetails = team.map(teamMember => {
+  //   return (
+  //     <MemberCard 
+  //       key={teamMember.id}
+  //       id={teamMember.id}
+  //       name={teamMember.name}
+  //       photo={teamMember.photo}
+  //       pronouns={teamMember.pronouns}
+  //       linkedin={teamMember.linkedin}
+  //       github={teamMember.github}
+  //       bio={teamMember.bio}
+  //     />
+  //   )
+  // });
 
   return (
     <section className='team-grid'>
-      {memberDetails}
+      {/* {memberDetails} */}
+      {/* <MemberCard key={teamMember.id} member={teamMember}/> */}
+      {team.map(teamMember => {
+        return (
+          <MemberCard 
+            key={teamMember.id}
+            member={teamMember}
+            // id={teamMember.id}
+            // name={teamMember.name}
+            // photo={teamMember.photo}
+            // pronouns={teamMember.pronouns}
+            // linkedin={teamMember.linkedin}
+            // github={teamMember.github}
+            // bio={teamMember.bio}
+          />
+        )
+      })}
     </section>
   )
 };

@@ -1,19 +1,22 @@
 import './TeamPages.scss';
-import devon_wigle from '../Images/devon_wigle.png';
 import github from '../SocialIcons/github.png';
 import linkedin from '../SocialIcons/linkedin.png';
 import { useState } from 'react';
-import { team } from '../../../TeamData/TeamMembers';
+// import { team } from '../../../TeamData/TeamMembers';
+import { useLocation } from 'react-router-dom';
 
 const Devon = () => {
+  const location = useLocation();
+  const name = location.state.name || 'user'
+
   return (
     <section className='main-container'>
-      <h2>Devon Wigle</h2>
+      <h2>{name}</h2>
       <p></p>
       <section className='team-grid'>
         <article className='team-member'>
           <div className='col-1'>
-            <img className='bio-photo' src={devon_wigle} alt="Devon Wigle"/>
+            {/* <img className='bio-photo' src={devon_wigle} alt="Devon Wigle"/> */}
           </div>
           <div className='col-2'>
             <h3>About Me</h3>

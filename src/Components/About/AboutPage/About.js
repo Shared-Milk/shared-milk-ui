@@ -1,6 +1,6 @@
 import './About.scss';
 import { useState, useEffect } from 'react';
-import { teamData, socialIcons } from '../../../TeamData/TeamData';
+import { teamData } from '../../../TeamData/TeamData';
 import TeamMembers from '../TeamMembers/TeamMembers';
 
 const About = () => {

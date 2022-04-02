@@ -1,9 +1,14 @@
 import './Profile.scss';
+import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { teamData } from '../../../TeamData/TeamData';
 
 const Profile = () => {
   const location = useLocation();
-  const profile = location.state;
+  const lowerCasePath = location.pathname.toLowerCase();
+  const splitPath = lowerCasePath.split('/');
+  const urlName = splitPath[1].split('_');
+  const profile = teamData.find(tm => tm.firstName.toLowerCase() === urlName[0]);
   const linkedinText = profile.linkedin.replace('https://www.', '');
   const githubText = profile.github.replace('https://', '');
 

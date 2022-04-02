@@ -2,11 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const memberCard = ({member}) => {
-  const url = `${member.firstName}_${member.lastName}`;
+  const firstName = member.firstName.toLowerCase();
+  const lastName = member.lastName.toLowerCase();
+  const url = `${firstName}_${lastName}`;
 
   return (
     <article className='member-card'>
-      <Link to={url} state={member}>
+      <Link to={`/${url}`}>
         <img className='bio-photo' src={member.photo} alt={`Photo of ${member.firstName}`}/>
         <h3>{member.firstName} {member.lastName}</h3>
       </Link>

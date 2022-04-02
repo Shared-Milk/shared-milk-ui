@@ -64,7 +64,7 @@ const App = () => {
                   <Route path='sent-confirmation' element={<ConfirmationMessage />}/>
                   <Route path='thank-you' element={<DonorThankYou />}/>
                   <Route path='sorry' element={<DonorSorry />}/>
-                  <Route path='about/*' element={<Profile />}/>
+                  <Route path='/*' element={<Profile />}/>
                </Routes>
                <Footer />
             </div>

@@ -1,6 +1,6 @@
 import React from 'react';
 // import './DonorCard.scss';
-import MemberCard from '../MemberCards/MemberCard';
+import MemberCard from '../MemberCard/MemberCard';
 import PropTypes from 'prop-types'
 
 const TeamMembers = ({team}) => {

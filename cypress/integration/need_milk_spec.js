@@ -32,7 +32,6 @@ describe('need milk donor results page user flow', () => {
     cy.get('h2').contains('Connect with Stacey Berkowitz')
     cy.get('form')
       .get('.main-container')
-      .get('form')
     cy.get('.name')
       .type('Joan Russell')
       .should('have.value', 'Joan Russell')
@@ -56,6 +55,18 @@ describe('need milk donor results page user flow', () => {
     cy.get('h2').contains('Message Sent')
       .get('p').contains('Thank you for contacting a donor. Keep an eye on your email or phone for a response from them.')
       .get('p').contains('Best wishes!')
+  })
+
+  it('should not let a user connect with a donor if they leave an input field empty', () => {
+    cy.get('a.contact-card').first().click()
+    cy.get('.name')
+      .type('Joan Russell')
+      .should('have.value', 'Joan Russell')
+    cy.get('.button').click()
+    cy.location().should((location => {
+      expect(location.href).to.eq('http://localhost:3000/contact')
+    }));
+   
   })
 
 })

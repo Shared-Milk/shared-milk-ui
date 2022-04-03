@@ -3,7 +3,7 @@ import './Footer.scss';
 const Footer = () => {
   return (
     <footer>
-      <p>© No Use Cryin' Over Shared Milk</p>
+      <p>© 2022 No Use Cryin' Over Shared Milk</p>
     </footer>
   )
 };

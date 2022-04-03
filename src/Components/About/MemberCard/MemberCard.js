@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'proptypes';
 
-const memberCard = ({member}) => {
+const MemberCard = ({member}) => {
   const firstName = member.firstName.toLowerCase();
   const lastName = member.lastName.toLowerCase();
   const url = `${firstName}_${lastName}`;
@@ -25,4 +26,17 @@ const memberCard = ({member}) => {
   )
 }
 
-export default memberCard;
+export default MemberCard;
+
+MemberCard.propTypes = {
+  member: PropTypes.shape({
+    firstName: PropTypes.string,
+    lastName: PropTypes.string,
+    photo: PropTypes.string,
+    linkedinIcon: PropTypes.string,
+    linkedin: PropTypes.string,
+    github: PropTypes.string,
+    githubIcon: PropTypes.string
+  })
+}
+

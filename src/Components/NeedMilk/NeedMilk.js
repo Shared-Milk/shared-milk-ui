@@ -24,11 +24,11 @@ const NeedMilk = () => {
   }
 
   return (
-    <section className='main-container donors'>
+    <section className='main-container donors' data-testid='main-container'>
       <h2>Milk Donors</h2>
       <p>Click on a profile below to contact a milk donor.</p>
         {checkForMessage()}
-      <section className='contact-grid'>
+      <section className='contact-grid' data-testid='contact-grid'>
         { donors.map(donor => {
           return (<DonorCard key={ donor.id } donor={ donor }/>)
         }) }

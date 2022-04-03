@@ -9,7 +9,7 @@ const MemberCard = ({member}) => {
 
   return (
     <article className='member-card'>
-      <Link to={`/${url}`} className='name-and-photo'>
+      <Link to={`${url}`} className='name-and-photo'>
         <h4>{member.firstName} {member.lastName}</h4>
         <img className='bio-photo' src={member.photo} alt={`Photo of ${member.firstName}`}/>
       </Link>

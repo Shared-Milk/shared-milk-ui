@@ -14,27 +14,27 @@ const Profile = () => {
 
   return (
     <section className='main-container'>
-      <h2>{profile.firstName} {profile.lastName}</h2>
+      <h2 data-testid='dev-page-title'>{profile.firstName} {profile.lastName}</h2>
       <p></p>
       <section className='team-grid'>
         <article className='team-member'>
           <div className='col-1'>
-            <img className='bio-photo' src={profile.photo} alt={`Photo of ${profile.firstName}`}/>
+            <img data-testid='dev-page-photo' className='bio-photo' src={profile.photo} alt={`Photo of ${profile.firstName}`}/>
           </div>
           <div className='col-2'>
-            <h3>Pronouns</h3>
+            <h3 data-testid='dev-page-pronouns'>Pronouns</h3>
               <p>{profile.pronouns}</p>
-            <h3>About Me</h3>
-              <p>{profile.bio}</p> 
+            <h3 data-testid='dev-page-about-title'>About Me</h3>
+            <p data-testid='dev-page-bio'>{profile.bio}</p> 
             <h3>Connect with Me</h3>
             <div className='social-link'>
-              <a href={profile.linkedin} target='_blank'> 
+              <a href={profile.linkedin} target='_blank' data-testid='dev-page-linkedin-link'> 
                 <img className='social-icon' src={profile.linkedinIcon} alt={`${profile.firstName}'s Linked In`}/>
                 <p className='link'>{linkedinText}</p>
               </a>
             </div>
             <div className='social-link'>
-              <a href={profile.github} target='_blank'> 
+              <a href={profile.github} target='_blank' data-testid='dev-page-github-link'>  
                 <img className='social-icon' src={profile.githubIcon} alt={`${profile.firstName}'s Github`}/>
                 <p className='link'>{githubText}</p>
               </a>

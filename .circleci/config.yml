@@ -18,3 +18,7 @@ workflows:
         - deploy-heroku:
             requires:
               - cypress/run
+            filters:
+              branches:
+                only:
+                - main  

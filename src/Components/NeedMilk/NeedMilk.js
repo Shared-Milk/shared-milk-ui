@@ -10,8 +10,6 @@ const NeedMilk = () => {
   useEffect(() => {
     if(data) {
       setDonors(data.users)
-      console.log(data)
-      console.log(data.users)
     }
   }, [data])
 

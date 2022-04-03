@@ -3,7 +3,7 @@ describe('Header content', () => {
     cy.visit('http://localhost:3000/')
   });
 
-  it('should display page title and navigation links on page load', () => {
+  it('should have header parts', () => {
     cy.get('[data-testid=site-title]').contains('No Use Cryin\' Over Shared Milk')
     cy.get('[data-testid=nav-bar]').contains('Home')
     cy.get('[data-testid=nav-bar]').contains('Need Milk')
@@ -11,14 +11,8 @@ describe('Header content', () => {
     cy.get('[data-testid=nav-bar]').contains('About')
     cy.get('[data-testid=nav-bar]').contains('Support')
   });
-})
 
-describe('footer content', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000/')
-  });
-
-  it('should have a copyright line', () => {
+  it('should have a footer', () => {
     cy.get('[data-testid=copyright-line]').should('be.visible')
   });
 })

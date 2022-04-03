@@ -48,19 +48,20 @@ const DonateMilkForm = () => {
       <input {...register('donorName', { required: `* Is the baby-brain that bad?` })} type='text' placeholder='First & Last Name' />
       <p className='error'>{ errors.donorName?.message }</p>
       <label htmlFor='Email Address'>Email Address</label>
-      <input {...register('donorEmail', { required: `* Oh, fer cryin' out loud. We don't do snail mail. Just enter your email` })} type='email' placeholder='Email Address' />
+      <input {...register('donorEmail', { required: `* Oh, fer cryin' out loud. We don't do snail mail. Just enter your email.` })} type='email' placeholder='Email Address' />
       <p className='error'>{ errors.donorEmail?.message }</p>
       <label htmlFor='Phone Number'>Phone Number</label>
-      <input {...register('donorPhone', { required: `* Can I have yo number??` })} type='tel' placeholder='Phone Number' />
+      <input {...register('donorPhone', { required: `* Can I have yo number??` })} type='tel' onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()} placeholder='Phone Number' />
       <p className='error'>{ errors.donorPhone?.message }</p>
       <label htmlFor='Location'>Location</label>
       <input {...register('donorLocation', { required: `Ope! We can't find you. Peekaboo!` })} type='text' placeholder='Location' />
       <p className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
-        <label htmlFor='no'>NO</label>
-        <input {...register('smoker', { required: `* Did you go out for a smoke?` })} type='radio' name='smoker' value='0' />
-        <label htmlFor='yes'>YES</label>
-        <input {...register('smoker', { required: `* Did you go out for a smoke?` })} type='radio' name='smoker' value='1' />
+        <label for='no' htmlFor='no'>NO</label>
+          <input id='no' {...register('smoker', { required: `* Did you go out for a smoke?` })} type='radio' name='smoker' value='0' />
+        <label for='yes' htmlFor='yes'>YES</label>
+         <input id='yes' {...register('smoker', { required: `* Did you go out for a smoke?` })} type='radio' name='smoker' value='1' />
+         
       </div>
       <p className='error'>{ errors.smoker?.message }</p>
       <label htmlFor='message'>Message</label>

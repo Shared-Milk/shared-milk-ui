@@ -6,6 +6,18 @@
     color: v.$salmon;
   }
 
+  .bold {
+    color: v.$salmon;
+  }
+
+  a {
+    color: v.$darkTeal;
+
+    &:visited {
+      color: v.$salmon;
+    }
+  }
+
   p {
     font-size: 1.2em;
   }

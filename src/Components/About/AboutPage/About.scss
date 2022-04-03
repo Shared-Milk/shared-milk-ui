@@ -1,0 +1,119 @@
+@use '../../Styles/mixins' as m;
+@use '../../Styles/variables' as v;
+
+.about-page {
+  height: 100%;
+  
+  h3 {
+    margin-top: 5%;
+    font-size: 1.5em;
+  }
+
+  .mission-container {
+    display: flex;
+    justify-content: center;
+    
+    .mission {
+      text-align: center;
+      font-size: 1.5em;
+      color: v.$salmon;
+      font-style: italic;
+      width: 80%;
+    }
+  }
+}
+
+.team-container {
+  
+  .team-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 1em;
+    justify-items: center;
+    margin-top: 4%;
+    padding-bottom: 10%;
+
+    .member-card {
+      @include m.flexbox(column, wrap, center, center, center);
+      text-align: center;
+
+      .name-and-photo {
+        &:hover {
+          @include m.buttonHover(1em);
+        }
+
+        .bio-photo {
+          margin: 5%;
+          border-radius: 50em;
+          width: 85%;
+          @include m.buttonShadow();
+        }
+
+        h4 {
+          margin: 1% 0;
+          font-size: 2em;
+          color: v.$salmon;
+          letter-spacing: 2px;   
+        }
+      }
+      
+
+      .social-links {
+        display: flex;
+        justify-content: space-evenly;
+        width: 50%;
+        margin: 5%;
+
+        .social-icon {
+          max-height: 1.75em;
+
+          &:hover {
+            @include m.buttonHover(1.1em);
+          }
+        }
+      }
+
+    }
+
+    .col-1 {
+      @include m.flexbox(column, wrap, normal, center, center);
+    }
+
+    .col-2 {
+      
+      h3 {
+        margin: 5% 0 2% 0;
+      }
+      
+      .social-link {
+        display: flex;
+        align-items: center;
+        margin: 1%;
+
+        .social-icon {
+          max-height: 1.75em;
+        }
+
+        .link {
+          margin: 0 1%;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .team-container {
+    .team-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 767px) {
+  .team-container {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+}

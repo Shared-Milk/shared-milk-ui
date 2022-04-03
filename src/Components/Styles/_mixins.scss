@@ -42,7 +42,10 @@
   font-weight: 600;
   border: none;
   border-radius: 1.5em;
-  box-shadow: 2px 3px 6px 3px #6b6b6b;
   text-align: center;
   padding: 2%;
+}
+
+@mixin buttonShadow() {
+  box-shadow: 2px 3px 6px 3px #6b6b6b;
 }

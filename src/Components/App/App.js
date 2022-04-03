@@ -16,7 +16,7 @@ import { onError } from '@apollo/client/link/error';
 import HomePage from '../HomePage/HomePage';
 import NeedMilk from '../NeedMilk/NeedMilk';
 import Donate from '../DonateMilk/DonateMilk';
-import About from '../About/About';
+import About from '../About/AboutPage/About';
 import Support from '../SupportPage/Support';
 import Sidebar from '../MobileMenu/MobileMenu';
 
@@ -25,6 +25,7 @@ import MilkRequestForm from '../MilkRequestForm/MilkRequestForm';
 import ConfirmationMessage from '../ConfirmationMessages/ConfirmationMessage';
 import DonorThankYou from '../ConfirmationMessages/DonorThankYou';
 import DonorSorry from '../ConfirmationMessages/DonorSorry';
+import Profile from '../About/ProfilePage/Profile';
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
    if(graphqlErrors) {
@@ -54,15 +55,16 @@ const App = () => {
             <div id='page-wrap'>
                <Header id='outer-container' />
                <Routes>
-                  <Route path='/' element={<HomePage />} />
-                  <Route path='need-milk' element={<NeedMilk />} />
-                  <Route path='donate' element={<Donate />} />
-                  <Route path='about' element={<About />} />
-                  <Route path='support' element={<Support />} />
-                  <Route path='contact' element={<MilkRequestForm />} />
-                  <Route path='sent-confirmation' element={<ConfirmationMessage />} />
-                  <Route path='thank-you' element={<DonorThankYou />} />
-                  <Route path='sorry' element={<DonorSorry />} />
+                  <Route path='/' element={<HomePage />}/>
+                  <Route path='need-milk' element={<NeedMilk />}/>
+                  <Route path='donate' element={<Donate />}/>
+                  <Route path='about' element={<About />}/>
+                  <Route path='support' element={<Support />}/>
+                  <Route path='contact' element={<MilkRequestForm />}/>
+                  <Route path='sent-confirmation' element={<ConfirmationMessage />}/>
+                  <Route path='thank-you' element={<DonorThankYou />}/>
+                  <Route path='sorry' element={<DonorSorry />}/>
+                  <Route path='/*' element={<Profile />}/>
                </Routes>
                <Footer />
             </div>

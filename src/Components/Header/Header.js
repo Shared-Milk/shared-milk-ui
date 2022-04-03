@@ -21,7 +21,7 @@ const Header = () => {
             <NavLink to='/donate' data-testid='donate-milk-link' className='nav'>Donate</NavLink>
           </li>
           <li>
-            <NavLink to='/about' data-testid='about-us-link' className='nav'>About Us</NavLink>
+            <NavLink to='/about' data-testid='about-us-link' className='nav'>About</NavLink>
           </li>
           <li>
             <NavLink to='/support' data-testid='support-link' className='nav'>Support</NavLink>

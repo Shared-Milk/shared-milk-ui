@@ -1,0 +1,59 @@
+@use '../../Styles/mixins' as m;
+@use '../../Styles/variables' as v;
+
+.team-grid {
+  
+  .team-member {
+    display: grid;
+    grid-template-columns: 40% 60%;
+    grid-gap: 2em;
+    
+    .col-1 {
+      @include m.flexbox(column, wrap, normal, center, center);
+   
+      .bio-photo {
+        border-radius: 50em;
+        width: 85%;
+        margin: 5%;
+        @include m.buttonShadow();
+      }
+    }
+
+    .col-2 {
+      h3 {
+        margin: 5% 0 2% 0;
+        font-size: 1.5em;
+      }
+
+      .social-link {
+        display: flex;
+        align-items: center;
+        margin: 1%;
+
+        a {
+          display: flex;
+          width: 100%;
+        }
+
+        .social-icon {
+          max-height: 1.75em;
+        }
+
+        .link {
+          margin: 0 1%;
+        }
+      }
+    }
+  }
+}
+
+
+@media (min-width: 320px) and (max-width: 1024px) {
+  .main-container {
+    .team-grid {
+      .team-member {
+        grid-template-columns: 1fr;
+      }
+    }
+  }
+}

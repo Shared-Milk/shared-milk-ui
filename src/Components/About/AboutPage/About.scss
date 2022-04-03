@@ -31,7 +31,7 @@
     grid-gap: 1em;
     justify-items: center;
     margin-top: 4%;
-    padding-bottom: 5%;
+    padding-bottom: 10%;
 
     .member-card {
       @include m.flexbox(column, wrap, center, center, center);
@@ -39,7 +39,7 @@
 
       .name-and-photo {
         &:hover {
-          @include m.buttonHover(1.2em);
+          @include m.buttonHover(1em);
         }
 
         .bio-photo {
@@ -53,8 +53,7 @@
           margin: 1% 0;
           font-size: 2em;
           color: v.$salmon;
-          letter-spacing: 2px;
-          // text-shadow: 1px 1px 1px #6b6b6b;       
+          letter-spacing: 2px;   
         }
       }
       
@@ -69,7 +68,7 @@
           max-height: 1.75em;
 
           &:hover {
-            @include m.buttonHover(1em);
+            @include m.buttonHover(1.1em);
           }
         }
       }

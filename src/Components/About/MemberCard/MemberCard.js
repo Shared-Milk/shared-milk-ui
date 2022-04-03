@@ -8,10 +8,10 @@ const MemberCard = ({member}) => {
   const url = `${firstName}_${lastName}`;
 
   return (
-    <article data-testid='member-card' className='member-card'>
-      <Link to={`/${url}`} className='name-and-photo'>
-        <h4 data-testid='dev-name'>{member.firstName} {member.lastName}</h4>
-        <img data-testid='dev-image' className='bio-photo' src={member.photo} alt={`Photo of ${member.firstName}`}/>
+    <article className='member-card'>
+      <Link to={`${url}`} className='name-and-photo'>
+        <h4>{member.firstName} {member.lastName}</h4>
+        <img className='bio-photo' src={member.photo} alt={`Photo of ${member.firstName}`}/>
       </Link>
       <div className='pronouns'>
         <h3 data-testid='dev-pronouns' >{member.pronouns}</h3>

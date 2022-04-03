@@ -7,7 +7,7 @@ const Profile = () => {
   const location = useLocation();
   const lowerCasePath = location.pathname.toLowerCase();
   const splitPath = lowerCasePath.split('/');
-  const urlName = splitPath[1].split('_');
+  const urlName = splitPath[2].split('_');
   const profile = teamData.find(tm => tm.firstName.toLowerCase() === urlName[0]);
   const linkedinText = profile.linkedin.replace('https://www.', '');
   const githubText = profile.github.replace('https://', '');

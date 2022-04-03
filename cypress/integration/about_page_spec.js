@@ -24,4 +24,36 @@ describe('About page user flow', () => {
     cy.get('[data-testid=about-dev-instructions]').should('be.visible')
     cy.get('[data-testid=team-grid]').should('be.visible')
   })
+
+  it('should have a place for dev name', () => {
+    cy.get('[data-testid=dev-name]').should('have.length', 7)
+    cy.get('[data-testid=dev-name]').first().contains('Seth Perna')
+    cy.get('[data-testid=dev-name]').last().contains('Devon Wigle')
+  })
+
+  it('should have a place for dev image', () => {
+    cy.get('[data-testid=dev-image]').should('have.length', 7)
+  })
+
+  it('should be able to be click image to visit a bio page', () => {
+    cy.get('[data-testid=dev-image]').first().click().url().should('eq', 'http://localhost:3000/seth_perna')
+  })
+
+  it('should have a place for dev pronouns', () => {
+    cy.get('[data-testid=dev-pronouns]').should('have.length', 7)
+  })
+
+  it('should have a place for dev social links', () => {
+    cy.get('[data-testid=dev-social-links]').should('have.length', 7)
+    cy.get('[data-testid=dev-linkedin-link]').should('be.visible')
+    cy.get('[data-testid=dev-github-link]').should('be.visible')
+  })
+})
+
+describe('individual about page flow', () => {
+  beforeEach(() => {
+    cy.visit('http://localhost:3000/seth_perna')
+  });
+  cy.get()
+  
 })

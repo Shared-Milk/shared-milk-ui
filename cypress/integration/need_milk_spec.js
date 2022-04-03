@@ -56,7 +56,6 @@ describe('need milk donor results page user flow', () => {
     cy.get('h2').contains('Message Sent')
       .get('p').contains('Thank you for contacting a donor. Keep an eye on your email or phone for a response from them.')
       .get('p').contains('Best wishes!')
-
   })
 
 })

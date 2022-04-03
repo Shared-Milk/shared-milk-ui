@@ -5,17 +5,17 @@ describe('Shared Milk landing page user flow', () => {
 
   it('should display page title and navigation links on page load', () => {
     cy.get('[data-testid=site-title]').contains('No Use Cryin\' Over Shared Milk')
-    cy.get('[data-testid=nav-bar]').contains('Home')
-    cy.get('[data-testid=nav-bar]').contains('Need Milk')
-    cy.get('[data-testid=nav-bar]').contains('Donate')
-    cy.get('[data-testid=nav-bar]').contains('About')
-    cy.get('[data-testid=nav-bar]').contains('Support')
+    cy.get('[data-testid="home-link"]').contains('Home')
+    cy.get('[data-testid="need-milk-link"]').contains('Need Milk')
+    cy.get('[data-testid="donate-milk-link"]').contains('Donate')
+    cy.get('[data-testid="about-link"]').contains('About')
+    cy.get('[data-testid="support-link"]').contains('Support')
   });
 
   it('should be able to navigate to the Need Milk page view on desktop or mobile', () => {
     cy.viewport(1532, 897)
     // cy.intercept(fetch call)
-    cy.get('header > nav > .menu > li:nth-child(2) > .nav').contains('Need Milk').click()
+    cy.get('[data-testid="need-milk-link"]').contains('Need Milk').click()
     // cy.wait(['api call']);
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/need-milk')
@@ -32,7 +32,7 @@ describe('Shared Milk landing page user flow', () => {
 
   it('should be able to navigate to the Donate page form on desktop or mobile', () => {
     cy.viewport(1532, 897)
-    cy.get('header > nav > .menu > li:nth-child(3) > .nav').contains('Donate').click()
+    cy.get('header > nav > .menu > li:nth-child(3)').contains('Donate').click()
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/donate')
     }));
@@ -47,7 +47,7 @@ describe('Shared Milk landing page user flow', () => {
 
   it('should be able to navigate to the About page view', () => {
     cy.viewport(1532, 897)
-    cy.get('header > nav > .menu > li:nth-child(4) > .nav').contains('About').click()
+    cy.get('header > nav > .menu > li:nth-child(4)').contains('About').click()
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/about')
     }))
@@ -62,7 +62,7 @@ describe('Shared Milk landing page user flow', () => {
 
   it('should be able to navigate to the Support page view', () => {
     cy.viewport(1532, 897)
-    cy.get('header > nav > .menu > li:nth-child(5) > .nav').contains('Support').click()
+    cy.get('header > nav > .menu > li:nth-child(5)').contains('Support').click()
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/support')
     }))

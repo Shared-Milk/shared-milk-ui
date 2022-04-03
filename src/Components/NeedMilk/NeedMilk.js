@@ -6,17 +6,24 @@ import { GET_ALL_DONORS } from '../../Graphql/Queries';
 const NeedMilk = () => {
   const { error, loading, data } = useQuery(GET_ALL_DONORS)
   const [donors, setDonors] = useState([])
+
   
   useEffect(() => {
     if(data) {
       setDonors(data.users)
     }
   }, [data])
+  
+  const checkForMessage = () => {
+    if (loading) return 'Loading Donors...';
+    if (error) return <span className='bold'>Error: {error.message}</span>
+  }
 
   return (
     <section className='main-container donors'>
       <h2>Milk Donors</h2>
       <p>Click on a profile below to contact a milk donor.</p>
+      {checkForMessage()}
       <section className='contact-grid'>
         { donors.map(donor => {
           return (<DonorCard key={ donor.id } donor={ donor }/>)

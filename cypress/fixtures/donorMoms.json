@@ -1,0 +1,30 @@
+{
+  "data": {
+    "users" : [
+      {
+        "bio": "I want to help struggling mothers and hungry babies",
+        "email": "seth2@gmail.com",
+        "id": "1",
+        "location": "Denver, CO",
+        "name": "Stacey Berkowitz",
+        "phoneFormatter": "(303) 456-1921"
+      },
+      {
+        "bio": "I want to feed your babies",
+        "email": "jane_james@gmail.com",
+        "id": "2",
+        "location": "Denver, CO",
+        "name": "Jane Jameson",
+        "phoneFormatter": "(303) 309-2039"
+      },
+      {
+        "bio": "Hungry kids? You've found the right mom",
+        "email": "milk_mama303",
+        "id": "3",
+        "location": "Denver, CO",
+        "name": "Jackie Manning",
+        "phoneFormatter": "(303) 456-2019"
+      }
+    ]
+  }
+}

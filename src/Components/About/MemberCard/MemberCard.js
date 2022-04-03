@@ -5,7 +5,6 @@ const memberCard = ({member}) => {
   const firstName = member.firstName.toLowerCase();
   const lastName = member.lastName.toLowerCase();
   const url = `${firstName}_${lastName}`;
-  console.log(member)
 
   return (
     <article className='member-card'>

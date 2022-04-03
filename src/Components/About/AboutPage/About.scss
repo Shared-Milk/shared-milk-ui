@@ -12,6 +12,7 @@
   .mission-container {
     display: flex;
     justify-content: center;
+    padding-bottom: 2%;
     
     .mission {
       text-align: center;
@@ -103,17 +104,13 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .team-container {
-    .team-grid {
-      grid-template-columns: 1fr 1fr 1fr;
-    }
+  .contact-grid {
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .team-container {
-    .team-grid {
-      grid-template-columns: 1fr;
-    }
+  .contact-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -31,7 +31,7 @@ const teamData = [
     linkedin: "https://www.linkedin.com/in/Kelly-Anderson852",
     githubIcon: `${githubIcon}`,
     github: "https://github.com/kanderson852",
-    bio: "n/a"
+    bio: "I am a curious, lateral thinking software developer who is passionate about lifelong learning, working in diverse and inclusive teams, and having a purposeful career in software development. Besides software my I like to spend my time doing yoga, reading, and taking my mini dachshund Rusko to the dog park or on a (easy) hike!"
   },
   {
     id: 3,
@@ -43,7 +43,7 @@ const teamData = [
     linkedin: "https://www.linkedin.com/in/chez-gallo/",
     githubIcon: `${githubIcon}`,
     github: "https://github.com/cagallo",
-    bio: "n/a"
+    bio: "Dog mom and outdoor enthusiast! Problem solving feeds my fire. Love skiing, hiking, trail running, trying new restaurants, traveling and playing poker. "
   },
   {
     id: 4,
@@ -67,7 +67,7 @@ const teamData = [
     linkedin: "https://www.linkedin.com/in/janipalomino/",
     githubIcon: `${githubIcon}`,
     github: "https://github.com/janitastic",
-    bio: "n/a"
+    bio: "I'm the fun aunt, and Babo the dog's mom. I love building software that helps people solve day to day problems, and cultivate relationships with others. The user experience is what I'm passionate about. While I am not a mom, and have never experienced the struggle to locate breast milk I was inspired to join this project group after talking to friends and family who have experienced this struggle intimately. I'm honored to have had the opportunity to make Seth's vision a reality."
   },
   {
     id: 6,
@@ -79,7 +79,7 @@ const teamData = [
     linkedin: "https://www.linkedin.com/in/lindsay-schnell/",
     githubIcon: `${githubIcon}`,
     github: "https://github.com/lschnell8",
-    bio: "n/a"
+    bio: "I adore my dog, nephews, and karaoke. I love creative solutions to all aspects of life; from building decks to building websites. I can tinker for hours with code, but I'm most passionate about building software that has a real world application to improve peoples lives."
   },
   {
     id: 7,

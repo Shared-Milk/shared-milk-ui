@@ -26,12 +26,16 @@ const Profile = () => {
               <p>{profile.bio}</p> 
             <h3>Connect with Me</h3>
             <div className='social-link'>
-              <img className='social-icon' src={profile.linkedinIcon} alt={`${profile.firstName}'s Linked In`}/>
-              <p className='link'>{linkedinText}</p>
+              <a href={profile.linkedin} target='_blank'> 
+                <img className='social-icon' src={profile.linkedinIcon} alt={`${profile.firstName}'s Linked In`}/>
+                <p className='link'>{linkedinText}</p>
+              </a>
             </div>
             <div className='social-link'>
-              <img className='social-icon' src={profile.githubIcon} alt={`${profile.firstName}'s Github`}/>
-              <p className='link'>{githubText}</p>
+              <a href={profile.github} target='_blank'> 
+                <img className='social-icon' src={profile.githubIcon} alt={`${profile.firstName}'s Github`}/>
+                <p className='link'>{githubText}</p>
+              </a>
             </div>
           </div>
         </article>

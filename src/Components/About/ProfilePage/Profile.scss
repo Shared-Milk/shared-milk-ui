@@ -30,6 +30,11 @@
         align-items: center;
         margin: 1%;
 
+        a {
+          display: flex;
+          width: 100%;
+        }
+
         .social-icon {
           max-height: 1.75em;
         }

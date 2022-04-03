@@ -27,15 +27,10 @@
   }
 }
 
-
-/*
-##Device = Most of the Smartphones Mobiles (Portrait)
-##Screen = B/w 320px to 479px
-*/
-
 @media (min-width: 320px) and (max-width: 480px) {
   .support-links .support-button {
       height: 8em;
       width: 8em;
+      padding: 1% 1% 5% 1%;
   }
 }

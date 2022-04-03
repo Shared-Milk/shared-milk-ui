@@ -27,16 +27,18 @@
 .team-container {
   
   .team-grid {
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1em;
     justify-items: center;
     margin-top: 4%;
-    padding-bottom: 10%;
+    // padding-bottom: 10%;
 
     .member-card {
       @include m.flexbox(column, wrap, center, center, center);
       text-align: center;
+      padding-bottom: 10%;
 
       .name-and-photo {
         &:hover {
@@ -104,13 +106,17 @@
 }
 
 @media (min-width: 768px) and (max-width: 1024px) {
-  .contact-grid {
-    grid-template-columns: 1fr 1fr 1fr;
+  .team-container {
+    .team-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
   }
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
-  .contact-grid {
-    grid-template-columns: 1fr;
+  .team-container {
+    .team-grid {
+      grid-template-columns: 1fr;
+    }
   }
 }

@@ -22,6 +22,8 @@ const Profile = () => {
             <img className='bio-photo' src={profile.photo} alt={`Photo of ${profile.firstName}`}/>
           </div>
           <div className='col-2'>
+            <h3>Pronouns</h3>
+              <p>{profile.pronouns}</p>
             <h3>About Me</h3>
               <p>{profile.bio}</p> 
             <h3>Connect with Me</h3>

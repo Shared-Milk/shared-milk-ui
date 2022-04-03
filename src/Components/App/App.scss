@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  margin: 0;
+}
+
 #outer-container {
   display: none;
 }
@@ -45,27 +49,25 @@ p {
   line-height: 1.25em;
 }
 
+hr.dots {
+  border-top: 0.35em dotted v.$salmon;
+  margin: 2% 10%;
+}
+
 a:link { text-decoration: none; }
 a:visited { text-decoration: none; }
-a:hover { text-decoration: none; }
+a:hover { 
+  text-decoration: none; 
+  cursor: pointer;
+}
 a:active { text-decoration: none; }
 a:focus { text-decoration: none; }
-
-/*
-##Device = Desktops
-##Screen = 1281px to higher resolution desktops
-*/
 
 @media (min-width: 1281px) {
   .desktop-hidden {
     display: none;
   }
 }
-
-/*
-##Device = Laptops, Desktops
-##Screen = B/w 1025px to 1280px
-*/
 
 @media (min-width: 1025px) and (max-width: 1280px) {
   .desktop-hidden {

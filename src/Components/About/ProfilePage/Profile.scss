@@ -2,12 +2,12 @@
 @use '../../Styles/variables' as v;
 
 .team-grid {
-  
+  height: 100vh;
+
   .team-member {
     display: grid;
     grid-template-columns: 40% 60%;
-    grid-gap: 2em;
-    
+
     .col-1 {
       @include m.flexbox(column, wrap, normal, center, center);
    
@@ -42,17 +42,6 @@
         .link {
           margin: 0 1%;
         }
-      }
-    }
-  }
-}
-
-
-@media (min-width: 320px) and (max-width: 1024px) {
-  .main-container {
-    .team-grid {
-      .team-member {
-        grid-template-columns: 1fr;
       }
     }
   }

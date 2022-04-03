@@ -19,8 +19,9 @@ const About = () => {
         <div className='mission-container'>
           <p className='mission'>"to create a save space for families who under-produce breast milk to connect with families who over-produce."</p>
         </div>
+        <hr className='dots'></hr>
       <h3>Our Tech Stack</h3>
-        <p>This is a Turing Module 4 project built with React.js, JavaScript, HTML, SASS, Ruby, Rails, GraphQL, Cypress, Heroku, and CircleCI. </p>
+        <p>This is a <a href='https://turing.edu/' target='_blank'>Turing School of Software & Design</a> Module 4 project built with React.js, JavaScript, HTML, SASS, Ruby, Rails, GraphQL, Cypress, Heroku, and CircleCI. </p>
       <section className='team-container'>
         <h3>Meet the Team</h3>
           <p>Click on any photo below to get to know more about us.</p>

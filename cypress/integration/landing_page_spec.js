@@ -112,8 +112,8 @@ describe('Shared Milk landing page user flow', () => {
     cy.get('aside.mission').children().should('have.length', 4)
   })
 
-  it('should display trademark at page footer', () => {
-    cy.get('p').contains('© No Use Cryin\' Over Shared Milk')
+  it('should display a copyright footer', () => {
+    cy.get('footer > p')
   })
 
 })

@@ -6,6 +6,22 @@
     color: v.$salmon;
   }
 
+  .bold {
+    color: v.$salmon;
+  }
+
+  a {
+    color: v.$darkTeal;
+
+    &:visited {
+      color: v.$salmon;
+    }
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
   p {
     font-size: 1.2em;
   }

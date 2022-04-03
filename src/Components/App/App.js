@@ -10,13 +10,13 @@ import {
    HttpLink,
    from,
 } from '@apollo/client';
-import {onError} from '@apollo/client/link/error'
+import { onError } from '@apollo/client/link/error';
 
 // Nav Bar Imports
 import HomePage from '../HomePage/HomePage';
 import NeedMilk from '../NeedMilk/NeedMilk';
 import Donate from '../DonateMilk/DonateMilk';
-import About from '../About/About';
+import About from '../About/AboutPage/About';
 import Support from '../SupportPage/Support';
 import Sidebar from '../MobileMenu/MobileMenu';
 
@@ -25,11 +25,12 @@ import MilkRequestForm from '../MilkRequestForm/MilkRequestForm';
 import ConfirmationMessage from '../ConfirmationMessages/ConfirmationMessage';
 import DonorThankYou from '../ConfirmationMessages/DonorThankYou';
 import DonorSorry from '../ConfirmationMessages/DonorSorry';
+import Profile from '../About/ProfilePage/Profile';
 
-const errorLink = onError(({graphqlErrors, networkError}) => {
+const errorLink = onError(({ graphqlErrors, networkError }) => {
    if(graphqlErrors) {
-      graphqlErrors.map(({message, location, path}) => {
-         return console.log(`Graphql error: ${message}`)
+      graphqlErrors.map(({ message, location, path }) => {
+         return console.log(`Graphql error: ${ message }`)
       })
    }
 })
@@ -46,13 +47,13 @@ const client = new ApolloClient({
 
 const App = () => {
    return (
-      <ApolloProvider client={client}>   
+      <ApolloProvider client={client}>
          <main className='App'>
             <div className='desktop-hidden'>
-               <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'}/>
+               <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />
             </div>
             <div id='page-wrap'>
-               <Header id='outer-container'/>
+               <Header id='outer-container' />
                <Routes>
                   <Route path='/' element={<HomePage />}/>
                   <Route path='need-milk' element={<NeedMilk />}/>
@@ -63,12 +64,16 @@ const App = () => {
                   <Route path='sent-confirmation' element={<ConfirmationMessage />}/>
                   <Route path='thank-you' element={<DonorThankYou />}/>
                   <Route path='sorry' element={<DonorSorry />}/>
+                  <Route path='/*' element={<Profile />}/>
                </Routes>
                <Footer />
             </div>
          </main>
       </ApolloProvider>
    )
-}
+};
 
 export default App;
+
+
+

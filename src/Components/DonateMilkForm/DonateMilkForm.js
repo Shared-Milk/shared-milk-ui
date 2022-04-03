@@ -1,39 +1,40 @@
 import './DonateMilkForm.scss';
-import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
-import { CREATE_DONOR } from '../../Graphql/Mutations.js'
+import { CREATE_DONOR } from '../../Graphql/Mutations.js';
+import { GET_ALL_DONORS } from '../../Graphql/Queries';
+import { useForm } from 'react-hook-form';
 
 const DonateMilkForm = () => {
-  const [smoker, setSmoker] = useState();
-  const [donorName, setDonorName] = useState();
-  const [donorEmail, setDonorEmail] = useState();
-  const [donorPhone, setDonorPhone] = useState();
-  // const [donorCity, setDonorCity] = useState();
-  // const [donorState, setDonorState] = useState();
-  const [donorBio, setDonorBio] = useState();
-  const [donorLocation, setDonorLocation] = useState();
+  const navigate = useNavigate();
+  const { register, handleSubmit, formState: { errors } } = useForm();
+  const isEmpty = Object.keys(errors).length === 0;
+  
+  const onSubmit = (data) => {
+    let smoker = parseInt(data.smoker)
+    if (isEmpty && smoker) {
+      return navigate('/sorry')
+    } else if (isEmpty && !smoker) {
+      createNewDonor(data);
+      return navigate('/thank-you')
+    }
+  };
 
-  // const [user, setUser] = useState({
-  //   name: '',
-  //   email: '',
-  //   phone: '',
-  //   bio: '', 
-  //   location: '',
-  //   donor_status: smoker
-  // })
+  const [createUser, { error }] = useMutation(CREATE_DONOR);
 
-  const [createUser, { error }] = useMutation(CREATE_DONOR)
-
-  const createNewDonor = () => {
+  const createNewDonor = (data) => {
     createUser({
       variables: {
-        name: donorName,
-        email: donorEmail,
-        phone: donorPhone,
-        bio: donorBio,
-        location: donorLocation,
+        name: data.donorName,
+        email: data.donorEmail,
+        phone: data.donorPhone,
+        bio: data.donorBio,
+        location: data.donorLocation,
         donorStatus: 0
+      },
+      refetchQueries: [{ query: GET_ALL_DONORS }],
+      options: {
+        awaitRefetchQueries: true
       }
     })
     if (error) {
@@ -41,81 +42,31 @@ const DonateMilkForm = () => {
     }
   }
 
-  const handleSmoker = (event) => {
-    setSmoker(event.target.value)
-    return smoker
-  }
-
-  const handleDonorName = (event) => {
-    setDonorName(event.target.value)
-    return donorName
-  }
-
-  const handleDonorEmail = (event) => {
-    setDonorEmail(event.target.value)
-    return donorEmail
-  }
-
-  const handleDonorPhone = (event) => {
-    setDonorPhone(event.target.value)
-    return donorPhone
-  }
-
-  // const handleDonorCity = (event) => {
-  //   setDonorCity(event.target.value)
-  //   return donorCity
-  // }
-
-  // const handleDonorState = (event) => {
-  //   setDonorState(event.target.value)
-  //   return donorState
-  // }
-
-  const handleDonorLocation = (event) => {
-    setDonorLocation(event.target.value);
-    return donorLocation
-  }
-
-
-  const handleDonorBio = (event) => {
-    setDonorBio(event.target.value)
-    return donorBio
-  }
-
-  const navigate = useNavigate();
-
-  const handleDonorSubmit = (event) => {
-    event.preventDefault();
-    if (smoker === 'yes') {
-      return navigate('/sorry')
-    } else if (smoker === 'no') {
-      createNewDonor();
-      return navigate('/thank-you')
-    }
-  }
-
   return (
-    <form data-testid='donate-form' className='donor-form'>
+    <form className='donor-form' onSubmit={ handleSubmit(onSubmit) }>
       <label htmlFor='Your Name'>Your Name</label>
-      <input data-testid='donor-name-input' type='text' placeholder='First & Last Name'  onChange={(event) => { handleDonorName(event) }}/>
+      <input data-testid='donor-name-input' {...register('donorName', { required: `* Is the baby-brain that bad?` })} type='text' placeholder='First & Last Name' />
+      <p className='error'>{ errors.donorName?.message }</p>
       <label htmlFor='Email Address'>Email Address</label>
-      <input data-testid='donor-email-input' type='email' placeholder='Email Address'  onChange={(event) => { handleDonorEmail(event) }} />
+      <input data-testid='donor-email-input' {...register('donorEmail', { required: `* Oh, fer cryin' out loud. We don't do snail mail. Just enter your email` })} type='email' placeholder='Email Address' />
+      <p className='error'>{ errors.donorEmail?.message }</p>
       <label htmlFor='Phone Number'>Phone Number</label>
-      <input data-testid='donor-phone-input' type='tel' placeholder='Phone Number'  onChange={(event) => { handleDonorPhone(event) }} />
+      <input data-testid='donor-phone-input' {...register('donorPhone', { required: `* Can I have yo number??` })} type='tel' placeholder='Phone Number' />
+      <p className='error'>{ errors.donorPhone?.message }</p>
       <label htmlFor='Location'>Location</label>
-      <input data-testid='donor-location-input' type='text' placeholder='Location'  onChange={(event) => { handleDonorLocation(event) }}/>
-      {/* <label htmlFor='State'>State</label>
-      <input type='text' placeholder='State' onChange={(event) => { handleDonorState(event) }}/> */}
-      <p data-testid='donor-radio-descriptor'  className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
+      <input data-testid='donor-location-input' {...register('donorLocation', { required: `Ope! We can't find you. Peekaboo!` })} type='text' placeholder='Location' />
+      <p data-testid='donor-radio-descriptor' className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
-        <label htmlFor='yes'>YES</label>
-        <input data-testid='donor-smoker-yes' type='radio' name='smoker' value='yes'  onChange={(event) => {handleSmoker(event)}}/>
         <label htmlFor='no'>NO</label>
-        <input data-testid='donor-smoker-no' type='radio' name='smoker' value='no' id='no' onChange={(event) => { handleSmoker(event)}}/>
+        <input data-testid='donor-smoker-no' {...register('smoker', { required: `* Did you go out for a smoke?` })} type='radio' name='smoker' value='0' />
+        <label htmlFor='yes'>YES</label>
+        <input data-testid='donor-smoker-yes' {...register('smoker', { required: `* Did you go out for a smoke?` })} type='radio' name='smoker' value='1' />
       </div>
+      <p className='error'>{ errors.smoker?.message }</p>
       <label htmlFor='message'>Message</label>
-      <textarea data-testid='donor-bio-input' type='text' placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?'  onChange={(event) => { handleDonorBio(event) }}/>
-      <button data-testid='donate-submit-button' className='button' onClick={(event) => handleDonorSubmit(event)}>Submit</button>
+      <textarea data-testid='donor-bio-input' {...register('donorBio', { required: `* Seriously though, tell us about yourself. Don't be sketchy` })} type='text' placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' />
+      <p className='error'>{ errors.donorBio?.message }</p>
+      <button className='button' type='submit'>Submit</button>
     </form>
   )
 };

@@ -43,7 +43,7 @@ const DonateMilkForm = () => {
   }
 
   return (
-    <form className='donor-form' onSubmit={ handleSubmit(onSubmit) }>
+    <form data-testid='donate-form' className='donor-form' onSubmit={ handleSubmit(onSubmit) }>
       <label htmlFor='Your Name'>Your Name</label>
       <input data-testid='donor-name-input' {...register('donorName', { required: `* Is the baby-brain that bad?` })} type='text' placeholder='First & Last Name' />
       <p data-testid='donor-name-error' className='error'>{ errors.donorName?.message }</p>
@@ -55,6 +55,7 @@ const DonateMilkForm = () => {
       <p data-testid='donor-phone-error' className='error'>{ errors.donorPhone?.message }</p>
       <label htmlFor='Location'>Location</label>
       <input data-testid='donor-location-input' {...register('donorLocation', { required: `Ope! We can't find you. Peekaboo!` })} type='text' placeholder='Location' />
+      <p data-testid='donor-location-error' className='error'>{errors.donorLocation?.message}</p>
       <p data-testid='donor-radio-descriptor' className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label htmlFor='no'>NO</label>

@@ -6,12 +6,24 @@
     color: v.$salmon;
   }
 
+  .bold {
+    color: v.$salmon;
+  }
+
+  a {
+    color: v.$darkTeal;
+
+    &:visited {
+      color: v.$salmon;
+    }
+  }
+
   p {
     font-size: 1.2em;
   }
 
   .error {
-    color: v.$orange;
+    color: v.$salmon;
     font-style: italic;
     font-size: 1em;
   }
@@ -25,7 +37,7 @@
 
     label {
       padding: 2% 1% 1%;
-      font-size: 0.75em;
+      font-size: 1em;
       font-family: v.$bodyFont;
       font-weight: 600;
       letter-spacing: 1px;
@@ -64,11 +76,6 @@
   }
 }
 
-/*
-  ##Device = Tablets, Ipads (portrait)
-  ##Screen = B/w 768px to 1024px
-  */
-
   @media (min-width: 768px) and (max-width: 1024px) {
     .main-container {
       form {
@@ -76,11 +83,6 @@
       }
     }
   }
-
-  /*
-  ##Device = Most of the Smartphones Mobiles (Portrait)
-  ##Screen = B/w 320px to 479px
-  */
 
   @media (min-width: 320px) and (max-width: 480px) {
     .main-container {

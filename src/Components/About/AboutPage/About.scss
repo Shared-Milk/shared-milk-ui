@@ -12,6 +12,7 @@
   .mission-container {
     display: flex;
     justify-content: center;
+    padding-bottom: 2%;
     
     .mission {
       text-align: center;
@@ -26,16 +27,17 @@
 .team-container {
   
   .team-grid {
+    height: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-gap: 1em;
     justify-items: center;
     margin-top: 4%;
-    padding-bottom: 10%;
 
     .member-card {
       @include m.flexbox(column, wrap, center, center, center);
       text-align: center;
+      padding-bottom: 10%;
 
       .name-and-photo {
         &:hover {

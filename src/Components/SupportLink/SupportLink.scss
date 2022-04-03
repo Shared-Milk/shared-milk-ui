@@ -14,7 +14,7 @@
     margin: 1%;
     padding: 2%;
     font-family: v.$bodyFont;
-    font-size: 1em;
+    font-size: 1.5em;
     font-weight: bolder;
     border: none;
     background-color: v.$salmon;
@@ -27,15 +27,9 @@
   }
 }
 
-
-/*
-##Device = Most of the Smartphones Mobiles (Portrait)
-##Screen = B/w 320px to 479px
-*/
-
 @media (min-width: 320px) and (max-width: 480px) {
   .support-links .support-button {
-      height: 8em;
-      width: 8em;
+      height: 12em;
+      width: 12em;
   }
 }

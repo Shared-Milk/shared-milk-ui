@@ -43,8 +43,8 @@ describe('need milk donor results page user flow', () => {
       .type('310-810-1022')
       .should('have.value', '310-810-1022')
     cy.get('textarea')
-      .type('I love releasing milk and sharing it with babies around the world')
-      .should('have.value', 'I love releasing milk and sharing it with babies around the world')
+      .type('I need extra milk to feed my growing boy, Teddy')
+      .should('have.value', 'I need extra milk to feed my growing boy, Teddy')
     cy.get('.button').click()
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/sent-confirmation')

@@ -19,3 +19,7 @@ const TeamMembers = ({team}) => {
 };
 
 export default TeamMembers;
+
+TeamMembers.propTypes = {
+  teamMember: PropTypes.object
+};

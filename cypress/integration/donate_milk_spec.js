@@ -44,26 +44,6 @@ describe('donate milk form user flow', () => {
     cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
     cy.get('[data-testid=thank-donor-title]').contains('Thank You!')
   })
-})
-
-describe('Shared Milk landing page happy user flow', () => {
-  beforeEach(() => {
-    cy.intercept('POST', 'https://secret-forest-87730.herokuapp.com/graphql', (req) => {
-      req.reply({
-        statusCode: 200,
-        fixture: 'createDonor.json'
-      })
-    });
-
-    cy.visit('https://no-use-cryin-over-shared-milk.herokuapp.com/need-milk')
-  });
-
-});
-
-describe('Shared Milk landing page sad user flows', () => {
-  beforeEach(() => {
-    cy.visit('http://localhost:3000/donate')
-  });
 
   it('should get error messages on empty input submits', () => {
     cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
@@ -101,7 +81,7 @@ describe('Shared Milk landing page sad user flows', () => {
       .type('(555) 555-5555')
     cy.get('[data-testid=donor-phone-error]').should('not.be.visible')
   })
-  
+
   it('should not have visible location error message after correcting', () => {
     cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
     cy.get('[data-testid=donor-location-error]').should('be.visible')
@@ -118,7 +98,7 @@ describe('Shared Milk landing page sad user flows', () => {
       .click()
     cy.get('[data-testid=donor-smoker-error]').should('not.be.visible')
   })
-  
+
   it('should not have visible bio error message after correcting', () => {
     cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
     cy.get('[data-testid=donor-bio-error]').should('be.visible')
@@ -127,4 +107,15 @@ describe('Shared Milk landing page sad user flows', () => {
       .type('I have extra to share')
     cy.get('[data-testid=donor-bio-error]').should('not.be.visible')
   })
-})
+
+  it.only('should be able to post', () => {
+    cy.intercept('POST', 'https://secret-forest-87730.herokuapp.com/graphql', (req) => {
+      req.reply({
+        statusCode: 200,
+        fixture: 'createDonor.json'
+      })
+    })
+    cy.visit('http://localhost:3000/need-milk')
+  });
+
+});

@@ -3,7 +3,7 @@ import { NavLink, Link } from 'react-router-dom';
 
 const Header = () => {
   return (
-    <header>
+    <header data-testid='header'>
       <section className='logo'>
         <Link to='/'>
           <h1 data-testid='site-title' >No Use Cryin' Over Shared Milk</h1>

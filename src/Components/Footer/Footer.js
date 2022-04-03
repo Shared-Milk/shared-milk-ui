@@ -9,8 +9,8 @@ const Footer = () => {
   }
   
   return (
-    <footer>
-      <p>Copyright © {selectYear()} No Use Cryin' Over Shared Milk</p>
+    <footer data-testid='footer'>
+      <p data-testid='copyright-line'>Copyright © {selectYear()} No Use Cryin' Over Shared Milk</p>
     </footer>
   )
 };

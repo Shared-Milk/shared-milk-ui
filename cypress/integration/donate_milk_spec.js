@@ -55,12 +55,12 @@ describe('Donate Milk form parts check', () => {
   })
 });
 
-describe('Messages', () => {
+describe('Confirmation/Denial Messages', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/donate')
   });
 
-  it.only('should get a sorry message when yes to smoking is selected', () => {
+  it('should get a sorry message when yes to smoking is selected', () => {
     cy.get('[data-testid=donor-name-input]')
       .click()
       .type('Jane Doe')
@@ -121,4 +121,92 @@ describe('Shared Milk landing page sad user flows', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/donate')
   });
+
+  it('should get error messages on empty input submits', () => {
+    cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
+    cy.get('[data-testid=donor-name-error]').should('be.visible')
+    cy.get('[data-testid=donor-email-error]').should('be.visible')
+    cy.get('[data-testid=donor-phone-error]').should('be.visible')
+    cy.get('[data-testid=donor-location-error]').should('be.visible')
+    cy.get('[data-testid=donor-smoker-error]').should('be.visible')
+    cy.get('[data-testid=donor-bio-error]').should('be.visible')
+  })
+
+  it('should get error messages on incorrect input submits', () => {
+    cy.get('[data-testid=donor-name-input]')
+      .click()
+      .type(' ')
+    cy.get('[data-testid=donor-email-input]')
+      .click()
+      .type('janedoeexample.com')
+    cy.get('[data-testid=donor-phone-input]')
+      .click()
+      .type('(555) 155-5555')
+    cy.get('[data-testid=donor-location-input]')
+      .click()
+      .type(' ')
+    cy.get('[data-testid=donor-bio-input]')
+      .click()
+      .type(' ')
+    cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
+    cy.get('[data-testid=donor-name-error]').should('be.visible')
+    cy.get('[data-testid=donor-email-error]').should('be.visible')
+    cy.get('[data-testid=donor-phone-error]').should('be.visible')
+    cy.get('[data-testid=donor-location-error]').should('be.visible')
+    cy.get('[data-testid=donor-smoker-error]').should('be.visible')
+    cy.get('[data-testid=donor-bio-error]').should('be.visible')
+  })
+
+  it('should not have visible name error message after correcting', () => {
+    cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
+    cy.get('[data-testid=donor-name-error]').should('be.visible')
+    cy.get('[data-testid=donor-name-input]')
+      .click()
+      .type('Jane Doe')
+    cy.get('[data-testid=donor-name-error]').should('not.be.visible')
+  })
+
+  it('should not have visible email error message after correcting', () => {
+    cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
+    cy.get('[data-testid=donor-email-error]').should('be.visible')
+    cy.get('[data-testid=donor-email-input]')
+      .click()
+      .type('janedoe@example.com')
+    cy.get('[data-testid=donor-email-error]').should('not.be.visible')
+  })
+
+  it('should not have visible phone error message after correcting', () => {
+    cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
+    cy.get('[data-testid=donor-phone-error]').should('be.visible')
+    cy.get('[data-testid=donor-phone-input]')
+      .click()
+      .type('(555) 555-5555')
+    cy.get('[data-testid=donor-phone-error]').should('not.be.visible')
+  })
+  
+  it('should not have visible location error message after correcting', () => {
+    cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
+    cy.get('[data-testid=donor-location-error]').should('be.visible')
+    cy.get('[data-testid=donor-location-input]')
+      .click()
+      .type('Denver, CO')
+    cy.get('[data-testid=donor-location-error]').should('not.be.visible')
+  })
+
+  it('should not have visible smoker error message after correcting', () => {
+    cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
+    cy.get('[data-testid=donor-smoker-error]').should('be.visible')
+    cy.get('[data-testid=donor-smoker-no]')
+      .click()
+    cy.get('[data-testid=donor-smoker-error]').should('not.be.visible')
+  })
+  
+  it('should not have visible bio error message after correcting', () => {
+    cy.get('[data-testid=donate-submit-button]').should('be.visible').click()
+    cy.get('[data-testid=donor-bio-error]').should('be.visible')
+    cy.get('[data-testid=donor-bio-input]')
+      .click()
+      .type('I have extra to share')
+    cy.get('[data-testid=donor-bio-error]').should('not.be.visible')
+  })
 })

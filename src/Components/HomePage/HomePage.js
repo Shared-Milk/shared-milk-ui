@@ -2,7 +2,7 @@ import './HomePage.scss';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
-  return (
+   return (
     <section className='main-container home columns' data-testid='home'>
       <aside className='mission'>
         <h2>Our Mission</h2>

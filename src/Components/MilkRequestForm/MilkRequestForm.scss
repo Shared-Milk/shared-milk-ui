@@ -6,8 +6,11 @@
     color: v.$salmon;
   }
 
-  .bold {
+  .donor-error {
     color: v.$salmon;
+    height: 100vh;
+    font-size: 3em;
+    // margin: 5%;
   }
 
   a {
@@ -62,6 +65,7 @@
     textarea {
       height: 6em;
       padding: 1% 2%;
+      min-height: 10em;
     }
 
     .button {

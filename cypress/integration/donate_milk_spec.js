@@ -91,7 +91,6 @@ describe('Donate milk form user flow', () => {
     cy.location().should((location => {
       expect(location.href).to.eq('http://localhost:3000/thank-you')
     }));
-    cy.get('[data-testid=thank-donor-title]').contains('Thank You!')
   })
 
   it('Should get error messages on empty input submits', () => {
@@ -164,7 +163,6 @@ describe('Donate milk form user flow', () => {
         fixture: 'createDonor.json'
       })
     })
-    // cy.visit('http://localhost:3000/need-milk')
   });
 
   it('Should redirect the user to the Thank You page', () => {

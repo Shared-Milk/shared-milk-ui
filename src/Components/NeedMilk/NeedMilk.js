@@ -8,6 +8,8 @@ const NeedMilk = () => {
   const { error, loading, data } = useQuery(GET_ALL_DONORS)
   const [donors, setDonors] = useState([])
 
+  const gqlError = error;
+  console.log(gqlError)
   
   useEffect(() => {
     if(data) {
@@ -20,7 +22,10 @@ const NeedMilk = () => {
       <ReactLoading type='spinningBubbles' color='#D95A4E' height={'20%'} width={'20%'} />
     </section>;
     
-    if (error) return <span className='bold'>Error: {error.message}</span>
+    if (error) {
+      console.log(error.message)
+      return <section className='donor-error'>Oops! We're having trouble loading donors right now. Please try again later.</section>
+    }
   }
 
   return (

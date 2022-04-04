@@ -8,20 +8,20 @@ const MemberCard = ({member}) => {
   const url = `${firstName}_${lastName}`;
 
   return (
-    <article className='member-card'>
+    <article className='member-card' data-testid='member-card'>
       <Link to={`${url}`} className='name-and-photo'>
         <h4>{member.firstName} {member.lastName}</h4>
         <img className='bio-photo' src={member.photo} alt={`Photo of ${member.firstName}`}/>
       </Link>
       <div className='pronouns'>
-        <h3 data-testid='dev-pronouns' >{member.pronouns}</h3>
+        <h3>{member.pronouns}</h3>
       </div>
-      <div data-testid='dev-social-links'className='social-links'>
-        <a href={member.linkedin} data-testid='dev-linkedin-link' target='_blank'> 
-          <img className='social-icon' data-testid='dev-linkedin-icon' src={member.linkedinIcon} alt={`${member.firstName}'s Linked In Profile`}/>
+      <div className='social-links'>
+        <a href={member.linkedin} target='_blank'> 
+          <img className='social-icon' src={member.linkedinIcon} alt={`${member.firstName}'s Linked In Profile`}/>
         </a>
-        <a data-testid='dev-github-link' href={member.github} target='_blank'> 
-          <img className='social-icon' data-testid='dev-github-icon' src={member.githubIcon} alt={`${member.firstName}'s Github Profile`}/>
+        <a href={member.github} target='_blank'> 
+          <img className='social-icon' src={member.githubIcon} alt={`${member.firstName}'s Github Profile`}/>
         </a>
       </div>
     </article>

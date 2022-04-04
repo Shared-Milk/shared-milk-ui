@@ -1,51 +1,66 @@
+import { isEnumType } from "graphql";
+
 describe('About page user flow', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/about')
   });
 
-  it('should header and footer on page load', () => {
+  it('Should display a header and footer on page load', () => {
     cy.get('[data-testid=header]').should('be.visible')
     cy.get('[data-testid=footer]').should('be.visible')
   });
 
-  it('should have an inspiration title, text, and quote', () => {
-    cy.get('[data-testid=inspiration-title]').contains('Our Inspiration')
-    cy.get('[data-testid=inspire-text]').contains('"No Use Cryin\' Over Shared Milk" was inspired by our founder, Seth Perna\'s, personal family battle with producing breast milk for his son and the mental an financial struggle that followed. Seth\'s mission became our mission...')
-    cy.get('[data-testid=founder-quote]').contains('"to create a safe space for families who under-produce breast milk to connect with families who over-produce."')
+  it('Should display a page with 7 elements', () => {
+    cy.get('[data-testid=about]').should('be.visible').children().should('have.length', 7)
   })
 
-  it('should display our tech stack section and information', () => {
-    cy.get('[data-testid=tech-stack-title]').should('be.visible')
-    cy.get('[data-testid=tech-stack-content]').should('be.visible')
-    cy.get('[data-testid=turing-link]').request('https://turing.edu/')
+  it('The first two elements should be a page title and overview', () => {
+    cy.get('[data-testid="about"] > h2:nth-child(1)').contains('Our Inspiration')
+      .get('[data-testid="about"] > p:nth-child(2)').should('have.length', 1)
   })
 
-  it('should display meet the team instructions', () => {
-    cy.get('[data-testid=about-dev-instructions]').should('be.visible')
-    cy.get('[data-testid=team-grid]').should('be.visible')
+  it('The third element should be a mission quote with a horizontal rule divider', () => {
+    cy.get('[data-testid=about]').children()
+      .get('.mission-container').should('be.visible')
+      .get('p').should('have.class', 'mission').contains('"to create a safe space for families who under-produce breast milk to connect with families who over-produce."')
+      .get('.dots')
   })
 
-  it('should have a place for dev name', () => {
-    cy.get('[data-testid=dev-name]').should('have.length', 7)
-    cy.get('[data-testid=dev-name]').first().contains('Seth Perna')
-    cy.get('[data-testid=dev-name]').last().contains('Devon Wigle')
+  it('The fifth element should display our tech stack section and information, with a link to Turing School of Software & Design', () => {
+    cy.get('[data-testid="about"] > :nth-child(5)').should('be.visible').contains('Our Tech Stack')
+      .get('p:nth-child(6)').should('be.visible').contains('This is a Turing School of Software & Design')
+      .get('[data-testid=turing-link]').should('be.visible').request('https://turing.edu/')
   })
 
-  it('should have a place for dev image', () => {
-    cy.get('[data-testid=dev-image]').should('have.length', 7)
+  it('Should display a Meet the Team container with a title and instructions', () => {
+    cy.get('[data-testid=team-container]').should('be.visible').children()
+      .get('h3:nth-child(1)').contains('Meet the Team')
+      .get('[data-testid="team-container"] > p').should('have.length', 1)
   })
 
-  it('should be able to be click image to visit a bio page', () => {
-    cy.get('[data-testid=dev-image]').first().click().url().should('eq', 'http://localhost:3000/seth_perna')
+  it('Should display a grid of team member photos, names, pronouns, and social icons', () => {
+    cy.get('[data-testid=team-grid]').should('be.visible').children()
+      .get('[data-testid=member-card]').children()
+      .get('.name-and-photo > h4')
+      .get('.name-and-photo > .bio-photo')
+      .get('.pronouns > h3')
+      .get('.social-links')
   })
 
-  it('should have a place for dev pronouns', () => {
-    cy.get('[data-testid=dev-pronouns]').should('have.length', 7)
+  it('Should be able to be click on any team members name or photo to visit their bio page', () => {
+    cy.get('[data-testid=team-container] > [data-testid=team-grid] > .member-card:nth-child(1) > .name-and-photo > .bio-photo').click().visit('http://localhost:3000/about/seth_perna')
+    cy.visit('http://localhost:3000/about')
+    cy.get('[data-testid=team-container] > [data-testid=team-grid] > .member-card:nth-child(7) > .name-and-photo > .bio-photo').click().visit('http://localhost:3000/about/devon_wigle')
   })
 
-  it('should have a place for dev social links', () => {
-    cy.get('[data-testid=dev-social-links]').should('have.length', 7)
-    cy.get('[data-testid=dev-linkedin-link]').should('be.visible')
-    cy.get('[data-testid=dev-github-link]').should('be.visible')
+  it.skip('Should display a LinkedIn social icon for each person that can be clicked on to visit that team members LinkedIn page', () => {
+    cy.get('[data-testid=team-container] > [data-testid=team-grid] > .member-card:nth-child(1)').children()
+    .get('.social-links > a:nth-child(1) > .social-icon').should('be.visible').click({ multiple: true })
+
+  })
+
+  it.skip('Should display a Github social icon for each person that can be clicked on to visit that team members Github page', () => {
+    cy.get('[data-testid=team-container] > [data-testid=team-grid] > .member-card:nth-child(1)').children()
+    .get('.social-links > a:nth-child(2) > .social-icon').should('be.visible').click({ multiple: true })
   })
 })

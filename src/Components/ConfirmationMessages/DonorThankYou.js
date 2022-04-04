@@ -3,17 +3,18 @@ import { GET_ALL_DONORS } from '../../Graphql/Queries';
 import { useEffect, useState } from 'react';
 
 const DonorThankYou = () => {
-  const { error, loading, data } = useQuery(GET_ALL_DONORS)
-  console.log('donor error', error)
-  const [errorStatus, setError] = useState(false)
+  const { error, loading, data } = useQuery(GET_ALL_DONORS);
+  const [errorStatus, setError] = useState(false);
 
   useEffect(() => {
-    if(!data) {
+    if(!data && loading) {
       setError(true)
     }
-  }, errorStatus)
+  }, [data])
 
   if (errorStatus) {
+    console.log('errorStatus after setError', errorStatus)
+    console.log('what is loading NOW??', loading)
     return (
       <article className="main-container error-container">
         <h2 className='error-message'>Oops! We had trouble with your submission. Please try again later.</h2>

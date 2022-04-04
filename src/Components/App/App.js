@@ -64,7 +64,10 @@ const App = () => {
                   <Route path='sent-confirmation' element={<ConfirmationMessage />}/>
                   <Route path='thank-you' element={<DonorThankYou />}/>
                   <Route path='sorry' element={<DonorSorry />}/>
-                  <Route path='/*' element={<Profile />}/>
+                  <Route path='about/*' element={<Profile />}/>
+                  {/* <Route path='*'>
+                     <NetworkError error="What are you doing here? This page doesn't exist."/>
+                  </Route> */}
                </Routes>
                <Footer />
             </div>

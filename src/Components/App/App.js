@@ -29,9 +29,9 @@ import ConfirmationMessage from '../ConfirmationMessages/ConfirmationMessage';
 import DonorThankYou from '../ConfirmationMessages/DonorThankYou';
 import DonorSorry from '../ConfirmationMessages/DonorSorry';
 import Profile from '../About/ProfilePage/Profile';
-import NetworkError from '../NetworkError/NetworkError';
+import NotFound from '../NotFound/NotFound';
 
-const errorLink = onError(({ graphqlErrors, networkError }) => {
+const errorLink = onError(({ graphqlErrors }) => {
    if(graphqlErrors) {
       graphqlErrors.map(({ message, location, path }) => {
          console.log(`Graphql error: ${ message }`)
@@ -42,7 +42,7 @@ const errorLink = onError(({ graphqlErrors, networkError }) => {
 
 const link = from([
    errorLink,
-   new HttpLink({ uri: 'https://secret-forest-87730.herokuapp.com' })
+   new HttpLink({ uri: 'https://spilled-milk-api.herokuapp.com/graphql' })
 ])
 
 const client = new ApolloClient({
@@ -51,42 +51,6 @@ const client = new ApolloClient({
 })
 
 const App = () => {
-   const [respCode, setResp] = useState([]);
-  const [hasError, setError] = useState(false);
-
-  const location = useLocation();
-  console.log('location >>>', location)
-
-  let URL = location;
-
-  async function makeRequest() {
-   try {
-     const response = await fetch(`${URL}`);
- 
-     console.log('status code: ', response.status); // 👉️ 200
- 
-     if (!response.ok) {
-       console.log(response);
-       setResp(response.status)
-       setError(true)
-       throw new Error(`Error! status: ${response.status}`);
-     } else {
-       console.log(response);
-       setResp(response.status)
-       setError(false)
-       throw new Error(`Not an error! status: ${response.status}`);
-     }
- 
-     const result = await response.json()
-     console.log(result)
-     return result;
-   } catch (err) {
-     console.log(err);
-   }
- }
-
- makeRequest();
-
    return (
       <ApolloProvider client={client}>
          <main className='App'>
@@ -96,8 +60,8 @@ const App = () => {
             <div id='page-wrap'>
                <Header id='outer-container' />
                <Routes>
-                  <Route path='/' element={<HomePage hasError={hasError} errorCode={respCode}/>}/>
-                  <Route path='need-milk' element={<NeedMilk hasError={hasError} errorCode={respCode}/>}/>
+                  <Route path='/' element={<HomePage />}/>
+                  <Route path='need-milk' element={<NeedMilk />}/>
                   <Route path='donate' element={<Donate />}/>
                   <Route path='about' element={<About />}/>
                   <Route path='support' element={<Support />}/>
@@ -106,8 +70,7 @@ const App = () => {
                   <Route path='thank-you' element={<DonorThankYou />}/>
                   <Route path='sorry' element={<DonorSorry />}/>
                   <Route path='about/*' element={<Profile />}/>
-                  <Route path='*' element={<NetworkError hasError={hasError} errorCode={respCode}/>}/>
-                  {/* <Route path='/need-milk/*' element={<NetworkError />}/> */}
+                  <Route path='*' element={<NotFound />}/>
                </Routes>
                <Footer />
             </div>

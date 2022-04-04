@@ -3,9 +3,8 @@ import { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
 import { useQuery, gql } from '@apollo/client';
 import { GET_ALL_DONORS } from '../../Graphql/Queries';
-import NetworkError from '../NetworkError/NetworkError';
 
-const NeedMilk = ({ hasError, errorCode }) => {
+const NeedMilk = () => {
   const { error, loading, data } = useQuery(GET_ALL_DONORS)
   const [donors, setDonors] = useState([])
 
@@ -29,22 +28,18 @@ const NeedMilk = ({ hasError, errorCode }) => {
     }
   }
 
-  if(hasError) {
-    return <NetworkError hasError={hasError} errorCode={errorCode && gqlError.message}/>
-  } else {
-    return (
-      <section className='main-container donors' data-testid='donors'>
-        <h2>Milk Donors</h2>
-        <p>Click on a profile below to contact a milk donor.</p>
-          {checkForMessage()}
-        <section className='contact-grid' data-testid='contact-grid'>
-          { donors.map(donor => {
-            return (<DonorCard key={ donor.id } donor={ donor }/>)
-          }) }
-        </section>
+  return (
+    <section className='main-container donors' data-testid='donors'>
+      <h2>Milk Donors</h2>
+      <p>Click on a profile below to contact a milk donor.</p>
+        {checkForMessage()}
+      <section className='contact-grid' data-testid='contact-grid'>
+        { donors.map(donor => {
+          return (<DonorCard key={ donor.id } donor={ donor }/>)
+        }) }
       </section>
-    )
-  }
+    </section>
+  )
 };
 
 export default NeedMilk;

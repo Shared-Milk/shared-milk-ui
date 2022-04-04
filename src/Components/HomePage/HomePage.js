@@ -1,11 +1,7 @@
 import './HomePage.scss';
 import { Link } from 'react-router-dom';
-import NetworkError from '../NetworkError/NetworkError';
 
-const HomePage = ({ hasError, errorCode }) => {
-  if(hasError) {
-    return <NetworkError hasError={hasError} errorCode={errorCode}/>
-  } else {
+const HomePage = () => {
    return (
     <section className='main-container home columns' data-testid='home'>
       <aside className='mission'>
@@ -20,7 +16,7 @@ const HomePage = ({ hasError, errorCode }) => {
         <Link to='/support' className='support'>Need<br></br>Support</Link>
       </aside>
     </section>
-  )}
+  )
 };
 
 export default HomePage;

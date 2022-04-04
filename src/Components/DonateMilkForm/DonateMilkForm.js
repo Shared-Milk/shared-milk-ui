@@ -4,31 +4,28 @@ import { useMutation } from '@apollo/client';
 import { CREATE_DONOR } from '../../Graphql/Mutations.js';
 import { GET_ALL_DONORS } from '../../Graphql/Queries';
 import { useForm } from 'react-hook-form';
-import NetworkError from '../NetworkError/NetworkError';
+import DonorThankYou from '../ConfirmationMessages/DonorThankYou';
 
-const DonateMilkForm = ({ hasError, errorCode }) => {
+const DonateMilkForm = () => {
+  const [createUser, { error }] = useMutation(CREATE_DONOR);
+
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm();
   const isEmpty = Object.keys(errors).length === 0;
   
-  const onSubmit = async (data) => {
+  const onSubmit = (data) => {
     let smoker = parseInt(data.smoker)
     if (isEmpty && smoker) {
       return navigate('/sorry')
     } else if (isEmpty && !smoker) {
       console.log('hereerere')
-      await createNewDonor(data);
-      if (error) {
-        console.log('grab this error >>>', error)
-        return <NetworkError hasError={hasError} errorCode={error}/>
-      }
+      createNewDonor(data);
+      console.log('grab this error >>>', error)
       return navigate('/thank-you')
     } 
   };
 
-  const [createUser, { error }] = useMutation(CREATE_DONOR);
-
-  const createNewDonor = async (data) => {
+  const createNewDonor = (data) => {
     createUser({
       variables: {
         name: data.donorName,
@@ -46,13 +43,9 @@ const DonateMilkForm = ({ hasError, errorCode }) => {
     if (error) {
       console.log('MUTATION ERROROR >>>>', error)
       return error;
-      // return <NetworkError hasError={hasError} errorCode={error}/>
     }
   }
   
-if(hasError) {
-  return <NetworkError hasError={hasError} errorCode={errorCode}/>
-} else {
   return (
     <form className='donor-form' data-testid='donor-form' onSubmit={ handleSubmit(onSubmit) }>
       <label htmlFor='Your Name'>Your Name</label>
@@ -80,7 +73,7 @@ if(hasError) {
       <p data-testid='donor-bio-error' className='error'>{ errors.donorBio?.message }</p>
       <button data-testid='donate-submit-button' className='button' type='submit'>Submit</button>
     </form>
-  )}
+  )
 };
 
 export default DonateMilkForm;

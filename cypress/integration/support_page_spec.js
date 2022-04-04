@@ -3,13 +3,9 @@ describe('Support page user flow', () => {
     cy.visit('http://localhost:3000/support')
   });
 
-  it('should display page title and navigation links on page load', () => {
-    cy.get('[data-testid=site-title]').contains('No Use Cryin\' Over Shared Milk')
-    cy.get('[data-testid=nav-bar]').contains('Home')
-    cy.get('[data-testid=nav-bar]').contains('Need Milk')
-    cy.get('[data-testid=nav-bar]').contains('Donate')
-    cy.get('[data-testid=nav-bar]').contains('About')
-    cy.get('[data-testid=nav-bar]').contains('Support')
+  it('should header and footer on page load', () => {
+    cy.get('[data-testid=header]').should('be.visible')
+    cy.get('[data-testid=footer]').should('be.visible')
   });
 
   it('should have a page title', () => {

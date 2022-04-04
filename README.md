@@ -33,7 +33,7 @@ Github Organization: [Shared Milk](https://github.com/Shared-Milk)
 - Project Spec here: [Capstone](https://mod4.turing.edu/projects/capstone/)
 
 - No Use Cryin' Over Spilled Milk API: 
-    - GitHub: [No Use Cryin' Over Spilled Milk API](https://github.com/cagallo/book-club-api)
+    - GitHub: [No Use Cryin' Over Spilled Milk API](https://github.com/Shared-Milk/shared_milk_be)
     - Heroku: [No Use Cryin' Over Spilled Milk Deployed API]('https://secret-forest-87730.herokuapp.com/graphql')
 
 ## Installation Instructions <a name="installationInstructions"></a>

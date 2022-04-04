@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 
 const TeamMembers = ({team}) => {
   return (
-    <section className='team-grid'>
+    <section data-testid='team-grid' className='team-grid'>
       {team.map(teamMember => {
         return (
           <MemberCard 

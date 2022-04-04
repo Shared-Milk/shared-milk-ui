@@ -9,7 +9,7 @@ const Footer = () => {
   }
   
   return (
-    <footer>
+    <footer data-testid='footer'> 
       <p>Copyright © {selectYear()} No Use Cryin' Over Shared Milk</p>
     </footer>
   )

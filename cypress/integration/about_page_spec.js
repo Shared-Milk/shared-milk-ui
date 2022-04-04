@@ -53,13 +53,13 @@ describe('About page user flow', () => {
     cy.get('[data-testid=team-container] > [data-testid=team-grid] > .member-card:nth-child(7) > .name-and-photo > .bio-photo').click().visit('http://localhost:3000/about/devon_wigle')
   })
 
-  it.skip('Should display a LinkedIn social icon for each person that can be clicked on to visit that team members LinkedIn page', () => {
+  it('Should display a LinkedIn social icon for each person that can be clicked on to visit that team members LinkedIn page', () => {
     cy.get('[data-testid=team-container] > [data-testid=team-grid] > .member-card:nth-child(1)').children()
     .get('.social-links > a:nth-child(1) > .social-icon').should('be.visible').click({ multiple: true })
 
   })
 
-  it.skip('Should display a Github social icon for each person that can be clicked on to visit that team members Github page', () => {
+  it('Should display a Github social icon for each person that can be clicked on to visit that team members Github page', () => {
     cy.get('[data-testid=team-container] > [data-testid=team-grid] > .member-card:nth-child(1)').children()
     .get('.social-links > a:nth-child(2) > .social-icon').should('be.visible').click({ multiple: true })
   })

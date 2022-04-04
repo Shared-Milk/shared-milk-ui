@@ -1,6 +1,6 @@
 describe('Need Milk request user flow', () => {
   beforeEach(() => {
-    cy.intercept('POST', 'https://secret-forest-87730.herokuapp.com/graphql', (req) => {
+    cy.intercept('POST', 'https://shared-milk-api.herokuapp.com/graphql', (req) => {
       req.reply({
         statusCode: 200,
         fixture: 'donorMoms.json'

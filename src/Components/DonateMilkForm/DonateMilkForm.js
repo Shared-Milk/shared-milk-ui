@@ -4,25 +4,31 @@ import { useMutation } from '@apollo/client';
 import { CREATE_DONOR } from '../../Graphql/Mutations.js';
 import { GET_ALL_DONORS } from '../../Graphql/Queries';
 import { useForm } from 'react-hook-form';
+import NetworkError from '../NetworkError/NetworkError';
 
-const DonateMilkForm = () => {
+const DonateMilkForm = ({ hasError, errorCode }) => {
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm();
   const isEmpty = Object.keys(errors).length === 0;
   
-  const onSubmit = (data) => {
+  const onSubmit = async (data) => {
     let smoker = parseInt(data.smoker)
     if (isEmpty && smoker) {
       return navigate('/sorry')
     } else if (isEmpty && !smoker) {
-      createNewDonor(data);
+      console.log('hereerere')
+      await createNewDonor(data);
+      if (error) {
+        console.log('grab this error >>>', error)
+        return <NetworkError hasError={hasError} errorCode={error}/>
+      }
       return navigate('/thank-you')
-    }
+    } 
   };
 
   const [createUser, { error }] = useMutation(CREATE_DONOR);
 
-  const createNewDonor = (data) => {
+  const createNewDonor = async (data) => {
     createUser({
       variables: {
         name: data.donorName,
@@ -38,10 +44,15 @@ const DonateMilkForm = () => {
       }
     })
     if (error) {
-      console.log(error)
+      console.log('MUTATION ERROROR >>>>', error)
+      return error;
+      // return <NetworkError hasError={hasError} errorCode={error}/>
     }
   }
-
+  
+if(hasError) {
+  return <NetworkError hasError={hasError} errorCode={errorCode}/>
+} else {
   return (
     <form className='donor-form' data-testid='donor-form' onSubmit={ handleSubmit(onSubmit) }>
       <label htmlFor='Your Name'>Your Name</label>
@@ -69,7 +80,7 @@ const DonateMilkForm = () => {
       <p data-testid='donor-bio-error' className='error'>{ errors.donorBio?.message }</p>
       <button data-testid='donate-submit-button' className='button' type='submit'>Submit</button>
     </form>
-  )
+  )}
 };
 
 export default DonateMilkForm;

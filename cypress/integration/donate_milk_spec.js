@@ -108,7 +108,7 @@ describe('donate milk form user flow', () => {
     cy.get('[data-testid=donor-bio-error]').should('not.be.visible')
   })
 
-  it.only('should be able to post', () => {
+  it('should be able to post', () => {
     cy.intercept('POST', 'https://secret-forest-87730.herokuapp.com/graphql', (req) => {
       req.reply({
         statusCode: 200,

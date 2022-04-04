@@ -34,7 +34,7 @@ Github Organization: [Shared Milk](https://github.com/Shared-Milk)
 
 - No Use Cryin' Over Spilled Milk API: 
     - GitHub: [No Use Cryin' Over Spilled Milk API](https://github.com/Shared-Milk/shared_milk_be)
-    - Heroku: [No Use Cryin' Over Spilled Milk Deployed API]('https://secret-forest-87730.herokuapp.com/graphql')
+    - Heroku: [No Use Cryin' Over Spilled Milk Deployed API](https://shared-milk-api.herokuapp.com/graphql)
 
 ## Installation Instructions <a name="installationInstructions"></a>
 
@@ -70,7 +70,7 @@ Lastly, the user may click the 'About' button on the navigation bar to learn mor
 
 ## Code Architecture <a name="codeArchitecture"></a>
 
-This application utlizes seventeen functional components and uses React Hooks to manage state and perform network requests. 
+This application utilizes seventeen functional components and uses React Hooks to manage state and perform network requests. 
 
 ## Technologies Used <a name="techUsed"></a>
 
@@ -121,23 +121,22 @@ This project was a good combination of working with familiar technologies such a
 
 ## Authors
 
-### Frontend Team: 
+### Frontend Team
 
 - [Chez Gallo](https://github.com/cagallo)
 - [Jani Palomino](https://github.com/janitastic)
 - [Lindsay Schnell](https://github.com/lschnell8)
 - [Devon Wigle](https://github.com/devonwigle)
 
-### Backend Team: 
+### Backend Team
 
 - [Kelly Anderson](https://github.com/kanderson852)
 - [Eric Miekle](https://github.com/EMielke76)
 - [Seth Perna](https://github.com/SethPerna)
 
-- Project Managers: 
-
-      - [Nik Seif](https://github.com/niksseif)
-      - [Dallas Slieker](https://github.com/he-dslieker)
+### Project Managers
+- [Nik Seif](https://github.com/niksseif)
+- [Dallas Slieker](https://github.com/he-dslieker)
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

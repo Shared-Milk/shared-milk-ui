@@ -3,7 +3,20 @@
 
 .main-container {
   margin: 5% 10%;
+
+  .error-loading {
+    display: flex;
+    justify-content: center;
+    margin: 5%;
+  }
+}
+
+.home, .message {
   height: 100vh;
+}
+
+.donors, .donate {
+  height: 100%;
 }
 
 .columns {

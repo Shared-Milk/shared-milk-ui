@@ -7,7 +7,7 @@ const Profile = () => {
   const location = useLocation();
   const lowerCasePath = location.pathname.toLowerCase();
   const splitPath = lowerCasePath.split('/');
-  const urlName = splitPath[1].split('_');
+  const urlName = splitPath[2].split('_');
   const profile = teamData.find(tm => tm.firstName.toLowerCase() === urlName[0]);
   const linkedinText = profile.linkedin.replace('https://www.', '');
   const githubText = profile.github.replace('https://', '');
@@ -22,6 +22,8 @@ const Profile = () => {
             <img className='bio-photo' src={profile.photo} alt={`Photo of ${profile.firstName}`}/>
           </div>
           <div className='col-2'>
+            <h3>Pronouns</h3>
+              <p>{profile.pronouns}</p>
             <h3>About Me</h3>
               <p>{profile.bio}</p> 
             <h3>Connect with Me</h3>

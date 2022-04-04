@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const HomePage = () => {
   return (
-    <section className='main-container columns'>
+    <section className='main-container home columns'>
       <aside className='mission'>
         <h2>Our Mission</h2>
           <p>To create a safe space for families who under-produce breast milk to connect with families who over-produce.</p>

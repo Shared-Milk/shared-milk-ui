@@ -37,7 +37,7 @@ const errorLink = onError(({ graphqlErrors, networkError }) => {
 
 const link = from([
    errorLink,
-   new HttpLink({ uri: 'https://shared.herokuapp.com/graphql' })
+   new HttpLink({ uri: 'https://shared-milk-api.herokuapp.com/graphql' })
 ])
 
 const client = new ApolloClient({

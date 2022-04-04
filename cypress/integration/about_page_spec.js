@@ -1,5 +1,3 @@
-import { isEnumType } from "graphql";
-
 describe('About page user flow', () => {
   beforeEach(() => {
     cy.visit('http://localhost:3000/about')

@@ -36,7 +36,7 @@ describe('About page user flow', () => {
   })
 
   it('should be able to be click image to visit a bio page', () => {
-    cy.get('[data-testid=dev-image]').first().click().url().should('eq', 'http://localhost:3000/seth_perna')
+    cy.get('[data-testid=dev-image]').first().click().url().should('eq', 'http://localhost:3000/about/seth_perna')
   })
 
   it('should have a place for dev pronouns', () => {

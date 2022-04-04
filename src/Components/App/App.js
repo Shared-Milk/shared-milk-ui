@@ -11,6 +11,7 @@ import {
    from,
 } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
+// import { gql, useQuery } from '@apollo/client';
 
 // Nav Bar Imports
 import HomePage from '../HomePage/HomePage';
@@ -26,11 +27,13 @@ import ConfirmationMessage from '../ConfirmationMessages/ConfirmationMessage';
 import DonorThankYou from '../ConfirmationMessages/DonorThankYou';
 import DonorSorry from '../ConfirmationMessages/DonorSorry';
 import Profile from '../About/ProfilePage/Profile';
+import NetworkError from '../NetworkError/NetworkError';
 
 const errorLink = onError(({ graphqlErrors, networkError }) => {
    if(graphqlErrors) {
       graphqlErrors.map(({ message, location, path }) => {
-         return console.log(`Graphql error: ${ message }`)
+         console.log(`Graphql error: ${ message }`)
+         return message
       })
    }
 })
@@ -65,9 +68,7 @@ const App = () => {
                   <Route path='thank-you' element={<DonorThankYou />}/>
                   <Route path='sorry' element={<DonorSorry />}/>
                   <Route path='about/*' element={<Profile />}/>
-                  {/* <Route path='*'>
-                     <NetworkError error="What are you doing here? This page doesn't exist."/>
-                  </Route> */}
+                  <Route path='*' element={<NetworkError />}/>
                </Routes>
                <Footer />
             </div>

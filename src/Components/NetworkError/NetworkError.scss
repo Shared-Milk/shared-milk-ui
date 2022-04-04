@@ -1,0 +1,17 @@
+@use '../Styles/mixins' as m;
+@use '../Styles/variables' as v;
+
+.error-container {
+  height: 100vh;
+  text-align: center;
+
+  .error-button {
+    @include m.button(v.$orange, v.$offBlack, v.$bodyFont);
+    @include m.buttonShadow();
+    margin: 5% 0%;
+  
+    &:hover {
+      @include m.buttonHover(1.2em)
+    }
+  }
+}

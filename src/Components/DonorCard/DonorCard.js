@@ -4,11 +4,11 @@ import PropTypes from 'prop-types';
 
 const DonorCard = ({ donor }) => {
   return (
-    <Link to="/contact" state={ donor } className='contact-card'>
-      <h3>{ donor.name }</h3>
-      <p>Location: { donor.location }</p>
-      <h4>Bio</h4>
-      <p>{ donor.bio }</p>
+    <Link to="/contact" state={ donor } className='contact-card' data-testid='contact-card' >
+      <h3 data-testid='donor-name'>{ donor.name }</h3>
+      <p data-testid='donor-location'>Location: { donor.location }</p>
+      <h4 data-testid='bio-title'>Bio</h4>
+      <p data-testid='donor-bio'>{ donor.bio }</p>
     </Link>
   )
 };

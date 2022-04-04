@@ -14,6 +14,12 @@ const NetworkError = () => {
   let URL = location;
 
   const makeRequest = () => {
+
+    // fetch('https://fe-cors-proxy.herokuapp.com', {
+    //   headers: {
+    // "Target-URL": `${URL}`
+    //   }
+    // })
     fetch(`${URL}`)
       .then(response => {
         if (!response.ok) {
@@ -28,9 +34,9 @@ const NetworkError = () => {
           throw new Error(`Not an error! status: ${response.status}`);
         }
       })
-        .catch(err => {
-          console.log(err)
-        })
+      .catch(err => {
+        console.log(err)
+      })
   }
 
   // async function makeRequest() {

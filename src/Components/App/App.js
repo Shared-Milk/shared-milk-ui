@@ -40,7 +40,7 @@ const errorLink = onError(({ graphqlErrors, networkError }) => {
 
 const link = from([
    errorLink,
-   new HttpLink({ uri: 'https://secret-forest-87730.herokuapp.com/graphql' })
+   new HttpLink({ uri: 'https://secret-orest-87730.herokuapp.com/graphql' })
 ])
 
 const client = new ApolloClient({

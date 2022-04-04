@@ -2,6 +2,9 @@ import './HomePage.scss';
 import { Link } from 'react-router-dom';
 
 const HomePage = () => {
+  // if (error) {
+  //   <NetworkError />
+  // }
   return (
     <section className='main-container home columns' data-testid='home'>
       <aside className='mission'>

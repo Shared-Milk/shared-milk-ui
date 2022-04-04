@@ -43,20 +43,20 @@ const DonateMilkForm = () => {
   }
 
   return (
-    <form className='donor-form' onSubmit={ handleSubmit(onSubmit) }>
+    <form className='donor-form' data-testid='donor-form' onSubmit={ handleSubmit(onSubmit) }>
       <label htmlFor='Your Name'>Your Name</label>
-      <input data-testid='donor-name-input' {...register('donorName', { required: `* Is the baby-brain that bad?` })} type='text' placeholder='First & Last Name' />
+      <input {...register('donorName', { required: `* Is the baby-brain that bad?` })} type='text' placeholder='First & Last Name' />
       <p data-testid='donor-name-error' className='error'>{ errors.donorName?.message }</p>
       <label htmlFor='Email Address'>Email Address</label>
-      <input data-testid='donor-email-input' {...register('donorEmail', { required: `* Oh, fer cryin' out loud. We don't do snail mail. Just enter your email.` })} type='email' placeholder='Email Address' />
+      <input {...register('donorEmail', { required: `* Oh, fer cryin' out loud. We don't do snail mail. Just enter your email.` })} type='email' placeholder='Email Address' />
       <p data-testid='donor-email-error' className='error'>{ errors.donorEmail?.message }</p>
       <label htmlFor='Phone Number'>Phone Number</label>
-      <input data-testid='donor-phone-input' {...register('donorPhone', { required: `* Can I have yo number??` })} type='tel' onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()} placeholder='Phone Number' />
+      <input {...register('donorPhone', { required: `* Can I have yo number??` })} type='tel' onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()} placeholder='Phone Number' />
       <p data-testid='donor-phone-error' className='error'>{ errors.donorPhone?.message }</p>
       <label htmlFor='Location'>Location</label>
-      <input data-testid='donor-location-input' {...register('donorLocation', { required: `Ope! We can't find you. Peekaboo!` })} type='text' placeholder='Location' />
+      <input {...register('donorLocation', { required: `Ope! We can't find you. Peekaboo!` })} type='text' placeholder='Location' />
       <p data-testid='donor-location-error' className='error'>{errors.donorLocation?.message}</p>
-      <p className='form-question'>Have you used any tobacco products in the last 6 weeks?</p>
+      <p className='form-question' data-testid='smoker-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label for='no' htmlFor='no'>NO</label>
         <input id='no' data-testid='donor-smoker-no' {...register('smoker', { required: `* Did you go out for a smoke?` })} type='radio' name='smoker' value='0' />

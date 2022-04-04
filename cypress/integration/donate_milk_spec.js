@@ -164,7 +164,6 @@ describe('Donate milk form user flow', () => {
         fixture: 'createDonor.json'
       })
     })
-    // cy.visit('http://localhost:3000/need-milk')
   });
 
   it('Should redirect the user to the Thank You page', () => {

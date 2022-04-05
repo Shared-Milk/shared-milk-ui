@@ -32,7 +32,9 @@ import Profile from '../About/ProfilePage/Profile';
 import NotFound from '../NotFound/NotFound';
 
 const errorLink = onError(({ graphqlErrors }) => {
+   console.log("an error!")
    if(graphqlErrors) {
+     console.log(graphqlErrors)
       graphqlErrors.map(({ message, location, path }) => {
          console.log(`Graphql error: ${ message }`)
          return message

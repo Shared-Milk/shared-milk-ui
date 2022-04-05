@@ -17,7 +17,7 @@ const DonateMilkForm = () => {
   const onSubmit = async (data) => {
     let smoker = parseInt(data.smoker)
     if (isEmpty && smoker) {
-      return navigate('/sorry')
+      return navigate('/sorry');
     } else if (isEmpty && !smoker) {
       let result;
       try {

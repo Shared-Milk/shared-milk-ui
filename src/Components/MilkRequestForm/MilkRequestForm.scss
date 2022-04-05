@@ -6,11 +6,15 @@
     color: v.$salmon;
   }
 
+  .error-message {
+    font-size: 3em;
+    font-family: v.$bodyFont;
+  }
+
   .donor-error {
     color: v.$salmon;
     height: 100vh;
     font-size: 3em;
-    // margin: 5%;
   }
 
   a {

@@ -6,13 +6,13 @@ const Footer = () => {
 
   const selectYear = () => {
     return yearBuilt === currentYear ? currentYear : `${yearBuilt} - ${currentYear}`;
-  }
-  
+  };
+
   return (
-    <footer data-testid='footer'> 
+    <footer data-testid='footer'>
       <p>Copyright © {selectYear()} No Use Cryin' Over Shared Milk</p>
     </footer>
-  )
+  );
 };
 
 export default Footer;

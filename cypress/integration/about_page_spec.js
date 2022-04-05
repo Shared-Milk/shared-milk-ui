@@ -41,7 +41,7 @@ describe('About page user flow', () => {
       .get('[data-testid=member-card]').children()
       .get('.name-and-photo > h4')
       .get('.name-and-photo > .bio-photo')
-      .get('.pronouns > h3')
+      .get('.pronouns > h4')
       .get('.social-links')
   });
 

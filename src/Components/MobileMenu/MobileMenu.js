@@ -12,7 +12,7 @@ const MobileMenu = () => {
       <NavLink to='/about' className='nav'>About</NavLink>
       <NavLink to='/support' className='nav'>Support</NavLink>
     </Menu>
-  )
+  );
 };
 
 export default MobileMenu;

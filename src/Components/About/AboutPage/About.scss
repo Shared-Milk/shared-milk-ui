@@ -64,6 +64,15 @@
         }
       }
 
+      .baby-photo {
+        .baby-photo {
+          margin: 5%;
+          border-radius: 0.5em;
+          width: 85%;
+          @include m.buttonShadow();
+        }
+      }
+
 
       .social-links {
         display: flex;

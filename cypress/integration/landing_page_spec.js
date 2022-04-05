@@ -15,7 +15,7 @@ describe('Shared Milk landing page user flow', () => {
   it('Should display a page title and organization mission statement', () => {
     cy.get('[data-testid=home]').children()
       .get('h2').contains('Our Mission')
-      .get('aside.mission').children().should('have.length', 4)
+      .get('aside.mission').children().should('have.length', 5)
   });
 
   it('Should display 3 large buttons; Need Milk, Donate Milk, and Need Support', () => {

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import ReactLoading from 'react-loading';
 import { useQuery } from '@apollo/client';
 import { GET_ALL_DONORS } from '../../Graphql/Queries';
+import 'animate.css';
 
 const NeedMilk = () => {
   const { error, loading, data } = useQuery(GET_ALL_DONORS);
@@ -29,7 +30,7 @@ const NeedMilk = () => {
       <h2>Milk Donors</h2>
       <p>Click on a profile below to contact a milk donor.</p>
         {checkForMessage()}
-      <section className='contact-grid' data-testid='contact-grid'>
+      <section className='contact-grid animate__animated animate__fadeInUpBig' data-testid='contact-grid'>
         { donors.map(donor => {
           return (<DonorCard key={ donor.id } donor={ donor }/>)
         }) }

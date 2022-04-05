@@ -1,6 +1,6 @@
 describe('individual about page flow', () => {
   beforeEach(() => {
-    cy.visit('http://localhost:3000/about/seth_perna')
+    cy.visit('http://localhost:3000/our-team/seth_perna')
   });
 
   it('should have a name as title', () => {

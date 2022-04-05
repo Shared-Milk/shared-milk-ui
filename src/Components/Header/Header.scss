@@ -3,27 +3,48 @@
 
 header {
   background-color: v.$darkTeal;
-  @include m.flexbox(row, nowrap, normal, space-between, center);
-  padding: 2%;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2em;
+  padding: 1%;
+  align-items: center;
   
   .logo {
-    flex: 1;
     line-height: 3em;
 
-    h1 {
-      font-size: 3em;
-      font-weight: 600;
-      color: v.$offWhite;
-      width: 80%;
-  
-      &:hover {
-        cursor: pointer;
+    .logo-link {
+      display: flex;
+      align-items: center;
+
+      .baby-logo {
+        &:hover {
+          display: inline-block;
+          
+          animation: pulse; 
+          animation-duration: 2s;
+        }  
+      }
+      
+      .logo-text {
+
+        h1 {
+          font-size: 4em;
+          font-weight: 600;
+          color: v.$offWhite;
+      
+          &:hover {
+            cursor: pointer;
+          }
+          .baby-bottle {
+            width: 11%;
+            margin: 1%;
+          }
+        }
       }
     }
   }
 
   nav {
-    flex: 1;
     @include m.flexbox(row, nowrap, normal, flex-end, normal);
     white-space: nowrap;
 
@@ -62,6 +83,49 @@ header {
     flex-direction: column;
     align-items: flex-start;
 
+    .logo {
+      .logo-link {
+        .baby-logo {
+          width: 20%;
+        }
+        
+        .logo-text {
+          h1 {
+            font-size: 2em;
+          }
+        }
+      }
+    }
+
+    nav {
+      .menu {
+        flex-wrap: wrap;
+      }
+
+      .mobile-hidden {
+        display: none;
+      }
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+    flex-direction: column;
+    align-items: flex-start;
+
+    .logo {
+      .logo-link {
+        .baby-logo {
+          width: 20%;
+        }
+        
+        .logo-text {
+          h1 {
+            font-size: 2em;
+          }
+        }
+      }
+    }
+
     nav {
       .menu {
         flex-wrap: wrap;
@@ -77,12 +141,16 @@ header {
     flex-direction: column;
     align-items: flex-start;
 
-    header {
-      .logo {
-        a {
+    .logo {
+      line-height: 1.5em;
+      .logo-link {
+        .baby-logo {
+          width: 30%;
+        }
+        
+        .logo-text {
           h1 {
-            font-size: 2em;
-            width: 80%;
+            font-size: 1.5em;
           }
         }
       }
@@ -103,11 +171,15 @@ header {
     flex-direction: column;
     align-items: flex-start;
 
-    header {
-      .logo {
-        h1 {
-          font-size: 2em;
-          width: 80%;
+    .logo {
+      line-height: 1.5em;
+      .logo-link {
+        .baby-logo {
+          width: 35%;
+        }
+        
+        .mobile-hidden {
+          display: none;
         }
       }
     }

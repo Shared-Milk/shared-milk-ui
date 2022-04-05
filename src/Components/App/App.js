@@ -1,6 +1,4 @@
 import React from 'react';
-import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
 import './App.scss';
 import { Routes, Route } from 'react-router-dom';
 import Header from '../Header/Header';
@@ -13,7 +11,6 @@ import {
    from,
 } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
-// import { gql, useQuery } from '@apollo/client';
 
 // Nav Bar Imports
 import HomePage from '../HomePage/HomePage';
@@ -32,23 +29,23 @@ import Profile from '../About/ProfilePage/Profile';
 import NotFound from '../NotFound/NotFound';
 
 const errorLink = onError(({ graphqlErrors }) => {
-   if(graphqlErrors) {
-      graphqlErrors.map(({ message, location, path }) => {
-         console.log(`Graphql error: ${ message }`)
-         return message
-      })
-   }
-})
+  if(graphqlErrors) {
+    graphqlErrors.map(({ message, location, path }) => {
+       console.log(`Graphql error: ${ message }`)
+       return message;
+    });
+  }
+});
 
 const link = from([
    errorLink,
    new HttpLink({ uri: 'https://shared-milk-api.herokuapp.com/graphql' })
-])
+]);
 
 const client = new ApolloClient({
-   cache: new InMemoryCache(), 
-   link: link 
-})
+  cache: new InMemoryCache(),
+  link: link,
+});
 
 const App = () => {
    return (
@@ -76,10 +73,7 @@ const App = () => {
             </div>
          </main>
       </ApolloProvider>
-   )
+   );
 };
 
 export default App;
-
-
-

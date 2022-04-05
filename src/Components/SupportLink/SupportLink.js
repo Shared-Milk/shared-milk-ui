@@ -13,7 +13,7 @@ const SupportLink = () => {
       <button data-testid='new-mom-link' className='support-button' onClick={ () => window.open('https://newmomhealth.com/', '_blank') }>4th Trimester Project</button>
       <button data-testid='suicide-hotline-number' className='support-button' onClick={ () => window.open('tel:18002738255', '_blank') }>National Suicide Prevention Hotline:  1-800-273-TALK (8255)</button>
     </section>
-  )
+  );
 };
 
-export default SupportLink;      
+export default SupportLink;

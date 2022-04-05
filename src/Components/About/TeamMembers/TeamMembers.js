@@ -8,18 +8,18 @@ const TeamMembers = ({team}) => {
     <section data-testid='team-grid' className='team-grid'>
       {team.map(teamMember => {
         return (
-          <MemberCard 
+          <MemberCard
             key={teamMember.id}
             member={teamMember}
           />
         )
       })}
     </section>
-  )
+  );
 };
 
 export default TeamMembers;
 
 TeamMembers.propTypes = {
-  teamMember: PropTypes.object
+  teamMember: PropTypes.object,
 };

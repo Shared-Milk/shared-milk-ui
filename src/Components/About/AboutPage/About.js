@@ -1,17 +1,17 @@
 import './About.scss';
 import { useState, useEffect } from 'react';
-import { teamData } from '../../../TeamData/TeamData';
-import TeamMembers from '../TeamMembers';
+import { babyData } from '../KiddoPhotos/BabyData';
+import Babies from '../Babies';
 import 'animate.css';
 
 const About = () => {
-  const [team, setTeam] = useState([]);
+  const [babies, setBabies] = useState([]);
 
   useEffect(() => {
-    if(team) {
-      setTeam([...teamData]);
+    if(babies) {
+      setBabies([...babyData]);
     }
-  }, [team]);
+  }, [babies]);
 
   return (
     <section className='main-container about-page' data-testid='about'>
@@ -22,7 +22,7 @@ const About = () => {
         </div>
         <hr className='dots'></hr>
       <section className='team-container' data-testid='team-container'>
-        <TeamMembers team={team} />
+        <Babies photos={babies} />
       </section>
     </section>
   );

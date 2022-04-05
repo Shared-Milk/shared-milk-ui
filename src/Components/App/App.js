@@ -26,7 +26,7 @@ import MilkRequestForm from '../MilkRequestForm/MilkRequestForm';
 import ConfirmationMessage from '../ConfirmationMessages/ConfirmationMessage';
 import DonorThankYou from '../ConfirmationMessages/DonorThankYou';
 import DonorSorry from '../ConfirmationMessages/DonorSorry';
-import Profile from '../About/ProfilePage/Profile';
+import Profile from '../MeetTheTeam/ProfilePage/Profile';
 import NotFound from '../NotFound/NotFound';
 
 const errorLink = onError(({ graphqlErrors }) => {

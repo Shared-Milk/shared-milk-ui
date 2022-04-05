@@ -3,7 +3,7 @@ import { teamData } from '../../TeamData/TeamData';
 import TeamMembers from './TeamMembers';
 import 'animate.css';
 
-const About = () => {
+const OurTeam = () => {
   const [team, setTeam] = useState([]);
 
   useEffect(() => {
@@ -25,4 +25,4 @@ const About = () => {
   );
 };
 
-export default About;
+export default OurTeam;

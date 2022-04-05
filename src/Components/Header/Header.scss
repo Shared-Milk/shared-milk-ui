@@ -3,7 +3,6 @@
 
 header {
   background-color: v.$darkTeal;
-  // @include m.flexbox(row, nowrap, normal, space-between, center);
   display: grid;
   grid-template-columns: 2fr 1fr;
   grid-gap: 2em;
@@ -11,7 +10,6 @@ header {
   align-items: center;
   
   .logo {
-    // flex: 2;
     line-height: 3em;
 
     .logo-link {
@@ -28,7 +26,6 @@ header {
       }
       
       .logo-text {
-        // display: flex;
 
         h1 {
           font-size: 4em;
@@ -48,7 +45,6 @@ header {
   }
 
   nav {
-    // flex: 1;
     @include m.flexbox(row, nowrap, normal, flex-end, normal);
     white-space: nowrap;
 

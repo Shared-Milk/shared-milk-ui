@@ -6,7 +6,7 @@
   text-align: center;
 
   .error-button {
-    @include m.button(v.$orange, v.$offBlack, v.$bodyFont);
+    @include m.button(v.$brightOrange, v.$offBlack, v.$bodyFont);
     @include m.buttonShadow();
     margin: 5% 0%;
   

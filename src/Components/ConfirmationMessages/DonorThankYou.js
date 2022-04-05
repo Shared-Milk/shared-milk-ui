@@ -13,8 +13,6 @@ const DonorThankYou = () => {
   }, [data])
 
   if (errorStatus) {
-    console.log('errorStatus after setError', errorStatus)
-    console.log('what is loading NOW??', loading)
     return (
       <article className="main-container error-container">
         <h2 className='error-message'>Oops! We had trouble with your submission.<br/>Please try again later.</h2>

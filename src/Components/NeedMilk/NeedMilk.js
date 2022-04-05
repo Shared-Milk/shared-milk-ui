@@ -7,9 +7,6 @@ import { GET_ALL_DONORS } from '../../Graphql/Queries';
 const NeedMilk = () => {
   const { error, loading, data } = useQuery(GET_ALL_DONORS)
   const [donors, setDonors] = useState([])
-
-  const gqlError = error;
-  console.log(gqlError)
   
   useEffect(() => {
     if(data) {

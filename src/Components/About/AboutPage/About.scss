@@ -3,18 +3,22 @@
 
 .about-page {
   height: 100%;
-  
+
   h3 {
     margin-top: 5%;
     font-size: 1.5em;
     color: v.$darkTeal;
   }
 
+  h4 {
+    font-size: 1.5em;
+  }
+
   .mission-container {
     display: flex;
     justify-content: center;
     padding-bottom: 2%;
-    
+
     .mission {
       text-align: center;
       font-size: 1.5em;
@@ -26,7 +30,7 @@
 }
 
 .team-container {
-  
+
   .team-grid {
     height: 100%;
     display: grid;
@@ -56,10 +60,10 @@
           margin: 1% 0;
           font-size: 2em;
           color: v.$salmon;
-          letter-spacing: 2px;   
+          letter-spacing: 2px;
         }
       }
-      
+
 
       .social-links {
         display: flex;
@@ -83,11 +87,11 @@
     }
 
     .col-2 {
-      
+
       h3 {
         margin: 5% 0 2% 0;
       }
-      
+
       .social-link {
         display: flex;
         align-items: center;

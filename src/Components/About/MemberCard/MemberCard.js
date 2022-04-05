@@ -11,22 +11,22 @@ const MemberCard = ({member}) => {
     <article data-testid='member-card' className='member-card'>
       <Link to={`${url}`} className='name-and-photo'>
         <h4 data-testid='dev-name'>{member.firstName} {member.lastName}</h4>
-        <img data-testid='dev-image' className='bio-photo' src={member.photo} alt={`Photo of ${member.firstName}`}/>
+        <img data-testid='dev-image' className='bio-photo' src={member.photo} alt={`${member.firstName}`}/>
       </Link>
       <div className='pronouns'>
-        <h3>{member.pronouns}</h3>
+        <h4>{member.pronouns}</h4>
       </div>
       <div className='social-links'>
-        <a href={member.linkedin} target='_blank'> 
+        <a href={member.linkedin} target='_blank' rel='noreferrer'>
           <img className='social-icon' src={member.linkedinIcon} alt={`${member.firstName}'s Linked In Profile`}/>
         </a>
-        <a href={member.github} target='_blank'> 
+        <a href={member.github} target='_blank' rel='noreferrer'>
           <img className='social-icon' src={member.githubIcon} alt={`${member.firstName}'s Github Profile`}/>
         </a>
       </div>
     </article>
-  )
-}
+  );
+};
 
 export default MemberCard;
 
@@ -40,5 +40,4 @@ MemberCard.propTypes = {
     github: PropTypes.string,
     githubIcon: PropTypes.string
   })
-}
-
+};

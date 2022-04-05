@@ -9,10 +9,10 @@ const MilkRequestForm = () => {
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm();
   const isEmpty = Object.keys(errors).length === 0;
-  
+
   const onSubmit = () => {
     if (isEmpty) {
-      navigate('/sent-confirmation')
+      navigate('/sent-confirmation');
     }
   };
 

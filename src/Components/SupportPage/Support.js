@@ -8,7 +8,7 @@ const Support = () => {
       <p>Help is available for parents and parents-to-be. We’re here for you and have provided some links to our recommended resources below.</p>
       <SupportLink />
     </article>
-  )
+  );
 };
 
 export default Support;

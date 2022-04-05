@@ -22,7 +22,6 @@
     @include m.buttonShadow();
 
     &:hover {
-      // @include m.buttonHover(2em)
       background-color: v.$orange;
     }
   }

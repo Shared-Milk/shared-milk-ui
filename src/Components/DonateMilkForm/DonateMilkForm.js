@@ -23,7 +23,7 @@ const DonateMilkForm = () => {
       try {
         result = await createNewDonor(data);
       } catch(error) {
-        const errorMsg = 'Oops! We had trouble with your submission. Please try again later.';
+        const errorMsg = 'Wahhhhhh! We had trouble with your submission. Please try again later.';
         return navigate('/thank-you', { state: errorMsg })
       }
       return navigate('/thank-you', { state: result })

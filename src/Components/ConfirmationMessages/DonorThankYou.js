@@ -17,7 +17,7 @@ const DonorThankYou = () => {
     console.log('what is loading NOW??', loading)
     return (
       <article className="main-container error-container">
-        <h2 className='error-message'>Oops! We had trouble with your submission. Please try again later.</h2>
+        <h2 className='error-message'>Oops! We had trouble with your submission.<br/>Please try again later.</h2>
         <button className='error-button' onClick={() => {window.location.href='/'}}>Go Back Home</button>
       </article>
     )

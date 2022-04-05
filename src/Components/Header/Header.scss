@@ -14,6 +14,7 @@ header {
       font-size: 3em;
       font-weight: 600;
       color: v.$offWhite;
+      width: 80%;
   
       &:hover {
         cursor: pointer;
@@ -81,6 +82,17 @@ header {
     flex-direction: column;
     align-items: flex-start;
 
+    header {
+      .logo {
+        a {
+          h1 {
+            font-size: 2em;
+            width: 80%;
+          }
+        }
+      }
+    }
+
     nav {
       .menu {
         flex-wrap: wrap;
@@ -99,7 +111,8 @@ header {
     header {
       .logo {
         h1 {
-          font-size: 1em;
+          font-size: 2em;
+          width: 80%;
         }
       }
     }

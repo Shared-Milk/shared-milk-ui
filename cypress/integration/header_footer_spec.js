@@ -17,12 +17,13 @@ describe('Header, Nav, and Footer content', () => {
       .get('nav').children('.active').should('have.length', 1)
       .get('.desktop-hidden').should('exist')
       .get('ul.menu').should('be.visible').children()
-      .get('li').should('have.length', 5)
+      .get('li').should('have.length', 6)
       .get('.menu > li:nth-child(1)').contains('Home')
       .get('.menu > li:nth-child(2)').contains('Need Milk')
       .get('.menu > li:nth-child(3)').contains('Donate')
       .get('.menu > li:nth-child(4)').contains('About')
-      .get('.menu > li:nth-child(5)').contains('Support')
+      .get('.menu > li:nth-child(5)').contains('Our Team')
+      .get('.menu > li:nth-child(6)').contains('Support')
   });
 
   it('Should be able to navigate all pages on desktop view', () => {
@@ -44,6 +45,10 @@ describe('Header, Nav, and Footer content', () => {
         expect(location.href).to.eq('http://localhost:3000/about')
     }));
     cy.get('.menu > li:nth-child(5)').click()
+      .location().should((location => {
+        expect(location.href).to.eq('http://localhost:3000/our-team')
+    }));
+    cy.get('.menu > li:nth-child(6)').click()
       .location().should((location => {
         expect(location.href).to.eq('http://localhost:3000/support')
     }));
@@ -68,7 +73,12 @@ describe('Header, Nav, and Footer content', () => {
         expect(location.href).to.eq('http://localhost:3000/about')
     }));
     cy.get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .active').click()
-      .get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .bm-item:nth-child(5)').click().contains('Support').click()
+      .get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .bm-item:nth-child(5)').click().contains('Our Team').click()
+      .location().should((location => {
+        expect(location.href).to.eq('http://localhost:3000/our-team')
+    }));
+    cy.get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .active').click()
+      .get('div > .bm-menu-wrap > .bm-menu > .bm-item-list > .bm-item:nth-child(6)').click().contains('Support').click()
       .location().should((location => {
         expect(location.href).to.eq('http://localhost:3000/support')
     }));

@@ -17,6 +17,7 @@ import HomePage from '../HomePage/HomePage';
 import NeedMilk from '../NeedMilk/NeedMilk';
 import Donate from '../DonateMilk/DonateMilk';
 import About from '../About/AboutPage/About';
+import TeamPage from '../MeetTheTeam//TeamPage';
 import Support from '../SupportPage/Support';
 import Sidebar from '../MobileMenu/MobileMenu';
 
@@ -25,7 +26,7 @@ import MilkRequestForm from '../MilkRequestForm/MilkRequestForm';
 import ConfirmationMessage from '../ConfirmationMessages/ConfirmationMessage';
 import DonorThankYou from '../ConfirmationMessages/DonorThankYou';
 import DonorSorry from '../ConfirmationMessages/DonorSorry';
-import Profile from '../About/ProfilePage/Profile';
+import Profile from '../MeetTheTeam/ProfilePage/Profile';
 import NotFound from '../NotFound/NotFound';
 
 const errorLink = onError(({ graphqlErrors }) => {
@@ -61,12 +62,13 @@ const App = () => {
                   <Route path='need-milk' element={<NeedMilk />}/>
                   <Route path='donate' element={<Donate />}/>
                   <Route path='about' element={<About />}/>
+                  <Route path='our-team' element={<TeamPage />}/>
                   <Route path='support' element={<Support />}/>
                   <Route path='contact' element={<MilkRequestForm />}/>
                   <Route path='sent-confirmation' element={<ConfirmationMessage />}/>
                   <Route path='thank-you' element={<DonorThankYou />}/>
                   <Route path='sorry' element={<DonorSorry />}/>
-                  <Route path='about/*' element={<Profile />}/>
+                  <Route path='our-team/*' element={<Profile />}/>
                   <Route path='*' element={<NotFound />}/>
                </Routes>
                <Footer />

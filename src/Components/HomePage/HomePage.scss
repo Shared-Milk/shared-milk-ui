@@ -3,12 +3,15 @@
 
 .main-container {
   margin: 5% 10%;
-  // height: 100vh;
 
   .error-loading {
     display: flex;
     justify-content: center;
     margin: 5%;
+  }
+
+  .bold {
+    color: v.$darkTeal;
   }
 }
 
@@ -29,11 +32,24 @@
     color: v.$salmon;
   }
 
+  .photo-grid {
+    display: flex;
+    max-width: 80%;
+    margin-top: 5%;
+
+    .baby-photo {
+      width: 60%;
+      margin: 1%;
+      border-radius: 1em;
+    }
+  }
+
   .buttons {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 2em;
     height: 50%;
+    margin: 5%;
 
     .need, .donate, .support {
       @include m.flexbox(row, nowrap, normal, center, center);
@@ -85,9 +101,20 @@
 @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
   .columns {
     @include m.flexbox(row, wrap, flex-start, center, normal); 
+    height: 100%;
+
+    .mission {
+      .mobile-hidden {
+        display: none;
+      }
+    }
 
     .buttons {
       width: 80%;
+
+      .support {
+        padding: 5%;
+      }
     }
   }
 }
@@ -96,8 +123,35 @@
   .columns {
     @include m.flexbox(row, wrap, flex-start, center, normal); 
 
+    .mission {
+      .mobile-hidden {
+        display: none;
+      }
+    }
+
     .buttons {
       width: 80%;
+    }
+  }
+}
+
+@media (min-width: 481px) and (max-width: 767px) and (orientation: landscape) {
+  .columns {
+    @include m.flexbox(row, wrap, flex-start, center, normal); 
+    height: 100%;
+
+    .mission {
+      .mobile-hidden {
+        display: none;
+      }
+    }
+
+    .buttons {
+      width: 80%;
+
+      .support {
+        padding: 5%;
+      }
     }
   }
 }
@@ -115,6 +169,47 @@
   .columns {
     @include m.flexbox(row, wrap, flex-start, center, normal); 
     
+
+    .mission {
+      .mobile-hidden {
+        display: none;
+      }
+    }
+
+    .buttons {
+      width: 100%;
+      grid-template-columns: none;
+      grid-gap: 0;
+      display: flex;
+      flex-direction: column;
+
+      .need, .donate, .support {
+        margin: 2%;
+        padding: 10% 1%;
+      }
+    }
+  }
+}
+
+@media (min-width: 320px) and (max-width: 480px) and (orientation: landscape){
+  .main-container {
+    height: auto;
+  }
+
+  .message {
+    height: 100vh;
+  }
+
+  .columns {
+    @include m.flexbox(row, wrap, flex-start, center, normal); 
+    
+
+    .mission {
+      .mobile-hidden {
+        display: none;
+      }
+    }
+
     .buttons {
       width: 100%;
       grid-template-columns: none;

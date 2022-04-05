@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'proptypes';
 
-const MemberCard = ({member}) => {
+const MemberCard = ({ member }) => {
   const firstName = member.firstName.toLowerCase();
   const lastName = member.lastName.toLowerCase();
   const url = `${firstName}_${lastName}`;

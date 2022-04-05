@@ -13,7 +13,6 @@ import {
    from,
 } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
-// import { gql, useQuery } from '@apollo/client';
 
 // Nav Bar Imports
 import HomePage from '../HomePage/HomePage';

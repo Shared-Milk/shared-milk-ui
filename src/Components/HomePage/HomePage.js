@@ -1,8 +1,7 @@
 import './HomePage.scss';
 import { Link } from 'react-router-dom';
-import Levon_Home from '../../TeamData/KiddoPhotos/Levon_Home.png';
-import Elora_Home from '../../TeamData/KiddoPhotos/Elora_Home.png';
-
+import Levon_Home from '../MeetTheTeam/KiddoPhotos/Levon_Home.png';
+import Elora_Home from '../MeetTheTeam/KiddoPhotos/Elora_Home.png';
 
 const HomePage = () => {
    return (

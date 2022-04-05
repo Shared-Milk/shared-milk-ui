@@ -1,6 +1,7 @@
 import { useQuery } from '@apollo/client';
 import { GET_ALL_DONORS } from '../../Graphql/Queries';
 import { useEffect, useState } from 'react';
+import baby_logo from '../Header/shared_milk_logo.png';
 
 const DonorThankYou = () => {
   const { loading, data } = useQuery(GET_ALL_DONORS);
@@ -15,7 +16,8 @@ const DonorThankYou = () => {
   if (errorStatus) {
     return (
       <article className="main-container error-container">
-        <h2 className='error-message'>Oops! We had trouble with your submission.<br/>Please try again later.</h2>
+        <img src={baby_logo} alt='No Use Cryin Over Shared Milk logo' className='baby-logo animate__animated animate__tada'/>
+        <h2 className='error-message'>Waah! We had trouble with your submission.<br/>Please try again later.</h2>
         <button className='error-button' onClick={() => {window.location.href='/'}}>Go Back Home</button>
       </article>
     );

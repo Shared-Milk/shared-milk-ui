@@ -4,25 +4,26 @@
 
 ***"to create a safe space for families who under-produce breast milk to connect with families who over-produce."***
 
-Deployed Application here: [No Use Cryin' Over Shared Milk](https://no-use-cryin-over-shared-milk.herokuapp.com/)
+Deployed Application here :point_right: [no-use-cryin-over-shared-milk.herokuapp.com](https://no-use-cryin-over-shared-milk.herokuapp.com/)
 
 Github Organization: [Shared Milk](https://github.com/Shared-Milk)
 
 # Table of Contents
 
 1. [Overview](#overview)
-2. [Installation Instructions](#installationInstructions)
-3. [Project Goals](#projectGoals)
-4. [Directions and Features](#directions)
-5. [Code Architecture](#codeArchitecture)
-6. [Technologies Used](#techUsed)
-7. [Testing](#testing)
-8. [Project Challanges](#projectChallanges)
-9. [Project Wins](#projectWins)
-10. [Future Iterations](#futureIterations)
-11. [Authors](#authors)
+2. [Demo](#demo)
+3. [Installation Instructions](#installation-instructions)
+4. [Project Goals](#project-goals)
+5. [Directions and Features](#directions-and-features)
+6. [Code Architecture](#code-architecture)
+7. [Technologies Used](#technologies-used)
+8. [Testing](#testing)
+9. [Project Challenges](#project-challenges)
+10. [Project Wins](#project-wins)
+11. [Future Iterations](#future-iterations)
+12. [Authors](#authors)
 
-## Overview <a name="overview"></a>
+## Overview 
 
 'No Use Cryin' Over Shared Milk' is an application that enables families that are dealing with an underproduction of breast milk to connect with families that are overproducing breast milk in a free and easily accessible manner. The end goal is to make sure that no baby goes hungry and that no family has to worry about making sure that their infant gets the best nutrition possible.
 
@@ -36,7 +37,10 @@ Github Organization: [Shared Milk](https://github.com/Shared-Milk)
     - GitHub: [No Use Cryin' Over Spilled Milk API](https://github.com/Shared-Milk/shared_milk_be)
     - Heroku: [No Use Cryin' Over Spilled Milk Deployed API](https://shared-milk-api.herokuapp.com/graphql)
 
-## Installation Instructions <a name="installationInstructions"></a>
+## Demo
+<a href='https://no-use-cryin-over-shared-milk.herokuapp.com/' target='_blank' rel='noreferrer'>![site-overview](https://github.com/Shared-Milk/shared-milk-ui/blob/main/.github/Site-Overview.gif)</a>
+
+## Installation Instructions
 
 1. Clone down [this repository](https://github.com/Shared-Milk/shared-milk-ui)
 2. Run `npm install`
@@ -44,7 +48,7 @@ Github Organization: [Shared Milk](https://github.com/Shared-Milk)
 4. Go to http://localhost:3000/ and you should see the website
 5. Enter `control + c` in your terminal to stop the server at any time.
 
-## Project Goals <a name="projectGoals"></a>
+## Project Goals
 
 - Demonstrate knowledge you’ve gained throughout Turing
 - Use an agile process to turn well defined requirements into deployed and production ready software
@@ -56,27 +60,43 @@ Github Organization: [Shared Milk](https://github.com/Shared-Milk)
 - Focus on communication between front-end and back-end teams in order to complete and deploy features that have been outlined by the project spec
 
 
-## Directions and Features <a name="directions"></a>
+## Directions and Features
 
-On the landing page, the user is given the option to donate milk, request milk and view resources for struggling families. The user may also click the About link in the navigation bar at the top right of the page to learn more about the team behind 'No Use Cryin' Over Shared Milk'.
+On the landing page, the user is given the option to donate milk, request milk and view support resources for struggling families. 
 
-Click on the 'Need Milk' button on either the landing page or on the navigation bar link to view a database of active milk donors. If the user is interested in requesting milk from a certain donor, they may click on that selected donor's card and they will be directed to a Milk Request Form where they can then message that donor.
+ - Click the **Need Milk** button on either the landing page or on the navigation bar link to view a database of active milk donors. If the user is interested in requesting milk from a certain donor, they may click on that selected donor's card and they will be directed to a Milk Request Form where they can then message that donor.
 
-Click on the 'Donate Milk' button on the landing page or the 'Donate' button on the navigation bar to fill out the Donate Milk Form. Once the donor adds their information correctly and clicks the submit button, they will be directed to a thank you page. 
+![need-milk](https://github.com/Shared-Milk/shared-milk-ui/blob/main/.github/Need-Milk.gif)
 
-Click on the 'Find Support' button on either the landing page or the 'Support' button on the navigation bar to view a list of links with a variety of resources for families who are struggling due to the stressors of parenthood or breast milk production issues.
+  - Click the **Donate Milk** button on the landing page or the 'Donate' button on the navigation bar to fill out the Donate Milk Form. Once the donor adds their information correctly and clicks the submit button, they will be directed to a thank you page. 
 
-Lastly, the user may click the 'About' button on the navigation bar to learn more about the team behind the application.
+![donate](https://github.com/Shared-Milk/shared-milk-ui/blob/main/.github/Donate-Milk.gif)
 
-## Code Architecture <a name="codeArchitecture"></a>
+  - Click the **Find Support** button on either the landing page or the 'Support' button on the navigation bar to view a list of links with a variety of resources for families who are struggling due to the stressors of parenthood or breast milk production issues.
 
-This application utilizes seventeen functional components and uses React Hooks to manage state and perform network requests. 
+![support](https://github.com/Shared-Milk/shared-milk-ui/blob/main/.github/Support.gif)
 
-## Technologies Used <a name="techUsed"></a>
+  - Navigate to the **Our Team** page in the menu to learn more about the team behind 'No Use Cryin' Over Shared Milk'.
+
+  - Navgigate to the **About** page to read more about our mission and take a look at the precious faces that inspired this app.
+
+  - Fully Mobile Responsive
+    
+    ![mobile-responsive](https://github.com/Shared-Milk/shared-milk-ui/blob/main/.github/Mobile-Responsive.gif)
+   
+  - 100% Accessible
+
+    ![accessibility-score](https://github.com/Shared-Milk/shared-milk-ui/blob/main/.github/accessibility_score.png)
+
+## Code Architecture
+
+This application utilizes 21 functional components and uses React Hooks to manage state and perform network requests. 
+
+## Technologies Used
 
 ### Frontend Technologies
 - React
-- React Router
+- React Router v6
 - Javascript
 - React Hooks
 - GraphQL
@@ -90,11 +110,13 @@ This application utilizes seventeen functional components and uses React Hooks t
 - CircleCI
 - Heroku
 
-## Testing <a name="testing"></a>
+## Testing
 
-Cypress was used for E2E and integration testing. To test the application: run `npm run cypress` and you will have a window open that gives you the ability to click on each test and see whether they pass. Make sure you've run `npm start` in a separate terminal tab before you begin the testing. 
+Cypress was used for E2E and integration testing. To test the application: 
+ 1. Run `npm start`
+ 2. In a seperate terminal tab run `npm run cypress` and you will have a window open that gives you the ability to click on each test and see whether they pass. 
 
-## Project Challanges <a name="projectChallanges"></a>
+## Project Challenges
 
 - This was our team's first time working with the following technologies and concepts, which naturally came with a learning curve as we implemented them into our project:
 
@@ -104,7 +126,7 @@ Cypress was used for E2E and integration testing. To test the application: run `
 
 This project was a good combination of working with familiar technologies such as React and Cypress, while also stretching our ability to learn unfamiliar technologies such as GraphQL. We also had to learn Router v6 and Hooks which added to the project complexity. We were taken aback by the difficulties of a query language like GraphQL because we had only fetched data from Rest APIs prior to this project. Error handling with GraphQL proved to be a formidable challenge because REST APIs use status codes as a part of their response (200-ok, 404-not found, 500-internal server error etc.), but GraphQL will generally always return a 200 error(or 500 if something goes really bad). Without being able to access the status code and status message information, it was really difficult to display the results of a failed or bad request.
 
-## Project Wins <a name="projectWins"></a>
+## Project Wins
 
 - Created a fully funtional MVP with time scope of two weeks
 - Continued to build a strong understanding of React framework 
@@ -113,11 +135,18 @@ This project was a good combination of working with familiar technologies such a
 - Implemented React Router for a multi-page UX
 - Continued to gain competency with Cypress E2E testing framework
 - Utilized typechecking with PropTypes
+- Implemented network error handling that tests for multiple errors
+- Successful implementation of multiple NPM packages, including form error handling, and a mobile menu
+- Fully mobile responsive
+- 100% Accessibility Audit
+- Great collaboration with the BE team on GraphQL
 
-## Future Iterations <a name="futureIterations"></a>
+## Future Iterations
 
-- A mailer to send the donating user an email when they submit to the donor database, as well as whenever someone requests milk
-- A login to have multiple users with statistics such as the amount of milk donated or received, as well as an internal messaging system to connect users
+- A mailer to send the donating user an email when they submit to the donor database, as well as whenever someone requests milk.
+- A login to have multiple users with statistics such as the amount of milk donated or received, as well as an internal messaging system to connect users.
+- A review system for parents to be able to review their experience with a donor.
+- A donor login so a donor can update their status when they are no longer producing.
 
 ## Authors
 

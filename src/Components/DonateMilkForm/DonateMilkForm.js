@@ -5,25 +5,33 @@ import { CREATE_DONOR } from '../../Graphql/Mutations.js';
 import { GET_ALL_DONORS } from '../../Graphql/Queries';
 import { useForm } from 'react-hook-form';
 
-const DonateMilkForm = () => {
-  const [createUser, { error }] = useMutation(CREATE_DONOR);
 
+const DonateMilkForm = () => {
+  const [createUser, { data,  error }] = useMutation(CREATE_DONOR);
+  console.log(data)
+  console.log(error)
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm();
   const isEmpty = Object.keys(errors).length === 0;
-
-  const onSubmit = (data) => {
-    let smoker = parseInt(data.smoker);
+  
+  const onSubmit = async (data) => {
+    let smoker = parseInt(data.smoker)
     if (isEmpty && smoker) {
       return navigate('/sorry');
     } else if (isEmpty && !smoker) {
-      createNewDonor(data);
-      return navigate('/thank-you');
-    }
+      let result;
+      try {
+        result = await createNewDonor(data);
+      } catch(error) {
+        const errorMsg = 'Wahhhhhh! We had trouble with your submission. Please try again later.';
+        return navigate('/thank-you', { state: errorMsg })
+      }
+      return navigate('/thank-you', { state: result })
+    } 
   };
 
-  const createNewDonor = (data) => {
-    createUser({
+  const createNewDonor = async (data) => {
+    await createUser({
       variables: {
         name: data.donorName,
         email: data.donorEmail,
@@ -37,11 +45,9 @@ const DonateMilkForm = () => {
         awaitRefetchQueries: true
       }
     })
-    if (error) {
-      return error;
-    }
-  };
-
+    return 'Thank you for offering to donate milk. An eager parent will be in contact with you soon!'
+  }
+  
   return (
     <form className='donor-form animate__animated animate__fadeInUpBig' data-testid='donor-form' onSubmit={ handleSubmit(onSubmit) }>
       <label htmlFor='Your Name'>Your Name</label>

@@ -78,7 +78,15 @@ On the landing page, the user is given the option to donate milk, request milk a
 
   - Navigate to the **Our Team** page in the menu to learn more about the team behind 'No Use Cryin' Over Shared Milk'.
 
-  - Navgigate to the **About** page to read more about our mission and take a look at the precious faces that inspired this app.
+  - Navigate to the **About** page to read more about our mission and take a look at the precious faces that inspired this app.
+
+  - If the user does not correctly fill out a form they are prompted with form error reminders.
+  
+    ![form_errors](https://github.com/Shared-Milk/shared-milk-ui/blob/main/.github/form_errors.gif)
+    
+  - If the user navigates to a website that doesn't exist, or a network error occurs, they are prompted with error messages.
+
+    ![error-messages](https://github.com/Shared-Milk/shared-milk-ui/blob/main/.github/error_handling.png)
 
   - Fully Mobile Responsive
     

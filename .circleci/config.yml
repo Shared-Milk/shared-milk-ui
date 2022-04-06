@@ -6,6 +6,8 @@ jobs:
       - checkout
       - heroku/install
       - heroku/deploy-via-git
+  kramdown:
+    input: Kramdown
 orbs:
   cypress: cypress-io/cypress@1
   heroku: circleci/heroku@1.2.6
@@ -15,8 +17,6 @@ workflows:
         - cypress/run:
             group: 'all tests' # name this group "all tests" on the dashboard
             start: 'npm start' # start server before running tests
-        - kramdown:
-            input: Kramdown
         - deploy-heroku:
             requires:
               - cypress/run

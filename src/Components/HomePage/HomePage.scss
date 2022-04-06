@@ -11,7 +11,7 @@
   }
 
   .bold {
-    color: v.$darkTeal;
+    font-family: v.$headerFont;
   }
 }
 
@@ -79,6 +79,19 @@
     .support {
       &:hover {
         @include m.buttonHover(3em);
+      }
+    }
+  }
+}
+
+@media (min-width: 1281px) {
+  .columns {
+    height: 100vh;
+
+    .buttons {
+      height: 60%;
+      .support {
+        // padding: 5% 0%;
       }
     }
   }

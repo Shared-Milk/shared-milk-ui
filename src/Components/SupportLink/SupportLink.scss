@@ -4,7 +4,7 @@
 .support-links {
   @include m.flexbox(row, wrap, normal, center, normal);
   margin: 5% 2% 20% 2%;
-  padding-bottom: 25%;
+  // padding-bottom: 25%;
 
   .support-button {
     display: block;
@@ -23,6 +23,7 @@
 
     &:hover {
       background-color: v.$orange;
+      cursor: pointer;
     }
   }
 }

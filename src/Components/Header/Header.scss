@@ -108,6 +108,20 @@ header {
     }
   }
 
+  @media (min-width: 1025px) and (max-width: 1280px) {
+    nav {
+      .menu {
+        flex-wrap: wrap;
+      }
+
+      .mobile-hidden {
+        display: none;
+      }
+    }
+  }
+   
+   
+
   @media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
     flex-direction: column;
     align-items: flex-start;
@@ -177,9 +191,11 @@ header {
         .baby-logo {
           width: 35%;
         }
-        
-        .mobile-hidden {
-          display: none;
+
+        .logo-text {
+          h1 {
+            font-size: 1.5em;
+          }
         }
       }
     }

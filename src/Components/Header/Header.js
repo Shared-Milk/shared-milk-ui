@@ -10,7 +10,7 @@ const Header = () => {
       <section className='logo'>
         <Link to='/' className='logo-link'>
           <img src={baby_logo} alt='No Use Cryin Over Shared Milk logo' className='baby-logo animate__animated animate__tada animate__repeat-2'/>
-          <div className='logo-text mobile-hidden'>
+          <div className='logo-text'>
             <h1>No Use Cryin' Over<br></br>
             <span className='logo-indent'> Shared Milk
             <img src={baby_bottle} alt='baby bottle icon' className='baby-bottle'/></span>

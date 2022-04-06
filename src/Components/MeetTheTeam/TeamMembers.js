@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 
 const TeamMembers = ({ team }) => {
   return (
-    <section data-testid='team-grid' className='team-grid animate__animated animate__fadeInUpBig'>
+    <section data-testid='team-grid' className='team-grid animate__animated animate__fadeInUp'>
       {team.map(teamMember => {
         return (
           <MemberCard

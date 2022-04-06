@@ -11,6 +11,7 @@ import {
    from,
 } from '@apollo/client';
 import { onError } from '@apollo/client/link/error';
+import ScrollToTop from './ScrollToTop';
 
 // Nav Bar Imports
 import HomePage from '../HomePage/HomePage';
@@ -51,6 +52,7 @@ const client = new ApolloClient({
 const App = () => {
    return (
       <ApolloProvider client={client}>
+         <ScrollToTop /> 
          <main className='App'>
             <div className='desktop-hidden'>
                <Sidebar pageWrapId={'page-wrap'} outerContainerId={'outer-container'} />

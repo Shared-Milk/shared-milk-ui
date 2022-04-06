@@ -30,7 +30,7 @@ const NeedMilk = () => {
       <h2>Milk Donors</h2>
       <p>Click on a profile below to contact a milk donor.</p>
         {checkForMessage()}
-      <section className='contact-grid animate__animated animate__fadeInUpBig' data-testid='contact-grid'>
+      <section className='contact-grid animate__animated animate__fadeInUp' data-testid='contact-grid'>
         { donors.map(donor => {
           return (<DonorCard key={ donor.id } donor={ donor }/>)
         }) }

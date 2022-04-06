@@ -8,8 +8,6 @@ import { useForm } from 'react-hook-form';
 
 const DonateMilkForm = () => {
   const [createUser, { data,  error }] = useMutation(CREATE_DONOR);
-  console.log(data)
-  console.log(error)
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm();
   const isEmpty = Object.keys(errors).length === 0;
@@ -49,7 +47,7 @@ const DonateMilkForm = () => {
   }
   
   return (
-    <form className='donor-form animate__animated animate__fadeInUpBig' data-testid='donor-form' onSubmit={ handleSubmit(onSubmit) }>
+    <form className='donor-form animate__animated animate__fadeInRight' data-testid='donor-form' onSubmit={ handleSubmit(onSubmit) }>
       <label htmlFor='Your Name'>Your Name</label>
       <input {...register('donorName', { required: `* Is the baby-brain that bad?` })} type='text' placeholder='First & Last Name' />
       <p data-testid='donor-name-error' className='error'>{ errors.donorName?.message }</p>

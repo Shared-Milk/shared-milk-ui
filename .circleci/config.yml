@@ -6,8 +6,6 @@ jobs:
       - checkout
       - heroku/install
       - heroku/deploy-via-git
-  kramdown:
-    input: Kramdown
 orbs:
   cypress: cypress-io/cypress@1
   heroku: circleci/heroku@1.2.6

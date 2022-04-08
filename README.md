@@ -8,6 +8,8 @@ Deployed Application here :point_right: [no-use-cryin-over-shared-milk.herokuapp
 
 Github Organization: [Shared Milk](https://github.com/Shared-Milk)
 
+CircleCI Status: [![Shared-Milk](https://circleci.com/gh/Shared-Milk/shared-milk-ui.svg?style=svg)](https://app.circleci.com/pipelines/github/Shared-Milk/shared-milk-ui?branch=main&filter=all)
+
 # Table of Contents
 
 1. [Overview](#overview)
@@ -163,20 +165,74 @@ This project was a good combination of working with familiar technologies such a
 
 ### Frontend Team
 
-- [Chez Gallo](https://github.com/cagallo)
-- [Jani Palomino](https://github.com/janitastic)
-- [Lindsay Schnell](https://github.com/lschnell8)
-- [Devon Wigle](https://github.com/devonwigle)
+- Chez Gallo 
+<a href="https://github.com/cagallo/"> 
+<img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+</a> 
+<a href="https://www.linkedin.com/in/chez-gallo/"> 
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+- Jani Palomino 
+<a href="https://github.com/janipalomino/"> 
+<img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+</a> 
+<a href="https://www.linkedin.com/in/lindsay-schnell/"> 
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+- Lindsay Schnell 
+<a href="https://github.com/lschnell8/"> 
+<img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+</a> 
+<a href="https://www.linkedin.com/in/lindsay-schnell/"> 
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+- Devon Wigle 
+<a href="https://github.com/devonwigle/"> 
+<img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+</a> 
+<a href="https://www.linkedin.com/in/lindsay-schnell/"> 
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
 
 ### Backend Team
 
-- [Kelly Anderson](https://github.com/kanderson852)
-- [Eric Miekle](https://github.com/EMielke76)
-- [Seth Perna](https://github.com/SethPerna)
+- Kelly Anderson 
+<a href="https://github.com/kanderson852/"> 
+<img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+</a> 
+<a href="https://www.linkedin.com/in/kelly-anderson852/"> 
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+- Eric Miekle 
+<a href="https://github.com/EMielke76/"> 
+<img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+</a> 
+<a href="https://www.linkedin.com/in/emielke76/"> 
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+- Seth Perna 
+<a href="https://github.com/SethPerna/"> 
+<img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+</a> 
+<a href="https://www.linkedin.com/in/sethperna/"> 
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
 
 ### Project Managers
-- [Nik Seif](https://github.com/niksseif)
-- [Dallas Slieker](https://github.com/he-dslieker)
+- Nik Seif 
+<a href="https://github.com/niksseif/"> 
+<img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+</a> 
+<a href="https://www.linkedin.com/in/nik-seif/"> 
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
+- Dallas Slieker 
+<a href="(https://github.com/he-dslieker/"> 
+<img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
+</a> 
+<a href="https://www.linkedin.com/in/dslieker/"> 
+<img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
+</a>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 

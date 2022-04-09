@@ -53,7 +53,7 @@ const DonateMilkForm = () => {
         {...register('donorName', {
           required: `* Is the baby-brain that bad?`,
           pattern: {
-            value: /\S+@\S+\.\S+/,
+            value: (/^[A-Z a-z -]+$/),
             message: `* We are not defined by numbers, only letters`
           }
         })}
@@ -64,7 +64,7 @@ const DonateMilkForm = () => {
         {...register('donorEmail', {
           required: `* Oh, fer cryin' out loud. We don't do snail mail. Just enter your email.`,
           pattern: {
-            value: /(^\s*)\S+@\S+\.\S+/,
+            value: /\S+@\S+\.\S+/,
             message: `* Entered value does not match email format`
           }
         })}
@@ -95,7 +95,7 @@ const DonateMilkForm = () => {
         {...register('donorLocation', {
           required: `* Ope! We can't find you. Peekaboo!`,
           pattern: {
-            value: /(^\s*)\S+@\S+\.\S+/,
+            value: /^[A-Za-z]+,[ ]?[A-Za-z]{2,}$/,
             message: `* Entered value does not match location format`
           }
         })}

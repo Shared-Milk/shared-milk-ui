@@ -1,7 +1,6 @@
 import Levon_Trampoline from './Levon_Trampoline.png';
 import Elora_Glasses from './Elora_Glasses.png';
 import Levon_Goofy from './Levon_Goofy.png';
-// import Levon_Hair from './Levon_Hair.png';
 import Elora_Nap from './Elora_Nap.png';
 import Sweet_Elora from './Sweet_Elora.png';
 import Pooped_Pair from './Pooped_Pair.png';
@@ -73,12 +72,7 @@ const babyData = [
     id: 12,
     photo: `${Elora_Bear}`,
     altText: 'Sweet baby in care seat wearing a bear outfit with a pacifier in her mouth'
-  },
-  // {
-  //   id: 13,
-  //   photo: `${Levon_Hair}`,
-  //   altText: 'Toddler standing on bed with Flock of Seagulls hair'
-  // }
+  }
 ]
 
 export { babyData };

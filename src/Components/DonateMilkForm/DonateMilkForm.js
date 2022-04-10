@@ -52,55 +52,55 @@ const DonateMilkForm = () => {
       <input type='text'
         {...register('donorName', {
           required: `* Is the baby-brain that bad?`,
-          pattern: {
-            value: (/^[A-Z a-z -]+$/),
-            message: `* We are not defined by numbers, only letters`
-          }
+            pattern: {
+              value: /^[A-Z a-z -]+$/,
+              message: `* We are not defined by numbers, only letters`
+            }
         })}
         placeholder='First & Last Name' />
-      <p data-testid='donor-name-error' className='error'>{ errors.donorName?.message }</p>
+      <p className='error' data-testid='donor-name-error'>{ errors.donorName?.message }</p>
       <label htmlFor='Email Address'>Email Address</label>
       <input type='email'
         {...register('donorEmail', {
           required: `* Oh, fer cryin' out loud. We don't do snail mail. Just enter your email.`,
-          pattern: {
-            value: /\S+@\S+\.\S+/,
-            message: `* Entered value does not match email format`
-          }
+            pattern: {
+              value: /\S+@\S+\.\S+/,
+              message: `* Entered value does not match email format`
+            }
         })}
-        placeholder='Email Address' />
-      <p data-testid='donor-email-error' className='error'>{ errors.donorEmail?.message }</p>
+          placeholder='Email Address' />
+      <p className='error' data-testid='donor-email-error'>{ errors.donorEmail?.message }</p>
       <label htmlFor='Phone Number'>Phone Number</label>
       <input type='tel'
         {...register('donorPhone', {
           required: `* Can I have yo number??`,
-          minLength: {
-            value: 8,
-            message: `* Are you dialing the baby's toy phone? Please include your area code.`
-          },
-          maxLength: {
-            value: 10,
-            message: `* Is the wee one trying to type again? 10 numbers max.`
-          },
-          pattern: {
-            value: /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/,
-            message: `* That's one smelly diaper! Enter a valid US phone number`
-          }
+            minLength: {
+              value: 8,
+              message: `* Are you dialing the baby's toy phone? Please include your area code.`
+            },
+            maxLength: {
+              value: 10,
+              message: `* Is the wee one trying to type again? 10 numbers max.`
+            },
+            pattern: {
+              value: /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/,
+              message: `* That's one smelly diaper! Enter a valid US phone number`
+            }
         })}
-        onKeyPress={(e) => !/[0-9]/.test(e.key) && e.preventDefault()}
-        placeholder='Phone Number' />
-      <p data-testid='donor-phone-error' className='error'>{ errors.donorPhone?.message }</p>
+          onKeyPress={ (e) => !/[0-9]/.test(e.key) && e.preventDefault() }
+          placeholder='Phone Number' />
+      <p className='error' data-testid='donor-phone-error'>{ errors.donorPhone?.message }</p>
       <label htmlFor='Location'>Location</label>
       <input type='text'
         {...register('donorLocation', {
           required: `* Ope! We can't find you. Peekaboo!`,
-          pattern: {
-            value: /^[A-Za-z]+,[ ]?[A-Za-z]{2,}$/,
-            message: `* Entered value does not match location format`
-          }
+            pattern: {
+              value: /^[A-Za-z]+,[ ]?[A-Za-z]{2,}$/,
+              message: `* Entered value does not match location format`
+            }
         })}
-        placeholder='Location (i.e. Denver, CO)' />
-      <p data-testid='donor-location-error' className='error'>{ errors.donorLocation?.message }</p>
+          placeholder='Location (i.e. Denver, CO)' />
+      <p className='error' data-testid='donor-location-error'>{ errors.donorLocation?.message }</p>
       <p className='form-question' data-testid='smoker-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
         <label htmlFor='no'>NO</label>
@@ -120,7 +120,7 @@ const DonateMilkForm = () => {
             required: `* Did you go out for a smoke?`
           })} />
       </div>
-      <p data-testid='donor-smoker-error' className='error'>{ errors.smoker?.message }</p>
+      <p className='error' data-testid='donor-smoker-error'>{ errors.smoker?.message }</p>
       <label htmlFor='message'>Message</label>
       <textarea type='text'
         data-testid='donor-bio-input'
@@ -128,8 +128,8 @@ const DonateMilkForm = () => {
           required: `* Seriously though, tell us about yourself. Don't be sketchy`
         })}
         placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' />
-      <p data-testid='donor-bio-error' className='error'>{ errors.donorBio?.message }</p>
-      <button  className='button' data-testid='donate-submit-button' type='submit'>Submit</button>
+      <p className='error' data-testid='donor-bio-error'>{ errors.donorBio?.message }</p>
+      <button className='button' data-testid='donate-submit-button' type='submit'>Submit</button>
     </form>
   )
 };

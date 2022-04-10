@@ -99,7 +99,7 @@ const DonateMilkForm = () => {
             message: `* Entered value does not match location format`
           }
         })}
-        placeholder='Location' />
+        placeholder='Location (i.e. Denver, CO)' />
       <p data-testid='donor-location-error' className='error'>{ errors.donorLocation?.message }</p>
       <p className='form-question' data-testid='smoker-question'>Have you used any tobacco products in the last 6 weeks?</p>
       <div className='form-group'>
@@ -129,7 +129,7 @@ const DonateMilkForm = () => {
         })}
         placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' />
       <p data-testid='donor-bio-error' className='error'>{ errors.donorBio?.message }</p>
-      <button data-testid='donate-submit-button' className='button' type='submit'>Submit</button>
+      <button  className='button' data-testid='donate-submit-button' type='submit'>Submit</button>
     </form>
   )
 };

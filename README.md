@@ -35,9 +35,9 @@ CircleCI Status: [![Shared-Milk](https://circleci.com/gh/Shared-Milk/shared-milk
 
 - Project Spec here: [Capstone](https://mod4.turing.edu/projects/capstone/)
 
-- No Use Cryin' Over Spilled Milk API: 
-    - GitHub: [No Use Cryin' Over Spilled Milk API](https://github.com/Shared-Milk/shared_milk_be)
-    - Heroku: [No Use Cryin' Over Spilled Milk Deployed API](https://shared-milk-api.herokuapp.com/graphql)
+- No Use Cryin' Over Shared Milk API: 
+    - GitHub: [No Use Cryin' Over Shared Milk API](https://github.com/Shared-Milk/shared_milk_be)
+    - Heroku: [No Use Cryin' Over Shared Milk Deployed API](https://shared-milk-api.herokuapp.com/graphql)
 
 ## Demo
 <a href='https://no-use-cryin-over-shared-milk.herokuapp.com/' target='_blank' rel='noreferrer'>![site-overview](https://github.com/Shared-Milk/shared-milk-ui/blob/main/.github/Site-Overview.gif)</a>
@@ -163,7 +163,6 @@ This project was a good combination of working with familiar technologies such a
 
 ## Authors
 
-
 ### Frontend Team
 
 <table>
@@ -179,7 +178,7 @@ This project was a good combination of working with familiar technologies such a
   </td>
   <td align="center">
     <img src="https://avatars.githubusercontent.com/u/78449313?v=4" width="100px;" alt="Lindsay Schnell"/>
-    <br>Lindsay (no personal pronouns)
+    <br>Lindsay (no pronoun preference)
     <a href="https://github.com/lschnell8/"> 
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
     </a> 
@@ -250,7 +249,7 @@ This project was a good combination of working with familiar technologies such a
 
 <table>
   <td align="center">
-    Nik Seif<br> 
+    Nik Seif (she/her)<br> 
     <a href="https://github.com/niksseif/"> 
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
     </a><br> 
@@ -259,7 +258,7 @@ This project was a good combination of working with familiar technologies such a
     </a>
   </td>
   <td align="center">
-    Dallas Slieker<br> 
+    Dallas Slieker (they/them)<br> 
     <a href="(https://github.com/he-dslieker/"> 
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
     </a><br> 

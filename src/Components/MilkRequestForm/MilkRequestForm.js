@@ -37,7 +37,7 @@ const MilkRequestForm = () => {
             required: `* Oh, fer cryin' out loud. We don't do snail mail. Just enter your email`,
               pattern: {
                 value: /\S+@\S+\.\S+/,
-                message: `* Entered value does not match email format`
+                message: `* Are you sure this is your email? It doesn't match an email format.`
               }
           })}
             placeholder='Email Address' />
@@ -46,14 +46,6 @@ const MilkRequestForm = () => {
         <input type='tel'
           {...register('recipientPhone', {
             required: `* Can I have yo number??`,
-              minLength: {
-                value: 8,
-                message: `* Are you dialing the baby's toy phone? Please include your area code.`
-              },
-              maxLength: {
-                value: 10,
-                message: `* Is the wee one trying to type again? 10 numbers max.`
-              },
               pattern: {
                 value: /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/,
                 message: `* That's one smelly diaper! Enter a valid US phone number`

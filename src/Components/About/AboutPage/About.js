@@ -8,10 +8,8 @@ const About = () => {
   const [babies, setBabies] = useState([]);
 
   useEffect(() => {
-    if(babies) {
-      setBabies([...babyData]);
-    }
-  }, [babies]);
+    setBabies([...babyData]);
+  }, []);
 
   return (
     <section className='main-container about-page' data-testid='about'>
@@ -22,7 +20,7 @@ const About = () => {
         </div>
         <hr className='dots'></hr>
       <section className='team-container' data-testid='team-container'>
-        <Babies photos={babies} />
+        <Babies photos={ babies } />
       </section>
     </section>
   );

@@ -15,6 +15,7 @@ workflows:
         - cypress/run:
             group: 'all tests' # name this group "all tests" on the dashboard
             start: 'npm start' # start server before running tests
+            wait-on: 'http://localhost:3000'
         - deploy-heroku:
             requires:
               - cypress/run

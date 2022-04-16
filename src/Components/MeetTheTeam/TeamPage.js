@@ -7,10 +7,8 @@ const OurTeam = () => {
   const [team, setTeam] = useState([]);
 
   useEffect(() => {
-    if(team) {
-      setTeam([...teamData]);
-    }
-  }, [team]);
+    setTeam([...teamData]);
+  }, []);
 
   return (
     <section className='main-container about-page' data-testid='about'>
@@ -19,10 +17,10 @@ const OurTeam = () => {
       <section className='team-container' data-testid='team-container'>
         <h3>Meet the Team</h3>
           <p>Click on any photo below to get to know more about us.</p>
-        <TeamMembers team={team} />
+        <TeamMembers team={ team } />
       </section>
     </section>
-  );
+  )
 };
 
 export default OurTeam;

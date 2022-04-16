@@ -65,7 +65,7 @@ describe('Donate milk form user flow', () => {
     cy.get('[data-testid=donor-sorry-title]').contains('Sorry!')
   })
 
-  it('Should get a thank you message when no to smoking is selected', () => {
+  it('Should get a thank you message when no to smoking is selected and the form is submitted', () => {
     cy.get('[data-testid=donor-form]').children()
     cy.get('[name=donorName]')
       .click()

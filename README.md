@@ -170,41 +170,41 @@ This project was a good combination of working with familiar technologies such a
 <table>
   <td align="center">
     <img src="https://avatars.githubusercontent.com/u/76501557?v=4" width="100px;" alt="Jani Palomino"/>
-    <br>Jani 'Hah-nee' (she/her)
-    <a href="https://github.com/janipalomino/"> 
+    <br>Jani 'Hah-nee' (she/her)<br>
+    <a href="https://github.com/janitastic"> 
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
-    </a> 
-    <a href="https://www.linkedin.com/in/lindsay-schnell/"> 
+    </a><br>  
+    <a href="https://www.linkedin.com/in/janipalomino/"> 
     <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
     </a>
   </td>
   <td align="center">
     <img src="https://avatars.githubusercontent.com/u/78449313?v=4" width="100px;" alt="Lindsay Schnell"/>
-    <br>Lindsay (no pronoun preference)
+    <br>Lindsay (no pronoun preference)<br>
     <a href="https://github.com/lschnell8/"> 
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
-    </a> 
+    </a><br>  
     <a href="https://www.linkedin.com/in/lindsay-schnell/"> 
     <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
     </a>
   </td>
   <td align="center">
     <img src="https://avatars.githubusercontent.com/u/78453792?v=4" width="100px;" alt="Chez Gallo"/>
-    <br>Chez (she/her)
+    <br>Chez (she/her)<br>
     <a href="https://github.com/cagallo/"> 
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
-    </a> 
+    </a><br>  
     <a href="https://www.linkedin.com/in/chez-gallo/"> 
     <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
     </a>
   </td>
   <td align="center">
     <img src="https://avatars.githubusercontent.com/u/88619501?v=4" width="100px;" alt="Devon Wigle"/>
-    <br>Devon (she/her)
+    <br>Devon (she/her)<br>
     <a href="https://github.com/devonwigle/"> 
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
-    </a> 
-    <a href="https://www.linkedin.com/in/lindsay-schnell/"> 
+    </a><br>  
+    <a href="https://www.linkedin.com/in/devonwigle/"> 
     <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
     </a>
     </td>
@@ -217,30 +217,30 @@ This project was a good combination of working with familiar technologies such a
   <tr>
     <td align="center">
       <img src="https://avatars.githubusercontent.com/u/90224504?v=4" width="100px;" alt="Seth Perna"/>
-      <br>Seth (he/him)
-      <a href="https://github.com/kanderson852/"> 
+      <br>Seth (he/him)<br>
+      <a href="https://github.com/SethPerna"> 
       <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
-      </a> 
-      <a href="https://www.linkedin.com/in/kelly-anderson852/"> 
+      </a><br>  
+      <a href="https://www.linkedin.com/in/sethperna/"> 
       <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
       </a>
     </td>
     <td align="center">
       <img src="https://avatars.githubusercontent.com/u/89998621?v=4" width="100px;" alt="Kelly Anderson"/>
-      <br>Kelly (she/her)
+      <br>Kelly (she/her)<br>
       <a href="https://github.com/kanderson852/"> 
       <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
-      </a> 
+      </a><br>  
       <a href="https://www.linkedin.com/in/kelly-anderson852/"> 
       <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
       </a>
     </td>
     <td align="center">
       <img src="https://avatars.githubusercontent.com/u/81482407?v=4" width="100px;" alt="Eric Miekle"/>
-      <br>Eric (he/him)
+      <br>Eric (he/him)<br>
       <a href="https://github.com/EMielke76/"> 
       <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
-      </a> 
+      </a><br>  
       <a href="https://www.linkedin.com/in/emielke76/"> 
       <img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white" />
       </a>
@@ -261,7 +261,7 @@ This project was a good combination of working with familiar technologies such a
   </td>
   <td align="center">
     Dallas Slieker (they/them)<br> 
-    <a href="(https://github.com/he-dslieker/"> 
+    <a href="https://github.com/he-dslieker/"> 
     <img src="https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white" />
     </a><br> 
     <a href="https://www.linkedin.com/in/dslieker/"> 

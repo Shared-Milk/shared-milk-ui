@@ -2,13 +2,6 @@ import DonateMilkForm from '../DonateMilkForm/DonateMilkForm';
 
 const DonateMilk = () => {
 
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth"
-    });
-  };
-
   return (
     <section className='main-container donate' data-testid='donate'>
       <h2>Donate Milk</h2>

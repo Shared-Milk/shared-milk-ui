@@ -23,10 +23,10 @@ const MilkRequestForm = () => {
         <label htmlFor='First & Last Name'>Your Name</label>
         <input type='text'
           {...register('recipientName', {
-          required: `* Is the baby-brain that bad?`,
+          required: `* Forgot your name? Must be the baby-brain. Try again.`,
             pattern: {
               value: /^[A-Z a-z -]+$/,
-              message: `* We are not defined by numbers, only letters`
+              message: `* We are not defined by numbers, only letters.`
             }
         })}
           placeholder='First & Last Name' />
@@ -34,7 +34,7 @@ const MilkRequestForm = () => {
         <label htmlFor='Email Address'>Email Address</label>
         <input type='email'
           {...register('recipientEmail', {
-            required: `* Oh, fer cryin' out loud. We don't do snail mail. Just enter your email`,
+            required: `* Oh, fer cryin' out loud. We don't do snail mail. Just enter your email.`,
               pattern: {
                 value: /\S+@\S+\.\S+/,
                 message: `* Are you sure this is your email? It doesn't match an email format.`
@@ -45,10 +45,10 @@ const MilkRequestForm = () => {
         <label htmlFor='Phone Number'>Phone Number</label>
         <input type='tel'
           {...register('recipientPhone', {
-            required: `* Can I have yo number??`,
+            required: `* Can I have yo numba??`,
               pattern: {
                 value: /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/,
-                message: `* That's one smelly diaper! Enter a valid US phone number`
+                message: `* That's one smelly diaper! Enter a valid US phone number.`
               }
           })}
             onKeyPress={ (e) => !/[0-9]/.test(e.key) && e.preventDefault() } placeholder='Phone Number' />

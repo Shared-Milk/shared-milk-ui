@@ -8,7 +8,7 @@ const HomePage = () => {
     <section className='main-container home columns' data-testid='home'>
       <aside className='mission'>
         <h2>Our Mission</h2>
-          <p>To create a safe space for families who underproduce breast milk to connect with families who overproduce.</p>
+          <p>To create a safe space for families who under-produce breast milk to connect with families who over-produce.</p>
           <p>We keep the money out of it as a donation-only based program.</p>
           <p>Whether you are a parent in need, or are here to donate, we hope you are able to build a connection with another family and join us in our mission to help infants thrive by making donated milk accessible.</p>
           <p>

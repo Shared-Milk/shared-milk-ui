@@ -19,7 +19,7 @@ const teamData = [
     linkedin: "https://www.linkedin.com/in/SethPerna",
     githubIcon: `${githubIcon}`,
     github: "https://github.com/SethPerna",
-    bio: "Dad of the year, Ruby enthusist, snowboarding, hiking and all things outdoors. I set out to build Shared Milk as a donation-only based connection app to get a very vital task of feeding babies completed. Thanks to some amazing individuals: Kelly Anderson, Erik Mielke, Chez Gallo, Jani Palomino, Devon Wigle and Lindsay Schnell, their passion for this project, and technical strength helped this idea become a reality. Got Milk?"
+    bio: "Dad of the year, Ruby enthusist, snowboarding, hiking and all things outdoors. I set out to build Shared Milk as a donation-only based connection app to get a very vital task of feeding babies completed. Thanks to some amazing individuals: Kelly Anderson, Erik Mielke, Chez Gallo, Jani Palomino, Devon Wigle and Lindsay Schnell, their passion for this project, and technical strength helped this idea become a realty. Got Milk?"
   },
   {
     id: 2,

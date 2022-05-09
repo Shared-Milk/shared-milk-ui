@@ -20,7 +20,7 @@ describe('About page user flow', () => {
   it('The third element should be a mission quote with a horizontal rule divider', () => {
     cy.get('[data-testid=about]').children()
       .get('.mission-container').should('be.visible')
-      .get('p').should('have.class', 'mission').contains('to create a safe space for families who under-produce breast milk to connect with families who over-produce.')
+      .get('p').should('have.class', 'mission').contains('to create a safe space for families who underproduce breast milk to connect with families who overproduce.')
       .get('.dots')
   });
 

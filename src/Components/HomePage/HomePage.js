@@ -27,7 +27,7 @@ const HomePage = () => {
         <Link to='/support' className='support'>Need<br></br>Support</Link>
       </aside>
     </section>
-  );
+  )
 };
 
 export default HomePage;

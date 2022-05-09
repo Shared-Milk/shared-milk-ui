@@ -28,6 +28,6 @@ const HomePage = () => {
       </aside>
     </section>
   )
-};
+}
 
 export default HomePage;

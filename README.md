@@ -29,7 +29,7 @@ CircleCI Status: [![Shared-Milk](https://circleci.com/gh/Shared-Milk/shared-milk
 
 ## Overview 
 
-'No Use Cryin' Over Shared Milk' is an application that enables families that are dealing with an underproduction of breast milk to connect with families that are overproducing breast milk in a free and easily accessible manner. The end goal is to make sure that no baby goes hungry and that no family has to worry about making sure that their infant gets the best nutrition possible.
+'No Use Cryin' Over Shared Milk' is an application that enables families that are dealing with an under-production of breast milk to connect with families that are over-producing breast milk in a free and easily accessible manner. The end goal is to make sure that no baby goes hungry and that no family has to worry about making sure that their infant gets the best nutrition possible.
 
  If the user is seeking breast milk, they can click the 'Need Milk' button to view a list of donor cards that displays a donor's name, location and a short bio. If they are interested in receiving breast milk from this donor, they can click on their selected donor and send a message to that donor, via the Milk Request Form. If the user is looking to donate breast milk, they can click the 'Donate Milk' button on the landing page. The user will then fill out the Donate Milk Form and on submit, they will be registered in our database and their information will be available for users who are seeking milk. 
 

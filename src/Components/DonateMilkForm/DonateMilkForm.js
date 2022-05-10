@@ -51,10 +51,10 @@ const DonateMilkForm = () => {
       <label htmlFor='Your Name'>Your Name</label>
       <input type='text'
         {...register('donorName', {
-          required: `* Forgot your name? Must be the baby-brain. Try again.`,
+          required: `* Is the baby-brain that bad?`,
             pattern: {
               value: /^[A-Z a-z -]+$/,
-              message: `* We are not defined by numbers, only letters.`
+              message: `* We are not defined by numbers, only letters`
             }
         })}
         placeholder='First & Last Name' />
@@ -73,10 +73,10 @@ const DonateMilkForm = () => {
       <label htmlFor='Phone Number'>Phone Number</label>
       <input type='tel'
         {...register('donorPhone', {
-          required: `* Can I have yo numba??`,
+          required: `* Can I have yo number??`,
             pattern: {
               value: /^\(?(\d{3})\)?[- ]?(\d{3})[- ]?(\d{4})$/,
-              message: `* That's one smelly diaper! Enter a valid US phone number.`
+              message: `* That's one smelly diaper! Enter a valid US phone number`
             }
         })}
           onKeyPress={ (e) => !/[0-9]/.test(e.key) && e.preventDefault() }
@@ -88,7 +88,7 @@ const DonateMilkForm = () => {
           required: `* Ope! We can't find you. Peekaboo!`,
             pattern: {
               value: /^[A-Za-z]+,[ ]?[A-Za-z]{2,}$/,
-              message: `* Is the wee one trying to type again? Format example: Denver, CO`
+              message: `* Is the wee one trying to type again? You might need to teach some formatting.`
             }
         })}
           placeholder='Location (i.e. Denver, CO)' />
@@ -101,7 +101,7 @@ const DonateMilkForm = () => {
           data-testid='donor-smoker-no'
           id='no'
           {...register('smoker', {
-            required: `* Did you go out for a smoke or just forget to answer?`
+            required: `* Did you go out for a smoke?`
           })} />
         <label htmlFor='yes'>YES</label>
         <input type='radio'
@@ -109,7 +109,7 @@ const DonateMilkForm = () => {
           data-testid='donor-smoker-yes'
           id='yes'
           {...register('smoker', {
-            required: `* Did you go out for a smoke or just forget to answer?`
+            required: `* Did you go out for a smoke?`
           })} />
       </div>
       <p className='error' data-testid='donor-smoker-error'>{ errors.smoker?.message }</p>
@@ -117,7 +117,7 @@ const DonateMilkForm = () => {
       <textarea type='text'
         data-testid='donor-bio-input'
         {...register('donorBio', {
-          required: `* Seriously though, tell us about yourself. Don't be sketchy.`
+          required: `* Seriously though, tell us about yourself. Don't be sketchy`
         })}
         placeholder='Tell us about yourself. Why are you donating? How much milk do you have available?' />
       <p className='error' data-testid='donor-bio-error'>{ errors.donorBio?.message }</p>

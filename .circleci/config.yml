@@ -4,8 +4,8 @@ jobs:
     executor: vercel/default
     steps:
       - checkout
-      - vercel/install
-      - vercel/deploy-via-git
+      # - vercel/install
+      # - vercel/deploy-via-git
 orbs:
   cypress: cypress-io/cypress@1
   # vercel: circleci/vercel@1.2.6

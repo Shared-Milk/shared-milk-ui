@@ -4,7 +4,7 @@
 
 ***"to create a safe space for families who under-produce breast milk to connect with families who over-produce."***
 
-Deployed Application here :point_right: [no-use-cryin-over-shared-milk.herokuapp.com](https://no-use-cryin-over-shared-milk.herokuapp.com/)
+Deployed Application here :point_right: [no-use-cryin-over-shared-milk.vercel.app](https://no-use-cryin-over-shared-milk.vercel.app/)
 
 Backend API: :point_right: [shared-milk-api.herokuapp.com/graphql](https://shared-milk-api.herokuapp.com/graphql)
 
@@ -124,6 +124,7 @@ This application utilizes 21 functional components and uses React Hooks to manag
 ![Miro](https://img.shields.io/badge/Miro-050038?style=for-the-badge&logo=Miro&logoColor=white)
 ![Postman](https://img.shields.io/badge/Postman-FF6C37?style=for-the-badge&logo=postman&logoColor=white)
 ![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
+![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## Testing
 

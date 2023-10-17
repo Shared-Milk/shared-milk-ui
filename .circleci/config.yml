@@ -1,14 +1,14 @@
 version: 2.1
 jobs:
-  deploy-heroku:
-    executor: heroku/default
+  deploy-vercel:
+    executor: vercel/default
     steps:
       - checkout
-      - heroku/install
-      - heroku/deploy-via-git
+      # - vercel/install
+      # - vercel/deploy-via-git
 orbs:
   cypress: cypress-io/cypress@1
-  heroku: circleci/heroku@1.2.6
+  # vercel: circleci/vercel@1.2.6
 workflows:
     build:
       jobs:
@@ -16,7 +16,7 @@ workflows:
             group: 'all tests' # name this group "all tests" on the dashboard
             start: 'npm start' # start server before running tests
             wait-on: 'http://localhost:3000'
-        - deploy-heroku:
+        - deploy-vercel:
             requires:
               - cypress/run
             filters:
